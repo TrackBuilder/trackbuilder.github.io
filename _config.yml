@@ -10,21 +10,23 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-minimal_mistakes_skin    : "dirt"
+# theme                  : "minimal-mistakes-jekyll"
+# remote_theme           : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "What the Pho game: Restaurant startup stories"
+title                    : "Site Title"
 title_separator          : "-"
-subtitle                 : "Lemonchii dev"
-name                     : "Lemonchii developer"
-description              : "This is the official website of the game: \"What the Pho: Restaurant startup stories\" as well as other update from Lemonchii dev""
-url                      : https://lemonchii.github.io/
-baseurl                  : "/main"
+subtitle                 : # site tagline that appears below site title in masthead
+name                     : "Your Name"
+description              : "An amazing website."
+url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : " "
+masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -105,10 +107,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Lemonchii dev"
+  name             : "Your Name"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Short (and cute) for Lemon Chihuahua, which is our dog, a small Chihuahua named Lemon"
-  location         : "Finland"
+  bio              : "I am an **amazing** person."
+  location         : "Somewhere"
   email            :
   links:
     - label: "Email"
@@ -292,5 +294,3 @@ defaults:
       comments: # true
       share: true
       related: true
-
-theme: jekyll-theme-slate

@@ -9,12 +9,12 @@ header:
   overlay_image: /assets/images/Bowl.png
   actions:
     - label: "Find What the Pho on Steam"
-      url: "https://github.com/mmistakes/minimal-mistakes/"
+      url: "https://store.steampowered.com/app/1138610"
 excerpt: >
   "What the Pho: Restaurant startup stories" is an upcoming video game about creating and managing your own restaurant dream. <br />
   You can (and must) design the layout of your little shop, choose what food to show in the menu, buy ingredients, prepare the meal, serve it to the customer, make money and clean up the mess.<br />
-  Your successful restaurant career can be played either solo or coop, and a special arcade mode that support up to 4 players (or more, 5 or 6 might be possible).
-  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.16.5">Coming to Steam and hopefully, more platforms.</a></small>
+  Your successful restaurant career can be played either solo or coop, and a special arcade mode that support up to 4 players (or more, 5 or 6 might be possible).<br />
+  <small><a href="https://store.steampowered.com/app/1138610">Coming to Steam and hopefully, more platforms.</a></small>
 feature_row:
   - image_path: /assets/images/Stove.png
     alt: "First image"

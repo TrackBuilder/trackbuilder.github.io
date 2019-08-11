@@ -97,9 +97,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Minh Duc Le Pham"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  bio              : "Developer of What the Pho Game."
   location         : "Somewhere"
   email            :
   links:

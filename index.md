@@ -19,25 +19,12 @@ feature_row:
   - image_path: /assets/images/FullGameFeature.jpg
     alt: "Full game feature"
     title: "Have your own restaurent"
-    # excerpt: "Everything from the menus, sidebars, comments, and more can be configured or set with YAML Front Matter."
-    # url: "/docs/configuration/"
-    # btn_class: "btn--primary"
-    # btn_label: "Learn more"
   - image_path: /assets/images/furniture.gif
     alt: "Design your own restaurant"
     title: "Design your own restaurant, down to every tile on the floor."
-    # excerpt: "Built with HTML5 + CSS3. All layouts are fully responsive with helpers to augment your content."
-    # url: "/docs/layouts/"
-    # btn_class: "btn--primary"
-    # btn_label: "Learn more"
-feature_row:
   - image_path: /assets/images/cooking.gif
     alt: "And create awesome food"
     title: "Grab, chop, cook, combine! Make food that your customer will crave to come back!"
-    # excerpt: "Free to use however you want under the MIT License. Clone it, fork it, customize it... whatever!"
-    # url: "/docs/license/"
-    # btn_class: "btn--primary"
-    # btn_label: "Learn more"      
   - image_path: /assets/images/mod-friendly.jpg
     alt: "Mod friendly"
     title: "Come up with your own recipe and add them to the game using our modding-tool."

@@ -11,22 +11,22 @@ header:
     - label: "Wishlist \"What the Pho\" on Steam"
       url: "https://store.steampowered.com/app/1138610"
 excerpt: >
-  Restaurant startup stories - An upcoming video game about starting up your own restaurant dream. <br />
-  Support single-player or coop and arcade mode that support up to 4 players.<br />
-  <small><a href="https://store.steampowered.com/app/1138610">Coming to Steam and hopefully, more platforms.</a></small>
+  An upcoming video game about starting up your own restaurant dream. <br />
+  Fully support single-player or coop and arcade mode that support up to 4 players.<br />
+  <small><a href="https://store.steampowered.com/app/1138610">Coming to Steam (and hopefully, more).</a></small>
 feature_row:
   # - image_path: /assets/images/FullGameFeature.jpg
   #   alt: "Full game feature"
   #   title: "Have your own restaurant"
-  - image_path: /assets/images/furniture.gif
+  - title: "Design your own restaurant, down to every tile on the floor."
+    image_path: /assets/images/furniture.gif
     alt: "Design your own restaurant"
-    title: "Design your own restaurant, down to every tile on the floor."
-  - image_path: /assets/images/cooking.gif
+  - title: "Grab, chop, cook, combine! Make food that your customer will crave for more!"
+    image_path: /assets/images/cooking.gif
     alt: "And create awesome food"
-    title: "Grab, chop, cook, combine! Make food that your customer will crave for more!"
-  - image_path: /assets/images/mod-friendly.jpg
+  - title: "User's mod friendly: Come up with your own recipe and add them to the game using our super easy mod-tool."
     alt: "Mod friendly"
-    title: "User's mod friendly: Come up with your own recipe and add them to the game using our super easy mod-tool."
+    image_path: /assets/images/mod-friendly.jpg
   
 ---
 

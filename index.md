@@ -12,7 +12,7 @@ header:
       url: "https://store.steampowered.com/app/1138610"
 excerpt: >
   An upcoming video game about starting up your own restaurant dream. <br />
-  Fully support single-player or coop and arcade mode that support up to 4 players.<br />
+  Single-player or coop for main mode and arcade mode that support up to 4 players.<br />
   <small><a href="https://store.steampowered.com/app/1138610">Coming to Steam (and hopefully, more).</a></small>
 feature_row:
   # - image_path: /assets/images/FullGameFeature.jpg

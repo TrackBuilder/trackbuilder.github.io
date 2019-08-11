@@ -1,6 +1,9 @@
 ---
+title: "A progress update for the game. From the very beginning until 2019-08-11"
+excerpt: "A progress update for the game. From the very beginning until 2019-08-11"
+last_modified_at: 2019-08-11T09:12:50-05:00
+toc: true
 layout: post
-title:  "All progress update for the game. From the very beginning until 2019-08-11"
 ---
 
 Sun Aug 11 01:03:55 2019 +0300 : [3hr]Huge art refactor. Add new sprite/animation for the player so that it looks like a guy, not some naked dude walking around. The animation/animator mapping took a lot of time. Add proper art for the rest of thing include: Table (4 types), redraw chopping board, trashbin, ingredient container. Also remove the change grid color code calling whenever we press A or place/remove an item. The pick/drop stuff still doesn't look right though, so will need to work more on that. But tomorrow, I will most probably try to get some gameplay vid/gif and update the website and maybe try to finish the steam page.

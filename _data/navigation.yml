@@ -1,12 +1,4 @@
 # main links
 main:
-  - title: "Progress update"
-    url: /progress/
-  # - title: "About"
-  #   url: /about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: "Weekly progress updates"
+    url: /updates/

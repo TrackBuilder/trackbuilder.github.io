@@ -19,9 +19,9 @@ words_per_minute         : 200
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "custom"
+  provider               : "google"
   google:
-    tracking_id          :
+    tracking_id          : "UA-145751787-1"
     anonymize_ip         : # true, false (default)
 
 

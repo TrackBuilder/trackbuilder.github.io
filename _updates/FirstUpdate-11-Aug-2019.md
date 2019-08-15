@@ -5,7 +5,12 @@ excerpt: "2019-08-11 - progress update"
 last_modified_at: 2019-08-11T09:12:50-05:00
 toc: true
 layout: posts
+feature_image_path: "/assets/2019-09-11/cooking.gif"
 ---
+
+## This is the progress after 3 months. Well, and this website...
+
+![cooking.gif](/assets/2019-09-11/cooking.gif)
 
 ### Sun Aug 11 01:03:55 2019 +0300 : 
 

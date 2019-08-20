@@ -1,6 +1,6 @@
 ---
 layout: collection
-title:  "Wekkly progress updates"
+title:  "Monthly progress updates"
 ---
 <ul>
   {% for update in site.updates %}

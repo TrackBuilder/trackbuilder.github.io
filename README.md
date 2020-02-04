@@ -1,3 +1,18 @@
+# QUICK USAGE:
+
+   ```bash
+   bundle install
+   ```
+   
+   ```bash
+   bundle exec jekyll serve
+   ```
+   Should probably be at:
+   
+   http://localhost:4000/
+   
+ 
+
 # [Minimal Mistakes Jekyll theme](https://mmistakes.github.io/minimal-mistakes/)
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE)

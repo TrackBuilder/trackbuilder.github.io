@@ -1,9 +1,9 @@
 ---
 layout: collection
-title:  "Monthly progress updates"
+title:  "Progress updates"
 ---
 <ul>
-  {% for update in site.updates %}
+  {% for update in site.updates reversed  %}
     <li>
       <a href="{{ update.url }}">{{ update.post_time }}</a>
       - {{ update.title }} <br>

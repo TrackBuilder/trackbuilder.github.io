@@ -18,11 +18,11 @@ feature_row:
   # - image_path: /assets/2019-08-11/FullGameFeature.jpg
   #   alt: "Full game feature"
   #   title: "Have your own restaurant"
-  - title: "Design your own restaurant, down to every tile on the floor."
-    image_path: /assets/2019-08-11/furniture.gif
+  - title: "Your own restaurant, down to every tile on the floor."
+    image_path: /assets/2020-02-11/organize.gif
     alt: "Design your own restaurant"
   - title: "Grab, chop, cook, combine! Make food that your customer will crave for more!"
-    image_path: /assets/2019-08-11/cooking.gif
+    image_path: /assets/2020-02-11/cooking.gif
     alt: "And create awesome food"
   - title: "User's mod friendly: Come up with your own recipe and add them to the game using our super easy mod-tool."
     alt: "Mod friendly"

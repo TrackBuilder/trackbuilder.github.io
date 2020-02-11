@@ -4,12 +4,12 @@ title: "My second update. Lots of improvement, but I didn't know that I would ha
 excerpt: "2020-02-10 - progress update"
 toc: true
 layout: posts
-feature_image_path: "/assets/2020-02-11/Main-header.png"
+feature_image_path: "/assets/2020-02-11/cooking.gif"
 ---
 
 ## This is the progress after 3 months. Well, and this website...
 
-![place-holder.png](/assets/2020-02-11/Main-header.png)
+![place-holder.png](/assets/2020-02-11/cooking.gif)
 
 -----------------------
 ### Mon Feb 10 00:59:32 2020 +0200

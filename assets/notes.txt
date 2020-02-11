@@ -1,0 +1,23 @@
+1. Using log processor to format the log from \git log\ from the project, to a better format, more suitable for the website.
+
+2. The dimension for steam page is: 616x346. Actually, the width is important, height can be whatever,
+
+3. Create a gif using ffmpeg:
+
+ffmpeg -ss 129 -t 7 -i 3.mp4 -vf "fps=16,scale=616:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 organize.gif
+
+4. Create a better formatted gif (nicer color), using the gif-creator.sh script
+
+BASH video.mp4 anim.gif
+
+# the -ss is the starting time in the video of the gif
+# the -t is the duration of the gif.
+# usage (windows 10): BASH video.mp4 anim.gif
+# easy way: ffmpeg -ss 129 -t 7 -i 3.mp4 -vf "fps=16,scale=616:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 organize.gif
+
+# The gif script doesn't work well on windows, so you can run these 2 commands back to back
+
+ffmpeg -ss 163 -t 7 -v warning -i 1.mp4 -vf "fps=15,scale=616:-1:flags=lanczos,palettegen" -y temp.png
+ffmpeg -ss 163 -t 7 -v warning -i 1.mp4 -i temp.png -lavfi "fps=15,scale=616:-1:flags=lanczos [x]; [x][1:v] paletteuse" -y cooking.gif
+
+but the result doesn't look that much better for me.

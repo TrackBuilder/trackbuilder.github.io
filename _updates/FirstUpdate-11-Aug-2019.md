@@ -12,7 +12,7 @@ feature_image_path: "/assets/2019-08-11/cooking.gif"
 
 ![cooking.gif](/assets/2019-08-11/cooking.gif)
 
-![arrange.gif](/assets/2019-08-11/cooking.gif)
+![arrange.gif](/assets/2019-08-11/furniture.gif)
 
 -----------------------
 ### Sun Aug 11 01:03:55 2019 +0300 : 

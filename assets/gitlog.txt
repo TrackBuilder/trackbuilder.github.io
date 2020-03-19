@@ -1,4 +1,196 @@
-commit 628217c283bab7b66042964f2148e22172ec09d0 (HEAD -> master, origin/master, origin/HEAD)
+commit 8163ce8ec9ed629c9a6e0b6ef2f28313396ac30f (HEAD -> master, origin/master, origin/HEAD)
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Fri Mar 20 00:12:03 2020 +0200
+
+    [Tue 10/3: 5hr][1hr today]I have been super lazy in procrastinate lately. I was a bit burn out after the demo, so I though I could take a day off or two. Today: update the website.
+    And then the Corona came and then there is the whole work place shut-down and then I have to set up some remote work.
+    And I was mostly looking for a car to buy so we can avoid public transport during this pandemic time, ofcourse we try to stay home as much as possible, but sometimes, you have to go out.
+    But yeah, it was mostly procrastination as most night, I was just watching films with my wif. We finished the first season of Sex Education on Netflix, it was briliant, play a lot of Slay the spire, and like 2 or 3 nights just seeing old cars.
+    Hopefully, this update will be the back to action. I will try to focus on the game tomorrow.
+    The last week Tuesday demo went well. I had like 10 players played the game and I received a lot of notes and feedback. There was 2 guys who was genuelly enjoy the game and once they get the gasp, they played for quite a while and enjoy themselves quite a lot. So I guess I have something. Still lots of work to be done though, but it's great. I will probably need another update for all the updates I gathered.
+    Also, update, by now, I have 25 wishlists, after one and a half week on Steam, which is a bit too little. I guess the game is too early so not a lot of people interested in it, just yet. Let's see the update after a month, more graphic and stuffs.
+
+commit 0f89b238b5364083171c1c311899bcc192529e55
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Tue Mar 10 00:37:26 2020 +0200
+
+    [4hr]Add tons of duct tape so that the game is playable. Containing: buy menu, rework food container, 2 players mode and tons of duct tape.
+    Buy Menu: You can buy stuffs from the computer. You can also start game using that game menu as well. Using money, gain from serving customer.                                                                                                  Food container rework: Each food container spawner (POT/BOWL) will spawn only 1 bowl. More balance.                     2 players: two players!                                                                                                                                                                                                                     commit 4715abd20dbbc3ef11683a4ee9e550296b3e900e                                                                         Author: Minh Duc <minhduc.gameregistry@gmail.com>                                                                       Date:   Mon Mar 9 01:30:03 2020 +0200                                                                                                                                                                                                               [1.5hr]Spiritual commit as I don't really do much code. Just finish the steam page for the 3rd time. Let's hope that this time I didn't fuck up and I will finally have a steam page for the demo day.                                                                                                                                                              commit 90163754c618f7bc9f25ab024c7253c61cf112c6                                                                         Author: Minh Duc <minhduc.gameregistry@gmail.com>                                                                       Date:   Sun Mar 8 23:58:54 2020 +0200                                                                                                                                                                                                               [2hr]Start working on the computer to buy sell stuffs. The computer works at the basic level as I press it, and it will show a buy menu, but there's nothing yet. Will need to design and balance it. But now, I will head to prepare the steam page.
+
+commit a357c500abbab7dfe382a0b872f77afa52d90c45
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sun Mar 8 15:24:40 2020 +0200
+
+    [3hr]Start menu and restart game function seems to work. Next to working on the Computer to have a SELL/BUY menu and a true start game function.
+    Also, redesign all the map that they are more fun/interesting, (objectively, in my opinion).
+    Temporaly make the camera fixed in the middle of the map, instead of following the player.
+    Happy International Woman's day <3
+
+commit a5e055d7e80904e8af363cb40097a53db45a3d92
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sat Mar 7 22:41:50 2020 +0200
+
+    [2hr]The place object on top-left function works. Now, I will work on the main menu (maybe not needed), but definitely a restart function. And a buy menu. After that, the game is presentable/playable? Maybe?
+
+commit a9261ef34f59c3e6e58dc149df448b8afb6e6792
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sat Mar 7 00:34:38 2020 +0200
+
+    [1.5hr]The map loading menu works. I also finally got a really nice looking logo from the guy on Fiverr, which, I'm quite satisfied.
+    Map loading works unloading old map and loading new map. Also retain the position of all objects on board. Still needs the automated position finding for object placed on non-ground tile but I guess I will work with that tomorrow.
+    Add a start menu scene, so I will try to make a start-menu next (tomorrow), so I can test the Restart function of the game properly.
+
+commit 0fc99293db762ea40977f18fd4c102edc4eca64c
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Fri Mar 6 00:11:09 2020 +0200
+
+    [1hr]Remove the place-holder unity editor fields in the grid-manager to store the sprite data of each gridtype. They are now store properly inside a json file name GridTileData.json
+    Spend most of the time wondering why my json file also return an exception when tried to load. It turn out that your json file, while being read by the C# Serialier can not have extra comma \,\. For example, this is perfectly fine in js, or even typescript
+    {"a":"a-field", "b":"b-field",} -> The extra comma after "b" field is completely fine in js or ts (or even Python, I think), but will fuck up either the C# serializer or UnityJson parser real hard.
+
+commit e2bfbf3878569b225dc788d12a1086c41a74cf40
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Tue Mar 3 00:13:06 2020 +0200
+
+    [1hr]Add 2 new maps (floor plan/maybe) so we have 3 maps total now. It's not needed, just fun thing to do. Add some ground works so that the loading of the map will be handle better.
+    Just watch the Oscar winning movie Parasite, it's good, I like it, genre mixing film with some underlying views of the system, nice movie.
+
+commit 677dcb37b479596b71b594bb5d90d2932067a8a8
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sun Mar 1 23:40:20 2020 +0200
+
+    [2hr-Working on the logo on Fiverr]-[1.5hr]Redraw the recycle bin sprite, it looks slightly better. Add a computer sprite, in which the customer can use to buy stuffs, like food/funiture to their kitchen.
+    Also, the guy from Fiverr already delivered his works. It looks lovely, now I really do regret that I didn't pay extra 10 dollar to have access to his source file. I asked some small revision (his logo looks like a noodle bowl, instead of Pho Bowl), and ask if I could pay extra to buy access to his source vector file.
+
+commit 5ba55761322f8f1e5cfb0f48355ffe3c0a4ba5dd
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sat Feb 29 23:52:39 2020 +0200
+
+    [1hr]Add a quick fix to the Game Grid so that we can not place object on top of it anymore.
+    Next, will try to make a function that spawned object, if placed on a wall, will try to place it on the top left corner of the screen or some where similar.
+
+commit 3bc9d8ad2a62f5d0546b43faa557c2c3fd1c55da
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sat Feb 29 15:19:12 2020 +0200
+
+    [3hr]The UI Save/Load Layout is now functioning with 3 slots. Will make so that the map-load works properly next.
+    Try to solve the button selection bug but couldn't do it. I am thinking I should make it so that if nothing is selected, and a controller button is detected, it will automatically select a top UI button.
+
+commit b1a49c5852c24f202dfbfca7b5debe03b1befc9a
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sat Feb 29 01:16:33 2020 +0200
+
+    [3hr]A lot of struggling with the UI codes and now Doozy and Rewire finally works together for now, but it's quite a bit buggy for me.
+
+    How to make Doozy works with Rewire: This is quite a band-aid fix to the problem. Because I'm using 2 plug-ins that doesn't intended to work with each other: DoozyUI and Rewire. As far as I understand, the DoozyUI only allow "onClick" function to be, a mouse click or a touch/tap. Thus, button pressed using controller, will not be recognized by DoozyUI Button. That's because Rewire UI register to the EventManager, sub component of Unity UI, while DoozyUI handle button pressed on it owns, thus, ignore the Unity Event system (I think). Thus, the fix is really simple and band-aid. If the button register an on-click event, execute the Doozy Click function. This can be troublesome, as the ExecuteClick will be call twice if we click the button with the mouse, but I don't see any problem, so probably there are some under-the-hood code that check for duplication. Also, note here just for future reference because having an additional Component to every button is annoying. I just go straight into the DoozyButton code and register this listener myself. In their OnEnable and OnDisable fucntion. Also, quite funny that somehow after adding this "fix" the [B] button suddenly works as a back button.
+
+    Another bug with selection: There is this huge problem with the UI is that if the user CLICK the mouse outside of the Menu Area, all button will get deselected, thus, make us un-focus on the menu, thus, make it impossible to control the UI with the controller anymore! Need fix!
+    Also, there is this brief bug of if you are scrolling around the PauseViewMapLayout, if you press BACK while moving the cursor, the menu WILL lose selection base, and the only way to get out of that is to exit the whole state.
+
+    Mom have left this afternoon, go back to Vietnam, not live with me and my wife anymore. While it was sometimes irritating living with her in our relatively small apartment, now that she's gone, I do miss her.
+
+commit b070d896e7da37ba0217008a87e8c841dd9fff5d
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Mon Feb 24 23:44:00 2020 +0200
+
+    [1hr]The pause menu works now. There is a nice NULL reference bug, going right after another pause logic bug of mine, that make the game fully functional, but I should fix both of them.
+    Like it's interesting, 2 wrongs make an smooth game. But I should fix it.
+    Also, got a new used apple watch series 3, so I'm just messing with it. Seem fun.
+
+commit 95f0d52689ddc87ade3d93bc3c2691bbed103490
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Mon Feb 24 00:05:41 2020 +0200
+
+    [2hr]Successfully import DoozyUI into the game. Doozy UI works as well as it's expected, but I still have a lot of questions.
+    Like I'm not sure the proper way to have a pause menu and then enter it at the press of a button. Like, hmm, how ... I'm doing work around and I feel like it's totally wrong.
+    The importing error is also weird, they have one error line, and if I remove that, it will install normally. But it didn't happen with my test project, which is like, err?
+
+commit 3ffb5764b73828efaa80fccad8013421ebd1cc4b
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sun Feb 23 22:18:09 2020 +0200
+
+    [15mins]Add proper PC keyboard map to the game, so that PC also have equivalent of Y and B button now. (V for [Y] and B for [B])
+    I though there is some bug caused by the recent map loader change that make picking up object buggy, turn out problem is that I was charging my mouse, which make my xbox controller un-plugged, so I had to use my keyboard, which make me realize that my keyboard mapping is incompleted.
+
+commit 6bf278aaf3f09a15403e84f6638a64ac77c62523
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sun Feb 23 22:08:02 2020 +0200
+
+    [4h]Trying to learn DoozyUI again after I realize that I will waste a lot of useless time at the menu stuffs.
+    I think I learn enough of Doozy UI to use now, it's a really amazing asset, the only problem now is that I just can't import it to the current project, which is a huge annoyance. Anyway, update DoTween because I though it would help (but it didn't). Commit to save the upgraded DoTween version, will try more.
+
+commit 61fe1b89228125961d591708582de2111e155e7d
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Fri Feb 21 00:07:30 2020 +0200
+
+    [1hr]More working with the Save load ui. Mostly just experiment with Button.onClick.AddListener(function with param).
+    Encounter a really weird issue, where I can't use the i index of the loop directly, if I do so, all the function will be called with the max index. Which is weird.
+    Here is the problem I'm talking about
+
+    for (int i =0; i < buttonNums; i ++) {
+       buttonNums[i].onClick.AddListener(() => { myFunction(i)});
+    }
+
+    If I use this, all the button, on click, will call myFunction(buttonNums), not myFunction(0/1/2) as I would like to, so I have to make a
+
+    int index = i, and use that index value. Which is weird .....
+
+    Also, UI is quite complicated, so I might looking into reinstall Doozy UI again if it save some times.
+
+commit e7d46afc978790b31a2d1839bb02fe04e615bacc
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Thu Feb 20 00:28:50 2020 +0200
+
+    [30min]Start working on a save/load layout menu so that we can have multiple save layout as well as save slots. Let's go with 3 for now.
+    Tried to do more, but ended up getting in the rabid hole of youtube. I have been playing Hitman 2 recently, Hitman Blood money still is one of my favorite video game so I really like hitman 2016. Haven't actually play the new map in the hitman 2, just played all the map from the first game, but ported to the second game, and I love every one of it so far. Kind of rush through each level and only run once, no replay, but still really nice game to play.
+
+commit 4709b4302afce14c7be96c1f9e56b3563eab0e21
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Wed Feb 19 00:07:36 2020 +0200
+
+    [1.5hr]Map a map editor/map loader of sort. It works, but needs a lot of bug fix.
+    The map is just a text file of x * y dimension, with proper error handling of course, with text making each type, for example, w is WALL, k is KITCHEN. It works now, but I think lots of extra work with the GridManager. Mostly because coordination is a difficult stuff, and I don't want to change already working code too much.
+    Example of a map:
+    wwwwwwwwwwwww
+    wyyykkkkkkkkw
+    wyyykkkkkkkkw
+    wyyykkkkkkkkw
+    wyyykkkkkkkkw
+    wyyywooooooow
+    wyyywooooooow
+    wyyywooooooow
+    wrrrwooooooow
+    wrrrwooooooow
+    wrrrwooooooow
+    wwwwwwwwwwwww
+
+commit 6adff6dd2a9321f9d196a4bb8f5e08e07337c94c
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Thu Feb 13 00:47:08 2020 +0200
+
+    [3hr]Prepare the steam page again.
+    Previous time, I got declined because I didn't have a logo, so I, with the help of the wife, make an okeish logo, prepare the steam page again and upload it. Took a lot of time.
+
+commit b64cf2a4730c0269f237e5492f140cbb44c4b02b
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Tue Feb 11 23:44:41 2020 +0200
+
+    [1.5hr]Making 2 new gif for the website.
+    Learning the tool mmfpeg, really nice command line tool for making gif, but there are a lot of annoying display artifact, which make the gif look a bit noisy. Also, try installing ubuntu and linux for window, because the bash script I need to run the file is a .sh file, but well, it doesn't work. So ...
+
+commit e27c32200352518aea4edb18017ae71299ab27d1
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Tue Feb 11 00:40:08 2020 +0200
+
+    [5hr]Work my ass off to update the websites, update the git commit, generate game play clip.
+
+    The game play clip was created using Davinci Resolve, which is a really decent free video editor software. Really nice, some small hurdle at first, but it works out nicely.
+
+    I didn't even have time to create some gif and graphics, just a screen shot of the game and the teaser trailer. But I guess it's nice I guess. Maybe I should try to setup the steam page soon.
+
+    The commit on this project is just a spiritual one because all I did was remove one line. Most of the works were done somewhere else, but I want to log it here anyway, because I want this git-log to be the main source of dev-documents.
+
+commit 628217c283bab7b66042964f2148e22172ec09d0
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
 Date:   Mon Feb 10 00:59:32 2020 +0200
 
@@ -49,8 +241,7 @@ Author: Minh Duc <minhduc.gameregistry@gmail.com>
 Date:   Mon Feb 3 00:52:02 2020 +0200
 
     [2hr]Moving some asset files around a bit so it's a bit more organized. Create a clocking icon/animation to show all the timer task and a warning icon to so emergency timer. It's work in progress. Kind of works, but there is some bug and refactor needed.
-    Today, I played Overcooked 2 with my wife, it was pretty fun and challenging, which is perfect game, as I have tried some other coop game, such as Tools up, a overcooked like game but for moving house, which is okei, too easy, so we got bored after a while, and the main reason is that there is not much variant between rounds I guess. And Unrailed, which we also dislike, but because the game is too stressful, taxxing. Not super hard, but really stressful, which isn't nice.
-    Also, the dog got like health issue, like last week (last Sunday) I was playing with her and throw the floor ball into her face (we were playing catching), it looks fine at first, but then I think because she kept scratching her eye, it got some serious infection, so it got quite bad. We have put the collar of shame to her and wipe her eyes every few hours, but it got tired really fast because the dog kept waking us up mid night because her eye was really itchy, so we have to wipe her face for her. 4/10, not recommended, but an experience, nonetheless.
+    Today, I played Overcooked 2 with my wife, it was pretty fun and challenging, which is perfect game, as I have tried some other coop game, such as Tools up, a overcooked like game but for moving house, which is okei, too easy, so we got bored after a while, and the main reason is that there is not much variant between rounds I guess. And Unrailed, which we also dislike, but because the game is too stressful, taxxing. Not super hard, but really stressful, which isn't nice.    Also, the dog got like health issue, like last week (last Sunday) I was playing with her and throw the floor ball into her face (we were playing catching), it looks fine at first, but then I think because she kept scratching her eye, it got some serious infection, so it got quite bad. We have put the collar of shame to her and wipe her eyes every few hours, but it got tired really fast because the dog kept waking us up mid night because her eye was really itchy, so we have to wipe her face for her. 4/10, not recommended, but an experience, nonetheless.
 
 commit 764cd34125a1ce41b88a3984ac7101121b618342
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
@@ -96,202 +287,3 @@ Date:   Sun Jan 12 23:28:21 2020 +0200
 
     [3hr]The progress bar bug is fixed. Also add a new state to the dining table component now, so it looks kind of ok-ish. It's sunday today and Tuesday there is a small game-dev meet-up and I kind of want to have the game to a play-able state to see how it works. I will have roughly like 3 hours tomorrow to make the game play-able, which I don't think is enough. Let's see.
     Great news is that I have a new computer now, which is awesome. It's super quick, and unity compile code a lot faster now, which mean writing code and then live test in Unity feels a lot better now. Also, gaming on this beast feels good. PUBG max everything and stable 60fps, what a dream.
-
-commit 63a715a0bc77e7dc3c6095d5dbb6b3944950aab5
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Thu Jan 9 00:13:42 2020 +0200
-
-    [1hr]Trying to fix a bug cause by rendering offset, in which, object placed onto table will be moved a bit for the offset, but the progress bar isn't moved. Which, I tried to solved by making the progress-bar inherit from the rendering-component as well. This might be good as it also solve the zDepth thing as well. Temporary just wrote it down here, I might finish it tomorrow as it's late today and I won't do anything anymore.
-    My pc parts came, everything, except the case, so I have to wait. Terrible feeling. My new PC is decent. Ryzen 3600x, RTX-2070-SUPER ASUS ADVANCED, 1tb SSD and 2TB HDD (awesome, I won't lack storage space anymore). 16gb RAM and a way overkill PSU whic is 850W, almost twice as much the required power, which will be super silent. Which is nice I guess. The case is pretty nice too, has some RGB and glass window so you can see the RGB inside as well.
-
-commit b397fed4d3cfae1ad020c70f76e5968af3f3bb05
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Tue Jan 7 00:11:35 2020 +0200
-
-    [2hr]The looping animation works now. It's nothing wrong with TWEEN or anything, just that it's a mis-colon, the animation time was 0.15 second, but then I typed it to 015 seconds (without the dot), that's why the animation nevers loop for me, because it took 15 seconds so I never see it works again.
-    Then, after like serveral rewrote, I see the typo and then even just the original animation works anyway, but it's kind of too late because I already wrote a new file and all. Stills, I guess this is better because it makes the code cleaner.
-    This Friday, there is a gamedev meet-up event in Helsinki, and I plan to go there, so I will need to make the game a bit ready and presentable, like a tutorial, maybe some menu and score tracking to make it fun, a menu to spawn object.
-    And tomorrow, my new pc parts will arrive, like all of them, except the computer case. Really bullshit, somehow ordering all the way from Germany and it arrived in like 3 days, where ordering just within Finland and it took a whole fucking week.
-
-commit df2be221ccc39bd5eb644a41030d4228c02f0083
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Mon Jan 6 00:25:42 2020 +0200
-
-    [2hr]Kind of refactor the FoodContainer, looks ok-ish now, but the looping Tweening animation for that doesn't work yet.
-    This is due to the fact that, when I place a CookingPot on top of Stove, 2 animations script (TWEEN) are created at the same time: The shrink in/out whenever we pick/drop object. And the Shrink up when we cooking, thus make it doesn't animating. Which make me really frustrated about this. Dunno what I will do though, this is annoying, trying to solve it smartly using callback but doesn't work, maybe I have to use a time check inside update function to do this. But this will be a bit ugly.
-
-commit ba3c21d60eb64a3fe7df3b1980f3168f72396b89
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Sun Jan 5 02:11:52 2020 +0200
-
-    [2hr]Some refactor on animation script to make things cleaner and add a new animation for food being cooked and overcooked.
-    Now, try to refactor the FoodContainerComponent by adding the progress bar to each and every food container component, and maybe some logic related to cooking/dining serving there as well, maybe it feels more natural? I don't know. Will do more tomorrow, as today I have a poker night so I didn't have much time to code (I'm also procrastinate a lot as well).
-
-commit 82121b3f8071e8a706c1798d439b59e368ab80ae
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Fri Jan 3 00:32:04 2020 +0200
-
-    [1hr]Kitchen-sink now fully works. Things look a bit sluggish, so maybe I will bring back the locking player mechanism for chopping/cleaning. It's way more fun that way, but I will still keep the part of pressing X to make it faster to make the game more exciting, but the value will be really low, like if you passively cleaning a board take 5s, then mashing button while passively doing it should only increase it to 3s. Also, more ideas about animations and stuffs.
-    Got a full day off yesterday (1st day of the year) but I didn't do much because I was too busy trying to build my NEW COMPUTER, yay. It's nothing too fancy though, but it's a nice upgrade from my current laptop.
-
-commit a64dd079047878a0d995ba3ed004df0a70519edb
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Mon Dec 30 23:27:02 2019 +0200
-
-    [1.5hr]Makes some tweening animation to separate the feedback between [A] pressed (pick/drop item) and [X] pressed (interact with items). Feels better to me now, but that really doesn't count because I'm the one making it. Still, at least, for me, the game feels better.
-    Next, will do a few more animation, one for the object that is being processed automatically (ie, stove cooking pot, dining table eating bowl), and one kind of alarm animation, like over-heating pot, so, it's shaking.
-    Also, needs to finish the kitchen-sink, fix the sorting layer of the player cursor, update to a better cursor, have a better floor texture, and add some UI so it actually feels like a game. And it will be like a good MVP that is capable of demo-ing to people. (oh, and tons of variable tweaking, so that it feels nice)
-
-commit 6661fc37650ddc36c8adcfb34ab66603f3cb7a30
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Mon Dec 30 00:27:11 2019 +0200
-
-    [2hr]Add the kitchen-sink to clean the dirty dish/bowl. Kind of works right now, but we need to add the progression system to the dishwashing.
-    Fix a super crittical bug related to the dropping object, which I made just the otherday, thinking I would optimize something, but actually, I just make more fucked up. It's related to Food container null check and all the condition of dropping to stove/dining table ....
-    Add some more animation so the game feels more responsive. I think the game, even at this very prototype stage, still needs a bit more animation, so that each button/interaction feel responsive.
-
-commit 8480e59c3c92aaa9ac5cc74b80631cf2024acc51
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Thu Dec 26 15:18:49 2019 +0200
-
-    [1hr]Add a new flag to lock pickable object so that they can't be picked if being locked. This is currently used to lock food container while it is being eaten on the dining table.
-
-commit 0a1a3351c2fe9b76d9c62376dad3a3eab4afc1ed
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Wed Dec 25 23:21:13 2019 +0200
-
-    [1.5hr]The dirty bowl works. After the food is served at the dining table, it will be transformed into a dirty bowl, which needs to be cleaned. Right now, it can be clean by just drop everything to trash can. Will fix later. Right now, it seems there are some un-clear case and bug fix, so maybe I will focus on that.
-
-commit 203ce380efc4316230bb62c47c62cf2f7696cea4
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Tue Dec 24 00:34:00 2019 +0200
-
-    [0.5hr]Small removal of un-used class and unnecessary code. I bough a new 27 inches samsung monitor, and spend the night watching the witcher movie. first 2 eps are good.
-
-commit 5c8a487d5ebe59b4b609ffe3efc7765964d98f9c
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Sun Dec 22 23:34:44 2019 +0200
-
-    [0hr]Forgot to add these changes to the previous commit.
-
-commit a6280370911ac4e4286cda76924237a0bbaccbb6
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Sun Dec 22 23:34:14 2019 +0200
-
-    [1.5hr]Working on the dirty sprite for the Bowl. Finish with the art (look okei-ish in my really low standard). Have some code in place, needed for implementation next time I try to work on this code (hopefully tomorrow)
-
-commit e4cdfb3888b3aaa091e793a120ce002e6b55b011
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Sat Dec 21 22:02:24 2019 +0200
-
-    [1hr]Trying to get back to the groove. Still too much procrastination, but did some small thing, like a small foundation for the animation to have better feedback, and small quality of life update where you can have a bowl, and get the food object to the bowl directly, while holding the bowl, looking at the pot. Previously, the bowl has to be on table and you have to hold the pot and pour it to the bowl. Hopefully, tomorrow I can make more code.
-
-commit 259e7422867595333c0c283143a8fb967c793d93
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Tue Dec 10 22:26:54 2019 +0200
-
-    [15 min]This commit is mostly just a spiritual commit, like, one that say, ok, I should get back to making this video game now. Lots of things happen during the 6 or 7 weeks I haven't pushed anything. I tried to get used to my new job, get ready for the huge trip back to my home country (vietnam), prepare for the huge weeding, have a honey moon in Japan, and go back to my current resident country.
-    But, I am all set now, so I will try to start working on this game, again.
-
-commit 35e7481b2364b1954a96211a9eff7882ed61f629
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Wed Oct 23 00:29:14 2019 +0300
-
-    [1.5hr]Finished most of the functionality of the dining table. The gameplay loop for dining table now is:
-    Idle ->Press X to generate a random order->Display the food prompt (Waiting for Dish)->Exact food is served->Eating process (Eating)->Finished (Completed)->Pick up dish from table->Back to Idle.
-    Fix some bugs and make that you can't place anything on the dining table except the correct food. Code is quite similar to the Stove Component.
-    It's done functionality now but the gameplay is quite bland, some polish/interaction feedback is needed and probably some bug fixxing as well.
-
-commit 1110eedf70af0eae53f63fb02f9b4c4074bafaab
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Tue Oct 22 00:32:12 2019 +0300
-
-    [2hr]More work on the Dining table, just more tighter control and create room for future works.
-    I think it's getting there and it's quite fun to play now. Just need a small score system and some timer on things, and it can keeps going for quite fun.
-    Also, tons of quality of life and general animation and improvement needed to make the game more clear and more responsive.
-    Remove DoozyUI as it's huge size make compilation time slower, which is annoying.
-    I still got a lot of procrastination on me, but at least I'm doing more than I did yesterday, so it's improving.
-
-commit ddd03da3bdcbfaf02904cceaa5674c4230d3c030
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Sun Oct 20 01:02:05 2019 +0300
-
-    [1Hr]Continue working with the Dining table. Now it can receive food, and check that if the requested food is valid.
-    Add a small prompt to show that the users should go and press [X] at the table to request an order. It's coming together as this is quite fun to play now.
-    I was starting Unity at like 5pm and now it's 1am, and I have only actually have 1hr to work with it. Too much distraction and procrastination. Hope that I will be able to finally come to my sense and be a bit more productive :(
-
-commit 5b2d2d37861f5e5e66931b7951eb56456245149e
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Wed Oct 16 00:20:11 2019 +0300
-
-    [3hr]Halfway through the dining table. I actually did like 1 hr of work yesterday, but if was really incompleted, there is even a compile error so I don't feel like committing.
-    Finally got the discipline (?) or motivation to sit down and code for a long time without being distracted by anime/manga/something else. You can sort of walk to the table, press [X] and then the table will generate an order. Tomorrow will make it validate the order and check if the order is actually correct.
-    Some refactor on the interactable component so that it makes more sense. Many more refactor in some other part of the code, mostly food and recipe related stuffs, because somehow the code I wrote 2 months ago doesn't make sense now. Slowly coming together though, so it's nice.
-    I got a new job, game programmer at a government company, so I have been mostly spending time saying goodbye to the old companies, 2 farewell parties, and something else. Also took wedding picture with my future wife and I went and played with a local music club on Sunday, which was super nice.
-
-commit d18d5a5939f1c650038e6acf5c61866e30fc4f6e
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Thu Oct 10 00:55:25 2019 +0300
-
-    [1.5hr]I was mostly procrastinating, but add some underline code for dining table and a pop-up UI, which we should press X at the empty dining table, and it should display on a popup UI the desired dish.
-    Decide to also not use the DoozyUI since it's not needed for now, maybe later when I actually have UI and menu and what not. It looks OK, just that not what I need right now.
-    Somehow the procrastination got the better of me and I spend most of my time reading manga. Since the last commit, I actually read shit tons of things. Here are the thing I read:
-    
-    + 140 chapters of Domestic girlfriend (it's good, but it's really heavy in a sense that I am sooo invested in Rui (the smaller sister), that when she got together with the MC, I'm so happy and was sooo annoyed, during the build up for that. I really have to stop because it's too tense and I was honestly emotionally invested, happy, sad and stuffs like that.
-    + Boku girl: A gender bender manga where the main char that normally looks like a girl, is actually turned into girl by magic, and his/her path to find his/her true identity. Finished it in one day (like, discovered it at work at 4pm and binge through the entire thing (107 chaps) until like 1 am. Really good, make me think a lot about gender identity and all the thing.
-    + I want to eat your pancreas: heart wrenching, tear wrecking, it's like, in top 5 anime movie and it's really good, I read the manga, which I think is the even better version, maybe? It's really touching story and leaves me with a lot of things to think about.
-    + Bokura no hentai: It's not a hentai. It's a gender bender manga about 3 girls, 2 cross-dressing for reasons and a trans girl. It has a lot of recommendation but I dropped it after 10 chapter because it is too depressing.
-
-commit 8e66c1811d63cb1e3ff2c245217a09882bd807bd
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Thu Oct 3 20:22:34 2019 +0300
-
-    [1Hr]Add Doozy UI package for awesome UI. Looks neat. I bought it from Humble bundle, but this seem like a good purchase. Update the dining table art so it looks slighly better.
-    
-    Installation process for Doozy UI takes quite a while and I have to update the DOTween as well, feel really lazy today so I didn't do much. I will try to learn DoozeUI tomorrow I guess.
-
-commit b57ef93696ae6471a597148ad39e787a8af22997
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Fri Sep 27 23:40:41 2019 +0300
-
-    [1.5hr]Add the dining table, some some base code for it. Right now, just log if you put something that is not food, and if you put a servable food container, it will empty that.
-    Tomorrow, I will go for a vacation in Germany for OktoberFest. Flight at 5.35 in the morning so I don't know if I even got to sleep or not. Trying to download some anime to my iphone to watch on the fly but it's really tricky. Fuck apple.
-
-commit 5d1d4b17254466d625d54e3e7271f746846d8cad
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Fri Sep 27 00:10:00 2019 +0300
-
-    [1hr]The sorting layer works as I wanted now. So, I also finished doki doki literature  club yesterday.
-    It's a really nice awesome game and really short, only 3hr, really recommend it (eventhough I should stop playing game and finish making this game). I will have a small vacation (lol) in the next 4-5 days, but I promise that afterwards, I will focus 100% on the game now. (Until I found another game that caught my attention). I'm looking at Catherine Classic, as well as persona q2, but they are much shorter than p5 and I doubt that they would have the same pull power as p5.
-
-commit 84a70977ba9595a295efce28689706813a75894a
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Tue Sep 24 21:36:54 2019 +0300
-
-    [1.5 hour]Making the player render properly behind all objects. However, it's till a bit glitchy and I'm not satisfied with it yeat.
-    I still haven't finished the damn persona 5 game yet, but I am quite close. 90 hours clocked in. I'm think I am at the final boss section now. I heard there are like 5 endings, 3 bad ones, 1 good one and 1 true ending. Hope that I'm going to reach at least the good one.
-
-commit 381b7c7f115f4754c80ce2889edee6645f12fce6
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Sun Sep 15 15:37:33 2019 +0300
-
-    [2hr]Trying to make the sprite sorting layer works with the grid pos (x, y).
-    It works and I managed to find and fix a bug related to the grid issues so it's quite nice. Objects are now displayed correctly. But the player hasn't. Will update the player next, just that I don't feel like coding now, so I am off to play more Persona 5. Maybe I will code more in the evening.
-    I'm also have a cold from the start of the week so I'm still feeling quite bad about it.
-
-commit 84088c88b868c366c7a3cd86e699defcc03df184
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Wed Sep 11 22:52:50 2019 +0300
-
-    [1h]Working on sorting lay to fix a display issue, where object further away are rendered on top of object closer.
-    For example: Player is standing behind the table, but is rendered on top of the table. Learn about sorting layer in sprite-renderer. Right now, just sorted based on y value, but I think using grid y value would be a better choice.
-    Stop for now, I was really hooked with Persona 5, clocked almost 60 hours so far and is at the 5th (bigbag burger) palace and is in a relationship with Ann Takamaki. Really nice game.
-
-commit e98a0b515410689fb906910ee8b43b88ba6c3767
-Author: Le Pham Minh Duc <minhduc.lepham@gmail.com>
-Date:   Tue Sep 3 22:02:47 2019 +0300
-
-    [1hr/1hr other day]Add a wall surrounding the map, and add a sprite for dining table of the customer.
-    Add surrounding so the player can't go outside and add proper code to check for out of map input, instead of just let Unity post an error like this.
-    Add a dining table, which is just normal table with a cloth on top of that.
-    I have been so lazy recently because I have been playing Persona 5 non-stop. Have like 26 hours on that game so far. By now, I think I have see and learn all the interesting and cool mechanic about the game, but the gameplay and story is soo good, just kept me wanting to go back for more.

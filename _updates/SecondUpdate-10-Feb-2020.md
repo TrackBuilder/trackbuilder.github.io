@@ -7,9 +7,11 @@ layout: posts
 feature_image_path: "/assets/2020-02-11/cooking.gif"
 ---
 
-## This is the progress after 3 months. Well, and this website...
+## Huge delay between. But I will try to focus on this game from now on. I have registered for a steam page now.
 
 ![place-holder.png](/assets/2020-02-11/cooking.gif)
+
+![place-holder_2.png](/assets/2020-02-11/organize.gif)
 
 -----------------------
 ### Mon Feb 10 00:59:32 2020 +0200

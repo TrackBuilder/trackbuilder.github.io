@@ -16,6 +16,7 @@ To update the project to the latest version on master (this is a forked project 
    git merge upstream/master 
    ```
 
+To add a new pages, just go to the [_updates] folder and duplicate one of the MD files there and update the name.
 
 # [Minimal Mistakes Jekyll theme](https://mmistakes.github.io/minimal-mistakes/)
 

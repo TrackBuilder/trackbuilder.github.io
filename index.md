@@ -6,9 +6,9 @@ layout: splash
 permalink: /
 header:
   overlay_color: "#5e616c"
-  overlay_image: /assets/2020-02-11/Main-header.png
+  overlay_image: /assets/2020-03-20/Main-header.png
   actions:
-    - label: "Steam page coming soon."
+    - label: "Wishlist on Steam!"
       url: "https://store.steampowered.com/app/1138610"
 excerpt: >
   An upcoming video game about starting up your own restaurant dream. <br />
@@ -19,11 +19,17 @@ feature_row:
   #   alt: "Full game feature"
   #   title: "Have your own restaurant"
   - title: "Your own restaurant, down to every tile on the floor."
-    image_path: /assets/2020-02-11/organize.gif
+    image_path: /assets/2020-03-20/prepare.gif
     alt: "Design your own restaurant"
+
   - title: "Grab, chop, cook, combine! Make food that your customer will crave for more!"
-    image_path: /assets/2020-02-11/cooking.gif
+    image_path: /assets/2020-03-20/serving.gif
     alt: "And create awesome food"
+
+  - title: "Buying upgrades for your restaurant!"
+    image_path: /assets/2020-03-20/buying.gif
+    alt: "Buy stuffs"
+
   - title: "User's mod friendly: Come up with your own recipe and add them to the game using our super easy mod-tool."
     alt: "Mod friendly"
     image_path: /assets/2019-08-11/mod-friendly.jpg

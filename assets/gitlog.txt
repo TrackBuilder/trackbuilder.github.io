@@ -1,289 +1,478 @@
-commit 8163ce8ec9ed629c9a6e0b6ef2f28313396ac30f (HEAD -> master, origin/master, origin/HEAD)
+commit ecaea4f3b7cbd447d772e168af6922b825e8ab75 (HEAD -> master, origin/master, origin/HEAD)
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Fri Mar 20 00:12:03 2020 +0200
+Date:   Tue Sep 15 00:38:33 2020 +0300
 
-    [Tue 10/3: 5hr][1hr today]I have been super lazy in procrastinate lately. I was a bit burn out after the demo, so I though I could take a day off or two. Today: update the website.
-    And then the Corona came and then there is the whole work place shut-down and then I have to set up some remote work.
-    And I was mostly looking for a car to buy so we can avoid public transport during this pandemic time, ofcourse we try to stay home as much as possible, but sometimes, you have to go out.
-    But yeah, it was mostly procrastination as most night, I was just watching films with my wif. We finished the first season of Sex Education on Netflix, it was briliant, play a lot of Slay the spire, and like 2 or 3 nights just seeing old cars.
-    Hopefully, this update will be the back to action. I will try to focus on the game tomorrow.
-    The last week Tuesday demo went well. I had like 10 players played the game and I received a lot of notes and feedback. There was 2 guys who was genuelly enjoy the game and once they get the gasp, they played for quite a while and enjoy themselves quite a lot. So I guess I have something. Still lots of work to be done though, but it's great. I will probably need another update for all the updates I gathered.
-    Also, update, by now, I have 25 wishlists, after one and a half week on Steam, which is a bit too little. I guess the game is too early so not a lot of people interested in it, just yet. Let's see the update after a month, more graphic and stuffs.
+    [4hr]Create another progress update, which contains one build, some gameplay gifs, and all the commit logs. After this, I will try to make this game 3d, because it will be better in the long run.
+    + Today, it will only be posted to the game website, but tomorrow, maybe I will try to update the steam page as well.
+    + Game build didn't work at first, which nearly gives me a panic attack that the GamePrefabDatabase refactor wouldn't work (because it use Just-in-time type checking, not pre-compiled) so it might not work. Turn out, the data was wrong, like, because I build the game, on this computer before, there are old save data that will not work with the new code (Json fields with different names). Clearing the saved data works. Nearly give me a huge disaapointment :p.
+    + Finally fix the typo of the game name, from WhatThoPho to correctly WhatThePho
+    + Yeah, I think I want to switch this game from 2d to 3d. It's a huge task to be sure to change so many things, but it will make this game more beautiful (because my 2d art skill are crap anyway), so at least with 3d, I can buy models and with correct shader, everything is a bit more same-styled. Also, 3d can fix a lot of problem that I have with 2d, mostly the rendering layer, order in layer, and probably also the position picking that feel super ir-responsive now.
 
-commit 0f89b238b5364083171c1c311899bcc192529e55
+commit 2a06f19870c0f9d147635bbfde94e49b7d3f6002
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Tue Mar 10 00:37:26 2020 +0200
+Date:   Sat Sep 12 00:56:05 2020 +0300
 
-    [4hr]Add tons of duct tape so that the game is playable. Containing: buy menu, rework food container, 2 players mode and tons of duct tape.
-    Buy Menu: You can buy stuffs from the computer. You can also start game using that game menu as well. Using money, gain from serving customer.                                                                                                  Food container rework: Each food container spawner (POT/BOWL) will spawn only 1 bowl. More balance.                     2 players: two players!                                                                                                                                                                                                                     commit 4715abd20dbbc3ef11683a4ee9e550296b3e900e                                                                         Author: Minh Duc <minhduc.gameregistry@gmail.com>                                                                       Date:   Mon Mar 9 01:30:03 2020 +0200                                                                                                                                                                                                               [1.5hr]Spiritual commit as I don't really do much code. Just finish the steam page for the 3rd time. Let's hope that this time I didn't fuck up and I will finally have a steam page for the demo day.                                                                                                                                                              commit 90163754c618f7bc9f25ab024c7253c61cf112c6                                                                         Author: Minh Duc <minhduc.gameregistry@gmail.com>                                                                       Date:   Sun Mar 8 23:58:54 2020 +0200                                                                                                                                                                                                               [2hr]Start working on the computer to buy sell stuffs. The computer works at the basic level as I press it, and it will show a buy menu, but there's nothing yet. Will need to design and balance it. But now, I will head to prepare the steam page.
+    [3hr]Finally fix the bug with the progress bar and food processor automatically get food from the spawner if placed on top of a spawner.
+    + This bug caused by placing the object on top of the "stove" will call the set rendering offset function twice. This only happens on load because of the delay init function. I added a duct-tape fix to call onObjectPlaced on stove 0.2second after init, because there is a bug of, if a pot is load with scene right on top of the stove, the pot will not register as is on top of the stove, and if you put food in, it won't be cooked. I fix the rendering-offset bug now though.
+    The processor automatically get ingredient and process it if placed on top of a spawner.  Still, if you get food in it while it's processing, it will remain unprocessed with 0% progression. Simple fix by just not allowing the player to take already processing from the processor. It kind of makes sense to not be able to take from it though, so I think it's cool. Also, I'm tired with this processor now, so tomorrow I want to do another thing.
+    + Add a delegateUtils file, so I can dump all the delegate definition there. It's cleaner that way.
+    + Fuck, I started coding at 9, and now it's 1, but it doesn't feel like I did much. I did fuck around a lot, like, going to toilet, playing piano, and playing Clash Royale but I didn't mess around too much though. Probably because of thing just didn't work right away and I have to track down problems and fix it so that the processor works. Code is short but it took a while to write these short code.
 
-commit a357c500abbab7dfe382a0b872f77afa52d90c45
+commit 9d69d09a702567cabca9bb6628e66bfe3520020f
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Mar 8 15:24:40 2020 +0200
+Date:   Fri Sep 11 00:48:31 2020 +0300
 
-    [3hr]Start menu and restart game function seems to work. Next to working on the Computer to have a SELL/BUY menu and a true start game function.
-    Also, redesign all the map that they are more fun/interesting, (objectively, in my opinion).
-    Temporaly make the camera fixed in the middle of the map, instead of following the player.
-    Happy International Woman's day <3
+    [1.5hr]Refactor the rendering component a bit so everything is cleaner. The food processor works, but still ugly.
+    + Refactor the progress-bar so its relation (inheritant) from rendering component make more sense and reduce more code.
+    + Make the sub-renderer as a property of the rendering component for easier set-world off-set function
+    + Make the WorldPopup inherit from the rendering component too because it makes more sense that way.
+    + Don't use the sub-renderer in the processing but use world popup now. It's more visible that ways, and both looks ugly anyway, so at least I choose the ugly but more visible.
+    + Add animation, but the animation I made look disgusting.
+    + Plan to make the Food-processor automatically pick up ingredient and process if is placed on top of a spawner.
 
-commit a5e055d7e80904e8af363cb40097a53db45a3d92
+commit 715ac22b7e4cbce53a126c6b2dcd88f689068981
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sat Mar 7 22:41:50 2020 +0200
+Date:   Thu Sep 10 00:31:06 2020 +0300
 
-    [2hr]The place object on top-left function works. Now, I will work on the main menu (maybe not needed), but definitely a restart function. And a buy menu. After that, the game is presentable/playable? Maybe?
+    [30min]Add the Sub-renderer to the Processor component, so it will display what is being processed instead of the popup.
+    + But this also looks a bit ugly though.
+    + Small code update to use my helpers function (GetComponent and check null automatically) so sorter and cleaner code.
+    + There is a bug with the SubRenderer, bascially, if things are put on top of table, it will be move back by some rendering offset to make the feel of 3d. This doesn't updat the subrenerer information though, so this should be fix.
+    + I'm thinking of maybe making the sub-rendrer as an optional part of the RenderingComponent?
 
-commit a9261ef34f59c3e6e58dc149df448b8afb6e6792
+commit 5af5c1eb67b8bfc1d4f51f96e5b5bf6826548f03
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sat Mar 7 00:34:38 2020 +0200
+Date:   Mon Sep 7 00:44:47 2020 +0300
 
-    [1.5hr]The map loading menu works. I also finally got a really nice looking logo from the guy on Fiverr, which, I'm quite satisfied.
-    Map loading works unloading old map and loading new map. Also retain the position of all objects on board. Still needs the automated position finding for object placed on non-ground tile but I guess I will work with that tomorrow.
-    Add a start menu scene, so I will try to make a start-menu next (tomorrow), so I can test the Restart function of the game properly.
+    [2hr]Food processor work like 70%. You can put raw ingredient in, it will process it, and you can grad chopped food from it.
+    + Now, if the object is under transition, if you remove it, you will just get a 0% progression object. I will fix it tomorrow.
+    + No animation yet whatsoever for the food processor eventhough I spent hour making animation for it.
+    + The position of the Object popup and the progress bar is really not optimal. I will need to change later.
+    + Took some times because I procrastinate (I started working at 9, and in 4 hour, I got like 2 hours of work done, and that's generous).
+    + Also because of some stupid naming I made long ago with the ingredient object. Transition Progress is just the total time, not the percentage transition, I spend a lot of time stucked there. Luckily, I have good debug skill (lol).
+    + Also, more fix/refactor with the Move all Progress bar and Object Popup from specific prefab (Chopping Board, Stove) to all world object. Turns out my last refactor wasn't that thorough, so I finished what I should have done long ago
+    + I have a half can of beer at 11.30, that's why this commit message is a bit long.
 
-commit 0fc99293db762ea40977f18fd4c102edc4eca64c
+commit c67f7a74763aa60b59e754ea54f2f26badeceeb7
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Fri Mar 6 00:11:09 2020 +0200
+Date:   Sun Sep 6 00:41:45 2020 +0300
 
-    [1hr]Remove the place-holder unity editor fields in the grid-manager to store the sprite data of each gridtype. They are now store properly inside a json file name GridTileData.json
-    Spend most of the time wondering why my json file also return an exception when tried to load. It turn out that your json file, while being read by the C# Serialier can not have extra comma \,\. For example, this is perfectly fine in js, or even typescript
-    {"a":"a-field", "b":"b-field",} -> The extra comma after "b" field is completely fine in js or ts (or even Python, I think), but will fuck up either the C# serializer or UnityJson parser real hard.
+    [1hr]Refactor the game prefab database.
+    So it's a bit smarter and not contains like 10 copy/pasted GetComponent function for every different prefab type I have in the game. So now, I have everything in a Dictionary<System.Type, PrefabType> that can lookup from it, and I can call the GetComponent(System.Type). It's a bit weird because I thought system.type is like, pre-compiled, but seems like it's a thing that generated at the final step of compilation, so I can't use Generic type like function<T> or switch :/
+    Kind of feeling there are still better way to do it, and I am just playing with the coding syntax, but this is quite briliant already and I will try to make the food processor working tomorrow.
 
-commit e2bfbf3878569b225dc788d12a1086c41a74cf40
+commit 670681ab972718adfe8dfb5b215a79b8bad45690
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Tue Mar 3 00:13:06 2020 +0200
+Date:   Sat Sep 5 20:01:48 2020 +0300
 
-    [1hr]Add 2 new maps (floor plan/maybe) so we have 3 maps total now. It's not needed, just fun thing to do. Add some ground works so that the loading of the map will be handle better.
-    Just watch the Oscar winning movie Parasite, it's good, I like it, genre mixing film with some underlying views of the system, nice movie.
+    [1hr]Add the Processor prefab to the game, that can be easily spawn and remove. So, need to change in 3 file, which is a bit too complicated for my taste.
 
-commit 677dcb37b479596b71b594bb5d90d2932067a8a8
+commit a9b38d425538571cdcd84d8cd1f0bd13220d2e37
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Mar 1 23:40:20 2020 +0200
+Date:   Sat Sep 5 00:37:09 2020 +0300
 
-    [2hr-Working on the logo on Fiverr]-[1.5hr]Redraw the recycle bin sprite, it looks slightly better. Add a computer sprite, in which the customer can use to buy stuffs, like food/funiture to their kitchen.
-    Also, the guy from Fiverr already delivered his works. It looks lovely, now I really do regret that I didn't pay extra 10 dollar to have access to his source file. I asked some small revision (his logo looks like a noodle bowl, instead of Pho Bowl), and ask if I could pay extra to buy access to his source vector file.
+    [1hr]Add animation and prefab for the Processor component.
 
-commit 5ba55761322f8f1e5cfb0f48355ffe3c0a4ba5dd
+commit 4992d34fa7181bd0dc43189db385951be9bea3a0
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sat Feb 29 23:52:39 2020 +0200
+Date:   Fri Sep 4 00:20:43 2020 +0300
 
-    [1hr]Add a quick fix to the Game Grid so that we can not place object on top of it anymore.
-    Next, will try to make a function that spawned object, if placed on a wall, will try to place it on the top left corner of the screen or some where similar.
+    [30min]Add art sprite for the food processor. This is a component that will automatically process food for you, from RAW to PROCESSED.
+    There will be two version of this.
+    + One is that will just there and if you drop food on it, after a while, it will become processed.
+    + The other is that if you drop it on TOP of a food container, it will automatically get food from the container, and process it, so all you have to do is to just pick the food up.
 
-commit 3bc9d8ad2a62f5d0546b43faa557c2c3fd1c55da
+commit f8ca95c461932de1f74127145c3f88f2a14ce643
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sat Feb 29 15:19:12 2020 +0200
+Date:   Wed Sep 2 00:43:29 2020 +0300
 
-    [3hr]The UI Save/Load Layout is now functioning with 3 slots. Will make so that the map-load works properly next.
-    Try to solve the button selection bug but couldn't do it. I am thinking I should make it so that if nothing is selected, and a controller button is detected, it will automatically select a top UI button.
+    [3hr]Add the processing ingredient code, also make progress-bar appear on processing ingredient.
+    + Problem is that my processing object art is super ugly and you really can't tell that if the food is under processing or not, so let's just use the good old progress bar.
+    + I could probably improve the art, but this will be a task of distant future.
 
-commit b1a49c5852c24f202dfbfca7b5debe03b1befc9a
+commit 23a302fed6ae787b2167dd35fb94b0322812eae1
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sat Feb 29 01:16:33 2020 +0200
+Date:   Tue Sep 1 00:41:43 2020 +0300
 
-    [3hr]A lot of struggling with the UI codes and now Doozy and Rewire finally works together for now, but it's quite a bit buggy for me.
+    [2hr]Add processing sprite for ingredients, and update the json data format.
+    No code update though. The ingredients updated are Beef, Chiken, Tofu and MixVegetable. Also change the art of the chicken-processed.
 
-    How to make Doozy works with Rewire: This is quite a band-aid fix to the problem. Because I'm using 2 plug-ins that doesn't intended to work with each other: DoozyUI and Rewire. As far as I understand, the DoozyUI only allow "onClick" function to be, a mouse click or a touch/tap. Thus, button pressed using controller, will not be recognized by DoozyUI Button. That's because Rewire UI register to the EventManager, sub component of Unity UI, while DoozyUI handle button pressed on it owns, thus, ignore the Unity Event system (I think). Thus, the fix is really simple and band-aid. If the button register an on-click event, execute the Doozy Click function. This can be troublesome, as the ExecuteClick will be call twice if we click the button with the mouse, but I don't see any problem, so probably there are some under-the-hood code that check for duplication. Also, note here just for future reference because having an additional Component to every button is annoying. I just go straight into the DoozyButton code and register this listener myself. In their OnEnable and OnDisable fucntion. Also, quite funny that somehow after adding this "fix" the [B] button suddenly works as a back button.
-
-    Another bug with selection: There is this huge problem with the UI is that if the user CLICK the mouse outside of the Menu Area, all button will get deselected, thus, make us un-focus on the menu, thus, make it impossible to control the UI with the controller anymore! Need fix!
-    Also, there is this brief bug of if you are scrolling around the PauseViewMapLayout, if you press BACK while moving the cursor, the menu WILL lose selection base, and the only way to get out of that is to exit the whole state.
-
-    Mom have left this afternoon, go back to Vietnam, not live with me and my wife anymore. While it was sometimes irritating living with her in our relatively small apartment, now that she's gone, I do miss her.
-
-commit b070d896e7da37ba0217008a87e8c841dd9fff5d
+commit 79285cab036eb8d20c688a0a81fafed6dda7a892
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Feb 24 23:44:00 2020 +0200
+Date:   Sun Aug 30 23:44:37 2020 +0300
 
-    [1hr]The pause menu works now. There is a nice NULL reference bug, going right after another pause logic bug of mine, that make the game fully functional, but I should fix both of them.
-    Like it's interesting, 2 wrongs make an smooth game. But I should fix it.
-    Also, got a new used apple watch series 3, so I'm just messing with it. Seem fun.
+    [Hot-fix]Because I just found a new bug/improvement.
+    + Right now, the ingredient, when being chopped, will have a progress-bar show up, but if they are picked up, their progress-bar will be hidden, which will be confusing for the player. Idea are either make processing ingredient always have their progress bar show up and/or have a sprite for ingredient that is in the processing phase (which is also helpful anyway).
+    + Fix the map_0, make it bigger, I feel a bit too crampped playing in that map.
 
-commit 95f0d52689ddc87ade3d93bc3c2691bbed103490
+commit f787111f2a561b2f0383559a64a8a05eaeef86d7
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Feb 24 00:05:41 2020 +0200
+Date:   Sun Aug 30 23:37:37 2020 +0300
 
-    [2hr]Successfully import DoozyUI into the game. Doozy UI works as well as it's expected, but I still have a lot of questions.
-    Like I'm not sure the proper way to have a pause menu and then enter it at the press of a button. Like, hmm, how ... I'm doing work around and I feel like it's totally wrong.
-    The importing error is also weird, they have one error line, and if I remove that, it will install normally. But it didn't happen with my test project, which is like, err?
+    [1hr]Did the TODO from friday I think.
+    + Fix the bugs related to content transfer between cooking pots. My food-recipe-interaction code is, well, confusing so I renamed a bit, so it's shorter, so it's at least easier to read.
+    + So, transfer between cooking pot is two ways now.
+    + Wife is going to sleep early today so I will also go to sleep early. Next week, I will create more content,
+    + For example:
+    - cooking pot that will be burn if overcooked: Require code change in recipe json data, new art and some code.
+    - queueing customer: could use the same art but will need new customer class, that is interactable
+    - a dish/bowl/cooking pot rack: new art would be better, code would be simple though because I already have container code.
+    - Ingredient food will have limited value and will have to re-buy? This will create more depth as the player can buy more premium quality food to make better food, but might be confusing.
+    - Automatic dish-washer: new art, code wouldn't be too hard.
+    - Automatic ingredient slicer/processer: Basically, you put this on top of a ingredient container, it will get ingredient from there and process it, so you don't have to chop meat anymore.
 
-commit 3ffb5764b73828efaa80fccad8013421ebd1cc4b
+commit 448395580ba6e1d54510ea97434d27dd60b329be
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Feb 23 22:18:09 2020 +0200
+Date:   Sun Aug 30 00:47:17 2020 +0300
 
-    [15mins]Add proper PC keyboard map to the game, so that PC also have equivalent of Y and B button now. (V for [Y] and B for [B])
-    I though there is some bug caused by the recent map loader change that make picking up object buggy, turn out problem is that I was charging my mouse, which make my xbox controller un-plugged, so I had to use my keyboard, which make me realize that my keyboard mapping is incompleted.
+    [30min]No code with this commit, just had an idea in the morning and I should write it down as a GDD (Game design document).
+    + One core idea of a rogue-like is that you progress through the game with a health-bar that act as your main currency. If you run out of health, you die, and every encounter, you have to trade some of your health with the enemy to gain better loot/gold, etc... In this game, there are no way to make a persistent health value from one day (round) to the next day (round) yet. So, if every-day is the same, the player just play to gain more money and beat the high-score, it's just a level climbing game, not rogue-like, especially that the target everyday is more or less the same, survive all the customer and gain as much money as possible.
+    + So idea is that every day will has a "Rating score". Basically, if you successfully serve a customer, he/she will vote the restaurant positively (5 stars, maybe), or if bad, he will rate negatively (like 1 star), so if the whole day, the Rating drop below a certain number (40/100), maybe, he will automatically lose.
+    + The score, while is consistent, will be day specific, and total rating will be the average value.
+    + For example: Day 1: Rating 60/100, day 2: 70/100, day 3: 40/100 -> The average score will be 170/3 = 63.33. So, if the average rating falls too low (like 50/100) calculate after day ends, he will lose. This might be too harsh though as when the player complete a day, if the screen says he lose, it will feel bad. But, for example, player start the first day with, for example: 70/100 base rating, and then, each customer rating will improve/decrese that value. And the "starting" rating of the next day, will be the total average of the whole week, which give the whole week rating some meaning.
+    + Another idea is that as the days in the week progress, the minimum required rating will increase, but this might leads to also case of when day ends, player realized that he loses, which isn't fun. So maybe idea is that if a new day has a new higher rating than the player has, like 60/100, but player only has 40, he will enter a grace period of 1 minutes, that if he doesn't increase his rating, he will lose. This grace period can apply to normal calculation as well, maybe.
+    + Also, idea for higher ascension is that if player serve customer quickly, they will reward better rating, and if serve poorly, maybe neutral rating or just bad rating.
+    ----------
+    + Another idea of rogue-like is that you should be able to choose your own path. This is well, difficult as this is not a dungeon crawler, but we could have it like:
+    -> The game runs in the course of 4 in game weeks, where at the end of each weeks, you enter a boss-fight phase or something similar. So, one "Act" runs from Monday -> Sunday and if you don't lose, you enter the next "Act"
+    -> As the week progress, there might be some free-form days, where, for example, Wednesday, where player can choose to go for some event to earn some special rewards, for example a "FAVOR" with the judge or the seller that will give some advantages, but sacrifies one opening day, so he won't earn more money from restaurant, and maybe risk losing rating (because closed restaurant is bad.).
+    -> Maybe player can has side-quest each day, and if he accepts, he will earn "favor" one time value (like potion works in slay the spire) or special gadgets (like relic in slay the spire). Favor sounds cool, like, let the player borrow super cooker for one day, or like, an auto cleaning robot for 1 day. Max 3 favors at a time, maybe.
+    -> As the restaurant open on evening, maybe we can make it like, player can choose what to do in the morning. So, either prepare/clean/re-arrange the restaurant in the morning, and ready for the openning, or skip morning to sleep/rest (happier, so maybe like, faster or smile more so customer are happier?), things like that, like persona but not as detailed. This will add a small layer of decision making for the player, as if he wants to go to an event or spend time and clean-up the mess that he calls a restaurant.
+    ---------
+    + I'm thinking of also putting the pattern of number of customer fully shown to the player. So like, openning from 7pm -> 11pm, And peak customer at 7.30 and 10.30, so like, at that time, there will be 3 times the customer as usual, and show that info to the player, so he can make the decision better.
+    + Or better yet, that calendar info can be a relic/gadget that the player must sacrify one openning day or one morning to go to.
 
-commit 6bf278aaf3f09a15403e84f6638a64ac77c62523
+commit a145b393302d131c6932c3f113eeb2db3679576e
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Feb 23 22:08:02 2020 +0200
+Date:   Fri Aug 28 00:12:02 2020 +0300
 
-    [4h]Trying to learn DoozyUI again after I realize that I will waste a lot of useless time at the menu stuffs.
-    I think I learn enough of Doozy UI to use now, it's a really amazing asset, the only problem now is that I just can't import it to the current project, which is a huge annoyance. Anyway, update DoTween because I though it would help (but it didn't). Commit to save the upgraded DoTween version, will try more.
+    [2hr]Fix bug with Buy-Sell-UI, add feature to pour content (food) from one POT to another POT.
+    1. The buy-sell-ui will not close itself after buying stuffs. This was left over interaction when I copy the resume button to the buy menu, I think, or I just intented it to happen at the first.
+    2. I can pour food (content) from one pot to another now, which is nice things, also, some refactor with some food-container related functions so the naming can be understand clearer (I hope), few things left though:
+    TODO:
+    + Bugs fix: If one pot is completely added (full recipe) and fully cooked, it will return an error. Both case, as, get from pot on table to hand, and the other way of pour from pot on hand to pot on table. Those are 2 different bugs though
+    + Maybe make it possible to Get content from pot on table to pot on hand. Currently, this is only one way interaction. From hand to table only, not the other way around. It's possible to get food content from Cooking Pot to Bowl this way, so I guess it makes sense, and consistency sake to make it possible to do from Pot to Pot, both way.
 
-commit 61fe1b89228125961d591708582de2111e155e7d
+commit 8b0eb7042ac64c3135dec87575ed1bb40007adb0
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Fri Feb 21 00:07:30 2020 +0200
+Date:   Thu Aug 27 00:39:32 2020 +0300
 
-    [1hr]More working with the Save load ui. Mostly just experiment with Button.onClick.AddListener(function with param).
-    Encounter a really weird issue, where I can't use the i index of the loop directly, if I do so, all the function will be called with the max index. Which is weird.
-    Here is the problem I'm talking about
+    [2hr]Bug fixes and proper test with the day summaries so I think it work well now. Next will fix bugs and add features.
+    + The RT + LT to speed-up is implemented (it was just commented out).
+    + Another improvements to the game is that if you have an empty cookiing pot (presumably on a stove), you should be able to pour the content (and the progress) of another cooking pot into it.
 
-    for (int i =0; i < buttonNums; i ++) {
-       buttonNums[i].onClick.AddListener(() => { myFunction(i)});
-    }
-
-    If I use this, all the button, on click, will call myFunction(buttonNums), not myFunction(0/1/2) as I would like to, so I have to make a
-
-    int index = i, and use that index value. Which is weird .....
-
-    Also, UI is quite complicated, so I might looking into reinstall Doozy UI again if it save some times.
-
-commit e7d46afc978790b31a2d1839bb02fe04e615bacc
+commit fe942020ff9e689b662f390bb16a6795125f3997
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Thu Feb 20 00:28:50 2020 +0200
+Date:   Wed Aug 26 00:33:28 2020 +0300
 
-    [30min]Start working on a save/load layout menu so that we can have multiple save layout as well as save slots. Let's go with 3 for now.
-    Tried to do more, but ended up getting in the rabid hole of youtube. I have been playing Hitman 2 recently, Hitman Blood money still is one of my favorite video game so I really like hitman 2016. Haven't actually play the new map in the hitman 2, just played all the map from the first game, but ported to the second game, and I love every one of it so far. Kind of rush through each level and only run once, no replay, but still really nice game to play.
+    [1hr]The end day summary works now + find some new bugs and some new ideas.
+    + If you don't have enough score. It will say you lose and prompt a game restart. If you have enough, you can go to next day. If it's the final day, there will be a you win show up and a restart button.
+    Bugs:
+    + The first cooking pot on the stove, when putting stuff it, the progress bar is way too high for some reason. If you pick it up and drop it, the position is set to normal, but no idea how that happen or how to fix. Note: this doesn't happen when I buy a new stove and buy a cooking pot so that it spawn on the stove. Only the one appears when you load the scene. (Not really load the scene as the object managers delete everything and spawn from save files)
+    + When loading restaurant layout. It's super bugger. It should be fix because it means my code has holes, but it will not be in the final feature though.
+    Improvement;
+    + press RT + LT so speed up the time, and release to make time normal, so that debugging/testing is faster.
+    + making collider of object more round. RIght now, it's a box and if you just stuck on to it, you stuck. Maybe make that it's circle so if you stump on it, you just move a bit slower, so the game feels better.
 
-commit 4709b4302afce14c7be96c1f9e56b3563eab0e21
+commit 3067212ca393bcb3eb59bf838bd0a33c5722f2f0
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Wed Feb 19 00:07:36 2020 +0200
+Date:   Mon Aug 24 23:53:13 2020 +0300
 
-    [1.5hr]Map a map editor/map loader of sort. It works, but needs a lot of bug fix.
-    The map is just a text file of x * y dimension, with proper error handling of course, with text making each type, for example, w is WALL, k is KITCHEN. It works now, but I think lots of extra work with the GridManager. Mostly because coordination is a difficult stuff, and I don't want to change already working code too much.
-    Example of a map:
-    wwwwwwwwwwwww
-    wyyykkkkkkkkw
-    wyyykkkkkkkkw
-    wyyykkkkkkkkw
-    wyyykkkkkkkkw
-    wyyywooooooow
-    wyyywooooooow
-    wyyywooooooow
-    wrrrwooooooow
-    wrrrwooooooow
-    wrrrwooooooow
-    wwwwwwwwwwwww
+    [1hr]Fix bug related to the Day Summary not working, due to calling the Wait for second function while setting time scale to 0 due to pausing game (Fix by using WaitForRealTime). Also, add a small function to check if winning and losing game, so I will create a final winning game menu as well as a losing/restart game scene.
 
-commit 6adff6dd2a9321f9d196a4bb8f5e08e07337c94c
+commit c1fe28a4b610a29551238b55857b9fc0f7415a42
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Thu Feb 13 00:47:08 2020 +0200
+Date:   Fri Aug 21 00:49:03 2020 +0300
 
-    [3hr]Prepare the steam page again.
-    Previous time, I got declined because I didn't have a logo, so I, with the help of the wife, make an okeish logo, prepare the steam page again and upload it. Took a lot of time.
+    [2hr]Continue to work with the DaySummary, it almost works. Like
+    It shows up and has a button, but pressing it doesn't work (go to next day, hide the menu), and the text is not updated (not sure why).
+    Code looks all over the place and ugly. I don't like it, but this is like, test code so I will change later? Atlest to be a part of Doozy UI, and this will probably be something bigger.
+    Update the Unity config so that the director will always be called first.
+    Remove all reference to the number scroller. Such a waste of time, but I think it's because I was really un-focus in making the game and just playing mobile phones, until I realized it's mid night and I need to do something for the game. So yeah, my fault.
+    I really should un-install all mobile games.
 
-commit b64cf2a4730c0269f237e5492f140cbb44c4b02b
+commit 4b11a644113b5eb4e9b8943a0fb27d69e769b58d
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Tue Feb 11 23:44:41 2020 +0200
+Date:   Thu Aug 20 00:16:08 2020 +0300
 
-    [1.5hr]Making 2 new gif for the website.
-    Learning the tool mmfpeg, really nice command line tool for making gif, but there are a lot of annoying display artifact, which make the gif look a bit noisy. Also, try installing ubuntu and linux for window, because the bash script I need to run the file is a .sh file, but well, it doesn't work. So ...
+    [1.5hr]Draft of the DaySummary UI. It will display the day information to the player, and a button to advance to the next day. The number scrolling yesterday was a bad idea, not "bad" idea but like, the implementation idea of mine was bad. It should not be a helper non-mono class. Should be a full on class and other things can call upon it.
 
-commit e27c32200352518aea4edb18017ae71299ab27d1
+commit 434e9ed60709fbe286c0667023e9906e18f21fd1
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Tue Feb 11 00:40:08 2020 +0200
+Date:   Wed Aug 19 00:50:32 2020 +0300
 
-    [5hr]Work my ass off to update the websites, update the git commit, generate game play clip.
+    [1hr]I was trying to create a UI display so that it can display all the important game information after a day, then I got side tracked and create a number scrolling (running, animation) and it didn't work (yet). Feel kind of pointless and idiot for focusing on such a small detail instead of prototype the game now. Also, feel extra useless for wasting time playing stupid video game (Toon Blast, really addicting casual game).
 
-    The game play clip was created using Davinci Resolve, which is a really decent free video editor software. Really nice, some small hurdle at first, but it works out nicely.
-
-    I didn't even have time to create some gif and graphics, just a screen shot of the game and the teaser trailer. But I guess it's nice I guess. Maybe I should try to setup the steam page soon.
-
-    The commit on this project is just a spiritual one because all I did was remove one line. Most of the works were done somewhere else, but I want to log it here anyway, because I want this git-log to be the main source of dev-documents.
-
-commit 628217c283bab7b66042964f2148e22172ec09d0
+commit d4cead5aad132cde201b2da0862479656091aeea
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Feb 10 00:59:32 2020 +0200
+Date:   Sun Aug 16 23:58:33 2020 +0300
 
-    [Hotfix]Something is wrong with the table 2x1, which make it doesn't work (no collider, can't pick up, and also cause and array out of bound index if place in the edge of the map for no fucking reason. Also, update the UI Time Keeper so that the clock only animate if game is started.
+    [1hr]Add a on restaurant phase changed delegate and some small fix. I was really un-productive this week.
 
-commit 360c70d31a9b0e9fe712fee9b744b441695018a7
+commit 02fc3431fadcb80f891f483253e2be02f92bb1b2
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Feb 10 00:53:52 2020 +0200
+Date:   Tue Aug 11 00:17:08 2020 +0300
 
-    [3hr]Add floor (yard) tiles and recycle tiles, ground work for buying/selling items. Makeshift start game function and some map designing. Trying to make the map prettier, so that I can create a introduction video about the game next Tuesday in the game dev meet up. Game look quite good (lol) now, so tomorrow, I will mostly just generate the materials for the websites and generate a video.
+    [2hr]Add a debug helper so I can just add some test/clean-up script to put there and use in editor (for example, one to clear all the player-prefs). Also, add a Restaurant-phase, so now, it will have 4 phase (prepare/openning/closing/ending) instead of just open/close like before.
 
-commit 80c95fcad87a952439188d06bde7a51da33b5611
+commit b37a53b7fbf4d2fbb0c06527e3ddcb2ae3054a78
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Feb 9 00:43:57 2020 +0200
+Date:   Tue Aug 4 00:24:13 2020 +0300
 
-    [4hr]Had a really productive day. Make chopping board locking (automatically chop and lock player in one place) again, spend 1 hr trying to fix a stupid bug related to that. Re-adjust the timer for cooking/waiting/chopping but it still doesn't feel right, yet. Add kitchen tile, wall tile and floor tile to the map. It looks functional, but it's quite ugly now. Also re-adjust the tutorial button panel a bit but still really ugly and out of place.
-    Spend most of the afternoon play Slay the Spire, so I pass like from ascension 1 to 4, but then I have a huge headache (probably from the stress from playing that game), so I went to sleep at like 4 and wake up at 7h30. Wife also made an awesome matcha-cheese cake, which is awesome.
+    [2hr]Fix the bug I found yesterday, and add a simple score counting, so that the player will have to play better everyday to get the good score to pass until the next day.
+    + The bug yesterday was fixed because I was really silly, I didn't add the customer in the queue to the current custoemr list, thus, their update function is never called, thus, the table will just show them up at X and they will never run their timer. So they will never leave, and even if you serve them food, they will just eat forever.
 
-commit a602bc4129860d6d3c8b2a9c4bf7b13f6807e341
+commit e19c5a54c0fc654356146c9c72bb39b90a67b80d
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Fri Feb 7 00:50:58 2020 +0200
+Date:   Sun Aug 2 23:54:41 2020 +0300
 
-    [2hr]Add a GameData staic class to store some settings variable. Still not optimal, as I want each of these value to be object sepecific so the player can upgrade later. But, well, it's not for now. Also, add a shitty done version of the tutorial panel, where I display the basic instruction of the game. It's bad.
+    [3hr]Add the game announcement to announce important information to the player. Right now, to just annouce like 60 second left, 30 second left, or things like that.
+    There seem to be a new bug of customer timer not working again, probably due to my refactor or something, will try to fix tomorrow.
 
-commit 3b9e0adcb51f1ff5f46d77885d667e394d2749a0
+commit 1df36108339cfb3dd52290fc00ce6a55e12d1cc0
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Thu Feb 6 00:55:25 2020 +0200
+Date:   Thu Jul 30 23:56:06 2020 +0300
 
-    [2hr]Finish with the text popup for dining table, they animate nicely when the user angrily leave the restaurant, or happily finish the meal. Add a quick hack button (press both triggers) to speed up the time (x3). Add a game timer UI to keep track of the time. Needs more works and refactoring though.
-    Also, took the dog to another vets hospital today to check her eyes issue. She got infected something and they give some medicine, but it costs us 169 euro, damn.
+    [0.5hr]Try to fix the map preview but couldn't, so just change the door preview from space to "," symbol. Weird bug. Also, slightly optimize it using StringBuilder instead of just string, but this weirdly doesn't fix the bug.
+    Also, will probably work on a big UI show up in the middle of the screen, like big announcement of such.
 
-commit 8552583e652262bc4804cd648a098982e0edd890
+commit 09650ee83158cb9ce54ae66090f0d97d58b87dbd
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Wed Feb 5 00:38:05 2020 +0200
+Date:   Thu Jul 30 00:21:14 2020 +0300
 
-    [1.5hr]FInish with the text popup animation. It's popup and fade out nicely now. Took a bit longer than I though because of a stupid bug regarding the Game interface. It's really late in the evening now so I have to go to sleep.
-    The reason for the change in the GameInterface UI is that, the animation there is counting up, from 0 to ANIM DURATION, but in the code, I want every timer to count from value, to 0. For consistency sake, so I rework that, and silly me, forgot some place thus, make it not working. Also help that yesterday I did a small refactor to that part, so it didn't work properly since yesterday ....
+    *Quick bug report* Something wrong with the map preview in the game menu, that it somehow display the MAP_2 all wrong. However, it only display wrong if I add the door (D) character to the map, if I let it as wall, everything is good. Just a string replace (d to space) why it didn't work?
 
-commit 5fb906c5fd7e90f2964b23559b171c402fe3ba2e
+commit 08db0e6065185b30f8dd59cd114da2ff4add9389
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Feb 3 23:56:28 2020 +0200
+Date:   Thu Jul 30 00:17:45 2020 +0300
 
-    [1hr]Finish with the clock icon and danger icon for now. Also, add a very basic pausing functionality, which means, time stop (well, run at a 0.0001 rate) when ui is on.
-    The clock icon will animate faster when the countdown is closing to end. These code is a bit dirty and un-clean, but these code will be changed later anyway, so no need for clean code, just yet. Also, there was a weird bug yesterday where somehow after the first time its appear, the clock animation will appear BEHIND the progress bar, even though there is nothing wrong. Somehow, this bug doesn't happen today, which make no sense.
+    [2hr]The default map layout saved by the user. Is now implemented. Next, I would want to have score, game over state and things like that. Right now, just increase the target score everyday, and then have the player try to reach that score.
 
-commit 821a7ea66143f018303a54d9c055bfb76f0a09b6
+commit 102e38f654ce4e84ddf820415675bb8e515c552b
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Feb 3 00:52:02 2020 +0200
+Date:   Wed Jul 29 00:11:59 2020 +0300
 
-    [2hr]Moving some asset files around a bit so it's a bit more organized. Create a clocking icon/animation to show all the timer task and a warning icon to so emergency timer. It's work in progress. Kind of works, but there is some bug and refactor needed.
-    Today, I played Overcooked 2 with my wife, it was pretty fun and challenging, which is perfect game, as I have tried some other coop game, such as Tools up, a overcooked like game but for moving house, which is okei, too easy, so we got bored after a while, and the main reason is that there is not much variant between rounds I guess. And Unrailed, which we also dislike, but because the game is too stressful, taxxing. Not super hard, but really stressful, which isn't nice.    Also, the dog got like health issue, like last week (last Sunday) I was playing with her and throw the floor ball into her face (we were playing catching), it looks fine at first, but then I think because she kept scratching her eye, it got some serious infection, so it got quite bad. We have put the collar of shame to her and wipe her eyes every few hours, but it got tired really fast because the dog kept waking us up mid night because her eye was really itchy, so we have to wipe her face for her. 4/10, not recommended, but an experience, nonetheless.
+    [1hr]Fix the scoring so that it works now. When customer finish their meals, this will increase score and money, and if it fails, it will reduce some score. Will make a scoring system and ways to auto save restaurant layout next. As well as idea for having customer enter and queue from the door.
+    Both bugs I noted down yesterday were magically disappear this morning when I open the game and check again. Probably because of either Unity editor or my computer issue
 
-commit 764cd34125a1ce41b88a3984ac7101121b618342
+commit 58fc9c0111efe4f2e33827d2bb4a1a5496e16335
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Feb 2 00:22:47 2020 +0200
+Date:   Mon Jul 27 23:52:12 2020 +0300
 
-    [1.5hr]Add a countdown mechanic for the dining table and the progress bar. It looks alright now, but I think I need to add sound to the game later, because it's kind of not feeling kind of bad now.
-    Good sound is needed I guess. But good new is the progress bar and the count down for the dining table works. I was planning to to it for the cooking pot as well, but it's a bit more difficult so it will be later.
-    Add a 2x2 pixel white box for all the progress-bar and pure color sprite, because the default sprite of unity somehow has a black edge, which annoy me a lot.
-    Now, I need to have a proper restaurant room, some art for the floor tile (should be easyer I guess, and maybe some art rework, and definitely good adjustment of the value for all the food/stuff.
-    For me, I have been playing non-stop slay the spire, which means I have completely finish the game with all 4 character, killing the final boss (the spire). So I guess my time for the game is done, but I think it's good time spent because I learn a lot of interesting rouge design tricks from that game.
+    [2hr]Big huge refactor. Add the Popup and the Progress bar to all objects in the game. This is to make things a bit more streamlined and things more flexible in the future. This will come with some performance, I guess, but this is a pixel game, and these extra component each will eat probably a few kb of ram, should not be any problem.
+    Also, there are two bugs I need to fix immediately now:
+    + First, when the customer finish eating, if you pick up the bowl, there will be a null-reference. This is due to a refactor with customer/dining-table I made on Saturday.
+    + Second, somehow during this time, the controller can't navigate the UI anymore, both the UI, main-menu and everything. No idea why, hopefully, when I turn on the game tomorrow, it will magically work again.
 
-commit edcb60747931992df9c0e22410f4be68b25ec0c7
+commit 95fcba6323937911e3f01793dc283690f33e5a96
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Jan 26 23:45:52 2020 +0200
+Date:   Sat Jul 25 19:42:10 2020 +0300
 
-    [30min]Not much, opened the unity editor since 10.15, but only able to work for half an hour (it's 11.42) now, because I kept procrasting soo much.
-    It's Tet (lunar new year) holiday, so I was quite relaxed, and not in the mood of doing much. I also play a lot of video games (the true reason, lol), finish Yakuza Kiwami 1, finish watching the yakuza 0 story on youtube (it's an amazing story), and is starting Yakuza kiwami 2. Also, just downloaded Metro Exodus since it's on Xbox Game Pass pc and it's so cheap, like 1e/3 months, so I want to test the most demanding video game on my brand new pc. And somehow finally finish the true last boss of slay the spire, so yeah, mostly video game.
-    I also got super drunk on new year eve and vomit like a lot, really terrible, but I have been dirnking since soon (like 1 330ml bottle beer on lunch, 0.5 beer at the bar, and then in the eveing, 4 guys of us drink one vodka and one wiskey, but only I was vomitting, yeah..)
+    [4hr]Commit after another long period of procrastination. :(  FIx bug with restaurant closing that will cause all customer logic to not update.Also, refactor the restaurant opening timer a bit so it's in the restaurant manager, not in the ui component, lol
 
-commit 3bedd0b82384fe596096c9724017401a0d17a338
+commit 299a4b85dcc7c7ecc53fbaf6d80ee46fbe1a99ce
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Fri Jan 24 00:12:37 2020 +0200
+Date:   Sat Jul 4 01:17:49 2020 +0300
 
-    [2hr]Add a basic score system, ui to display said score and the player will have score added when the customer finish a meals (random from 20-40), just to test it. Next, will make a punishment system where if the customer waits to long, he will leave and player will lose score.
-    Add a scrolling number effect to the score count, so that it goes up slowly, not instantly, so that it looks cools. Unity Mathf.Lerp is weird, took a while to figure out.
+    [2hr]Finally fix the bug that cause pre-placed cooking pot on stove are not recognized unless you pick it up and drop it again. Due to map initiazlization.
+    Also, fix bug that make us somehow able to serve customer un-finished food (like, bowl of beef without vegetable).
+    Next, I will move all the world-display/popup/progress-bar as part of normal world object, so it will apply to all, not "just" some special object anymore.
+    Also, I want to fix the pick/drop targeting system so it feels better to play.
+    Finally, I want to have some better visual feedback on various item, like, stove cooking, customer eating...
 
-commit 3db32e5e271e0d832db45de1f21c115f67e6106d
+commit 74b299bb68a27732c46f283ce971531fed4f6c2c
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sat Jan 18 21:52:01 2020 +0200
+Date:   Fri Jul 3 00:34:57 2020 +0300
 
-    [4hr]The button prompts thing works now, the game looks much more responsive already. Also some more refactor around the tween animator so we can use it for almost anything now. Small remap button so that [Y] now will pick up heavy item, instead of pressing both shoulder buttons.
+    [3hr]Finally the Dining table and Game customer refactor is done. It works like before, hopefully, so the code is still a bit messy and I have a dread feeling of bugs in here and there, but it's finally done, so I will try to finally work on the game. I have been super procrastinating, so hopefully, I can be more serious this time.
 
-commit c0f00e70a5125b8575bd96583c948cc8152553fb
+commit 2a9e44228c3b36f0a01b1d8e63f2173d6b292787
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Tue Jan 14 21:58:00 2020 +0200
+Date:   Wed Jul 1 00:18:07 2020 +0300
 
-    [1hr]Add xbox buttons for more beautiful prompts.
-    I decided to chicken out of the gamedev meet-up. It's not like I have to be there and show up with anything, it's just a nice and relax evening to go there and talk with people, but I kind of too busy (it took like 40 mins from my home) and would took the whole evening, and well, since I have mom and wife, I don't really feel like hanging out and party-ing anyway.
+    [3hr]More work with the dining table and customer. It almost works, some bug/error when customer leave meal only.
+    Another long procrastination, ahh, damn it. Finally learn to set a timer limit on my phone so that I won't browse too much reddit and facebook (so, 15 mins combined daily).Hopefully, this timer will help.
+    Also, another reason is that we went on a small summer trip to a summer cabin in Kuopio (finland) so, it took like 4 days, and after that, I spend the rest of time finising "The Outer Wilds". It's an amazing experience, 10/10 recommendation. Also, just bought a new 55 inches tv, so it's also another distraction. now. Needs more testing though. Also, fixes on other part of the code, like the progress bar component, finally fix the long running bug that the progress bar somehow render on top of the clock/warning sign sprite (it's weird bug because of Unity).
+    Anyway, I think most bugs I fix today is mostly "work-around" the implementation of Unity. Fun time though.
 
-commit 2d3b629c04498e0286d30470df517ccf3fe76496
+commit bf63db46d71fb5b9e7a4580f2d54d2987e70df43
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Jan 12 23:28:21 2020 +0200
+Date:   Fri Jun 19 23:59:09 2020 +0300
 
-    [3hr]The progress bar bug is fixed. Also add a new state to the dining table component now, so it looks kind of ok-ish. It's sunday today and Tuesday there is a small game-dev meet-up and I kind of want to have the game to a play-able state to see how it works. I will have roughly like 3 hours tomorrow to make the game play-able, which I don't think is enough. Let's see.
-    Great news is that I have a new computer now, which is awesome. It's super quick, and unity compile code a lot faster now, which mean writing code and then live test in Unity feels a lot better now. Also, gaming on this beast feels good. PUBG max everything and stable 60fps, what a dream.
+    [4hr]More work with the customer manager and dining table. It generate customer, add to a dining table if there are empty one or add to a queue list. With proper timer set up and everything.
+    Here, it said 4 hr, for today, but probably in the span of a whole week. I always open the project and the IDE, but never write down some code, or very little code. And even today, I set my goal to spend whole day (minus daily task) to do thing, I have the whole day off, and I didn't manage to do much. Really considering just delete reddit from my life :(
+
+commit 1366f364d7b4498c2ff24f757a0aca2b19273be9
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Tue Jun 9 00:47:42 2020 +0300
+
+    [2hr]Slowly rework the restaurant manager and dining table component. It's getting together, hopefully.
+
+commit b90a007f6673d8dfc32af867079e687616bf6742
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Mon Jun 8 00:27:52 2020 +0300
+
+    [2hr]Continue with the customer refactoring. Changed my mind (actually, found a better way of implementation) in the middle of the way 2 times already. Atleast, everything compile now, but that's because I deleted everything. Hopefully, it mights work tomorrow.
+
+commit d026a49794c2acb6916e0e0045fa1fa6ccbf71e7
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sun Jun 7 00:38:56 2020 +0300
+
+    [4hr]After soo many delay (and I moved my home last week, which was quite stressful), I finally get down to refactor the DiningTableComponent code so that it's good to work forward. Right now,it's super WIP and there are compile error everywhere. Hopefully, I could get it working tomorrow.
+
+commit fd03d723e7b075ab7c4bfb4ad21efcf50f458c4c
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Wed May 27 00:13:11 2020 +0300
+
+    [2hr]Trying to refactor the DiningTableComponent by adding the RestaurantManager class. Right now, each table handles its own customer task and count down. This is just a duct tape fix to trying to make thing work and test the water. Making a proper restaurant manager, and tasks giver for the player is the proper way to go. It's just a bit complicated. Heh
+    Another long break, because I played Xcom 2 (and finish it) and watched Barry season 1 and 2 with my wife.
+
+commit d9bac804059ce6e4717b7bf61fd48ffb7152abd0
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Mon May 11 12:47:33 2020 +0300
+
+    [1hr]Art fix. Update the sprites of table and diner table so that it looks slight better.
+    Change the Computer prefab so that it also contains a table sprite, as it is now a computer and a table, and will take place in both layer (ground and top). So we can arrange stuffs a bit easier, and more intuitive.
+
+commit badb0a8fb8e5f3eac860b45a2aecb8af62739384
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sun May 10 21:28:49 2020 +0300
+
+    [2hr]Try to adjust our food data so that we can add vegetable to empty bowl because that's what I noticed a lot of our user did. Then figure out another nasty bug that gone completely through because the code never reach that part.
+    Also, make it that press [Y] (pick up heavy stuffs) will also pick up small stuff if there is no valid heavy stuffs.
+    Kind of want to refactor the food/recipe thing now. I think I have a better way of making it, but well, it's still work, so I think I should not touch it too much.
+
+commit b898b2d78d7f0f578d4e6423790ff1f410a5097e
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sun May 10 16:50:31 2020 +0300
+
+    [2hr]Fix bugs that make objects not saved properly with the new set up. Also, rework with the ingredient spawner a bit, so that it's more consistent with the way other class is set up, so that their values is setup first, and then we call the init function.
+    Find out some weird bug:
+    1. If you buy a Sink/Stove, and then buy another bowl/cooking pot: the cooking pot/bowl will be spawn on top of that. It shouldn't happen.
+    2. If you save a layout, load it, and then load again (that layout or another layout) It will have a despawning error from the grid manager. I'm too lazy to fix it now, but it must be fixed.
+    3. I should also should create a test class, to validate all of our data.
+
+commit 0d2ac184d394fa67899fe55e32100758221bb7a8
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sun May 10 01:31:40 2020 +0300
+
+    [4hr]More work with the GamePrefabData update. So, I fix all the bugs yesterday and manager to make everything working again. Then, I add more update, because it's needed, and now everything is not working again, but it should be finished tomorrow.
+    This is just mostly repacking data so that it's more convenience to pass data around and less error prone. Now, it dawns on me that I have 4-5 json data files, that is so inter-connected with each other, such that if I change one value in one file, all the other file would stop working, and because they are all text in json file, no compiler can help me catch them. Which, leads me to the needs of another test system.
+    Due to this refactor, I figured out another bug I made when I was creating the savable thing. Somehow it went all over the rader for 2 months, until this refactor.
+    I fixed a bug with Trashbin stop working due to another refactor as well.
+    This is becoming really tiring and I need an automated test system, so that I know that whenever I made a new change, old thing still works. Because all of this going in back and forth cost a lot of time, not just going back and testing if shit works, but just the process of testing is also time consuming. If I can make an automated test system that can just test everything, so I can make new features, press a button and know that all the old stuff still works, that would be really nice.
+    TL;DR: unit tests and integration tests.
+
+commit 096ec27756f89c4bd0d7129063f66a5126470cb5
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Fri May 8 00:56:17 2020 +0300
+
+    [1.5hr]More of the refactor of the GamePrefabData thing. Now that I also refactor the save-load-data mechanism, so it doesn't work now.
+    Somehow, the FoodContainer (Bowl/CookingPot) completely disappear in the scene and seem to be null, which should not happen for some reason. Will fix tomorrow or some day.
+
+commit 11b5d5bf66cca7ebdd584d91b961b4b5d0e08752
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Tue May 5 01:08:50 2020 +0300
+
+    [2hr]The buy menu layout work in a way that it can now automatically spawn the menu grid based on the contents inside the GamePrefabData config file.
+    Next is refactoring the spawning system and make the sell button works.
+    After selling work, probably some refactoring with the money/score/dining-table system because I wrote it in a rush for the demo.
+
+commit 7b098d593d3c9dd53c8a09750e76b9d36bd94231
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Thu Apr 30 00:45:20 2020 +0300
+
+    [1hr]More work with the GamePrefabsData class. It now remove all the old uses of "string" reference from Unity Editor Game Object name, which is not good.
+    Find out some bugs with the SaveLoad functionalities, probably because I rewrote many save load code. But, it shouldn't happen. It might be because of my refactor, or it might related to the object in ANY layer stuffs. I don't know. Must test tomorrow.
+    Now, I think that I should read more about Unity Automated test, and create some unittest, so that whenever I create a new feature or refactor something, I know that it works and doesn't break something else.
+
+commit c5040010d0ff813bb7e30949de9f0691124f2510
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Wed Apr 29 00:33:17 2020 +0300
+
+    [1hr]Adding grid layout to the buy sell menu. Will try to make it dynamic. Also, more base work with the GameItem/Prefab manager.
+
+    Hopefully, I can get a working prefab database system by the end of this week. This will be in charge of reading and serializing data. Also handle the data thing, like spawn rate, price and such.
+
+commit 5ec6e18d891934a13b0e5754c497cd6853c8b8d8
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Mon Apr 20 00:36:44 2020 +0300
+
+    [10mins]Check for some TODOs and remove I think like 2 or 3 of them. (Total now: 21)
+    It's nice that I have Todos commented in the code, and all of them seems descriptive enough that I do have solution for. Now, I do wonder if I have some thing missing that needs to be done. Let's hope I don't have that and have the discipline to always add more todo to the code. For the record. I now have 21 todos in the code.
+
+commit 58a3e63d2dbf83d6c2ea0e0a79ab4f1e5203272f
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Mon Apr 20 00:28:45 2020 +0300
+
+    [1hr]Trying to work with the new GameItemData thing, ended up remove a lot of code, which is good.
+    The idea is that that I will have a single json file that keep information of all game prefab (which I change the game item data name to game prefab data. Which, will handle stuffs like, cost of items and rarity and other stuffs like that as well. Ended up find out about some code I have written long ago that should be removed: Such as PickableData, or Container Component (mostly remove codes, because this use PickableData extensively).
+
+commit 46cb665a74a2a8a7ff61325797529757c75a2182
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sun Apr 19 14:27:31 2020 +0300
+
+    [2hr]Remove the FoodContainerSpawner component. Make the KitchenSink (the one to clean dishes) to a locking interactable objec.Fix a bug with the ANY layout world object.
+    + Remove FoodContainerSpawner: Includes the script, the prefabs, other reference to it in the buy/sell/spawn in the object manager And remove it from the saved layouts.
+    + IsLockingObject is a properly that tell if the interactable object will LOCK the player to the object (you can't do anything else, unless you press B to cancel the interaction). This will make it similar to the chopping board, as if you press X more, it will speed up the process, but if you don't do anything, it will clean the dish, just a bit slower.
+    + There is a bug with the object that can be dropped to ANY layer that if you drop it to the ground, it will act as a table. Which shouldn't happen. Fix that so that if you place it on the ground, it will occupy both ground and top layer.
+
+commit 6afbade12ea4c6c0e206712cb6ab1e4c9bcb3e88
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sun Apr 19 01:15:05 2020 +0300
+
+    [1.5hr]Create a GameItem data json file and class loader. This json config file will be used as our whole database for all item in the game, as well as their rarity and cost.
+
+    The data file is here and I'm done with the data structure. Will work on the loading next. I will try to remove the FoodContainer Spawner soon and rework the SavableData object a bit, as it's really similar to this GameItemJson.
+
+commit c10d0bd834f38ea3e5b8f38c26da031057a712b2
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sat Apr 18 00:39:35 2020 +0300
+
+    [1hr]Add the AnyLayer to World object, which make it possible for us to have a object that can be place either directly on the ground or on a table. Which I now it for food container object (Bowl, Cooking Pot), so that I can remove the stupid FoodContainer spawner thing, and buy a bowl directly, not like, buy a bowl, but you buy a box that have a bowl inside and you can use it as a table as well.
+
+commit 5fa88e0ea807aa93f7a06027817242f54a97917c
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Wed Apr 15 00:44:26 2020 +0300
+
+    [2hr]The sell button works halfway. Remove some useless UI-Code about the buy/sell menu. Refactor the Object manager despawn function so it works properly top down.
+    + The sell button now can detect all objects in the recycle zone and remove it. Nothing to do with money yet because we don't have a Money Manager class yet. Next is to work on a money manager class.
+    + The Despawn function used to be in each Object itself, and when called, it remove itself and report back (update the object list) in the object manager. Now, it works that the object-manager call the despawn function, and remove from its list. So slightly better.
+    + Need some refactor with the Pause Menu I think, I can remove the PauseMenu class, it's useless. Generally, my UI is quite mess up (I think all projects UI code is messed up).
+    + Add a ANY cell state, idea is that an object can be placed either at the ground, or on top of a table. It used to be JUST ground, or Just table, or BOTH. This work for, bowl or pot for example. So now when people buy a bowl or pot, they just buy a bowl or pot, not a table contain a bowl, or a pot. Really useless.
+    + Make the Computer so that it is a table with computer, and it takes both layer at once. Right now, the computer is a table-top object, and I think it's confusing to have to move the computer. Press A with the computer should probably interact with it as well.
+    + Make a sprite/state for a bowl with lectute on it. Players from testing (even me) always want to chop vegetable, put it in the bowl, but couldn't do it. I think it's dumb. So, more sprite.
+
+commit c2053784826aa357846290a203647006f93dd4f5
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Mon Apr 13 15:29:56 2020 +0300
+
+    [2hr]Add the default layout setup for each map. Also, fix some bug with the UI and a bug related to the computer prefab missing the computer script component.
+    map_1 is quite ugly and not really well functioning, so I think that should be remade. Also, will need a working selling button on the Computer (shouldn't be too hard to make I think), and some sort of guidance or tutorial.
+
+commit c3b2352c622ab46bd54e8d84f78cf461f2caca4a
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Mon Apr 13 00:44:09 2020 +0300
+
+    [30min]Rework map loader a bit so that it's not a duct-tape add on anymore. Next, will try to make a default layout for each map.
+
+commit 051cc52f5b05f6106e4c041bca1f72556f58d515
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sat Apr 11 15:22:21 2020 +0300
+
+    [2hr]Fix the bug with the UIs that if you navigate between different UI view, and moving the joystick while the ui is transitioning, will make the button not selected, thus, hard lock the player out of the game.
+    I'm really glad to fix this, because it's been annoying me quite a bit about the game and I though that it would took forever to fix. It's not the "fix/fix" to the solution, but rather a duct-tape fix, in that I will have to make the UI behave in some certain way, but it is fine and I guess I will just have to live with it.
+
+commit 1cc37cdb7414e3a411982dc72ce547b882b8380d
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Tue Apr 7 23:36:34 2020 +0300
+
+    [30min]Not doing much, but hopefully this will get me back on track. Trying to fix the UI and fix the compile error I made the other days.
+
+    The start-menu now can be controlled by controller now (previously, it was only controllable using mouse, which make demo-ing really awkward. Anyway, next is I will try to make a default layout for each map. So that each map will have a at least passable layout.
+
+commit 7642715968e2e60cf8a8e7c84cc723207fdefef3
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Mon Apr 6 00:22:15 2020 +0300
+
+    [1hr]Moving some ui files around. Hopefully, this time I will get the discipline to work.

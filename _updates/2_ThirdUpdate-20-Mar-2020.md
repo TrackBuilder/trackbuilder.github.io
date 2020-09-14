@@ -11,7 +11,9 @@ feature_image_path: "/assets/2020-03-20/serving.gif"
 
 ![image.png](/assets/2020-03-20/serving.gif)
 
-![image_2.png](/assets/2020-03-20/buying_1.gif)
+![image_2.png](/assets/2020-03-20/buying.gif)
+
+![image_3.png](/assets/2020-03-20/prepare.gif)
 
 -----------------------
 ### Fri Mar 20 00:12:03 2020 +0200

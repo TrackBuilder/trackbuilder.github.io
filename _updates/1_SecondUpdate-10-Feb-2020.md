@@ -1,6 +1,6 @@
 ---
 post_time: "10th Feb 2020:"
-title: "My second update. Lots of improvement, but I didn't know that I would have a 4 months delays between update like this."
+title: "4 months later and my second update. Customer to serve, an actual restaurant layout."
 excerpt: "2020-02-10 - progress update"
 toc: true
 layout: posts

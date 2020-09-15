@@ -1,6 +1,6 @@
 ---
-post_time: "15th Sep 2020:"
-title: "Forth update. Wow, six months without updates. Processor component, some refactors, and planning to change the game to 3d!"
+post_time: "14th Sep 2020:"
+title: "Forth update. Updates after six months. Food processor, lots of refactors, some new art, and planning to change the game to 3d!"
 excerpt: "2020-09-15 - Progress update"
 toc: true
 layout: posts

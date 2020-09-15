@@ -1,6 +1,6 @@
 ---
 post_time: "20th Mar 2020:"
-title: "Third update. Post demo procrastination. Corona time struggle. Steam page is up!"
+title: "Third update. First demo to people ever. Buying and selling of kitchenwares. Steam page is up!"
 excerpt: "2020-03-20 - Progress update"
 toc: true
 layout: posts

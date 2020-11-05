@@ -1,4 +1,196 @@
-commit ecaea4f3b7cbd447d772e168af6922b825e8ab75 (HEAD -> master, origin/master, origin/HEAD)
+commit e2d6efeb0f1009506df500bd5f9368ce3e53b4e1 
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Fri Nov 6 00:24:49 2020 +0200
+
+    [2.5hr]Update the processor component, and tweak the camera angle. The 3d transition is now officially done. Also, write the progress update.
+
+commit ece4a28ccbdf674653f1e6c9b8559a13c0ceba8c
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Thu Oct 22 23:36:17 2020 +0300
+
+    [1hr]The game is now fully working as similar as the 2d version now. So now I can just start to add cool shader and refine the movement.
+    + Fix the problem with progress bar, like somehow the progress part is sometimes behind the background. At first, I was doing really dummy way of setting the position to like -0.01 for the main part and 0 to the background, which might cause the issue. The proper way would be to change the order in layer, which I fortunately know from doing 2d. So doing this in 2d isn't a total loss of time at all. Also fix more positioning bug with the progress bar like icon was at -2 pos so it's so far away.
+    + Each food container now have a small text on top of it saying what ingredient it currently have, or in case of finished, what recipe it is. Because now, you can't tell which food container is which, and also, adding my old sprite to the popup would take too much refactor, which I plan to demolish the whole game recipe anyway. I did it initially because of 2d and sprite loading. Now I have 3d and none sprite loading, so I should do it in a less confusing way.
+    + The dining table has been update to be the same, so that if a customer is requesting some food, it will display the name of that dish.
+    + Remove most of the tween animation on 2d object, it's just weird.
+    + Right now, the movement is really akward, I think I need to fix it somehow, by resizing the object so movement is a bit easier, and generally, just placement of 3d objects.
+    + My son is expected to be born tomorrow, I have no idea when he will actually born, but exciting time ahead, and probably, busy time as well.
+    + I have been spending the last 8 days playing mostly JUST genshin impact, after spending soo much money on it (so 55 for the guarantee Venti pull, and AFTER that, I got greedy and spend another 17 euro to get 10 pulls to get more dupes of 4 stars so they get stronger, pretty good pulls though as I was able to get 1 fish and 2 barbaras). And 5 euro on a monthly gems (for a month, their value equal paying like 35euro) and the battle pass. Eventhough I spent a lot of money on that game (like 3-4 times I would normally on a normal game). I don't feel regret spending on that though, because somehow, I know exactly what I get into, and yeah, I just like the game that much. I also might have problem with Anime girls and gambling problem though, or at least, buying impulse.
+
+commit 7637ada0e69f31925a99e0663eca951bd0fbb550
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Wed Oct 14 00:09:10 2020 +0300
+
+    [1hr30min]So, the food-container updates its model properly now when there are food added and when completed.
+    + The whole recipe data I wrote a while ago was for the 2d sprite, which is a bit confusing. With this change, I could delete a lot of data/code to make this looks a bit clearer.
+    + Right now, when ingredient is added to food container, we have just one generic model for that, which make things super confusing, because adding vegetable or beef or chicken or anything to the bowl shows nothing different at all. This probably need to be fixed, to either have their little icon shows over the top like in Overcooked and DinerBros.
+    + Fix a bug with Tofu sometimes not able to drop it down. Turn out because I didn't remove the box collider from the model. Nothing big.
+    + See a bug with the progress bar component will fade behind the background (so it looks greyed out). It happens until the bar reach like 50%. Will investigate more.
+    + Also, if an object has progress bar popup, and we move it around, the progress bar is rotated as well. We should make that thing a bill-board shader, always facing main camera.
+    + When cooking pot is finished cooking and has its content taking by a bowl, its Z scale is set to 0. Will fix.
+    + Overall, my crappy pumping animation 2d doesn't looks that exiciting in 3d. Will need to fix later.
+    + Right now, I think it's more important to just make everything works again, so next I should make customer and food order work. After that, is the clean-up phase, which will remove all the 2d artifacts and makes it more 3d friendly.
+    + I played a lot of genshin impact today, but actually, just mostly reroll account (3 times only, not much though). Basically, somehow in the morning I have the briliant idea that I should pay 55 euro on this game, so that I will get the limited banner character (Venti). He's super good, S rank, and it's nice that this game have a pity system so that you are guarantee to have your star characters, so you will never spend too much. (Well, if you have ultra bad luck then you need like 200 to pulls the banner characters, but it's not much compare to other gacha games. Not that it's a small amount though).
+    + So I have been going over it a lot, basically, it not worth it, but because I am soo commited to this game, and this character is a limitted one, which means he probably won't come back until next year, so now is the only chance of getting him. And if I drop money to pull him, I will also have another cool character as well so not a 100% loss.
+    + Which makes me think of how Gacha game really works. They aren't straight forward P2W, actually, most of the content can be clear with just normal guys, what they did is they create a really fun game, and requires you to play a lots. And then, they show you just a little bit of these really cool and awesome character (that's also very cute). You can absolutely play fine without that cool character, but your gaming experience will be much better with that character, so yeah, get you commited to it, give you free gems so you can try, and only then, if you are really hooked, you will pay good money to pay.
+    + So, I tried reroll for that character (Venti) (means I create new account again, which they give a few gacha for free, so people reroll until their first chars are what they wants) which I did successfully. But then comes the problem that the character on my main account are actually way better, just that it will be even better with that Venti, which means I need to reroll to have 2 5* on my account, which basically means impossible.
+    + Yeah, like, really addicting thing, let see how this pan out. Like, I can dish out 55euro for this game, but I feel that these kind of money can be much better spend else where, like 1 week worth of food, or a new shoes, lol. But we shall see, the guy is on gacha for 4 more days, I will try to farm gems until 1 day left, and then let see if I will pay money, (and how much)
+
+commit 64926425eaed766357681d6f15eefac5c4b68718
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Mon Oct 12 23:28:39 2020 +0300
+
+    [1hr]Ingredient now loads the correct models when finish processed. Change the collider of all prefabs from sphere to box.
+    + The ingredients now load their models correctly. Next I will try to make the food container models update correctly as well as fix bugs that I have with them, like somehow the processor component doesn't show up.
+    + The object's prefabs are changed from sphere to box. The player now doesn't stuck between object now, but moving around corner is a bit slugish. Need quite a while to fix though.
+    + Seems like all the object in the game (table) need to be lower, like only to be 0.5 or 0.7 of the x and z size. I was keeping everything in a 1-1-1 dimension box but seems like too high object make things clipping quite a lot and also asthestically not nice.
+    + Doesn't help that the game looks totally ugly due to the everything is still in the default model, definitely will buy some cool anime shader soon.
+    + I feel that if I do sit down for like one full day and work, all of this will be complete, but I just keep doing something else, and not even talk about playing game. I finished eating at 7.30 today, and now is 11.20, but I only dev-ed 1 hour, I just keep doing stupid thing, first, just aimlessly watching TV while waiting for my 2 roomates to finish sauna so I can do my sauna turn. After that, I was free from 9.30 but somehow just get distracted by the stupid reality tv shows on the tv right behind me, and then 10.15, walked the dog for half an hour. And dev a little bit until now. So that's a 1 hour dev in a 4 hour span. I mean, if I can play games for 2 hours, walk-dog 30min, and sauna + shower for 30 mins, it's much better time spend than that, which I waste 2 hours for something I don't even enjoy.
+    + Talk about game, I was playing Genshin Impact all day Sunday. I logged on in the noon and decied that I want to do some side quest, which then I found a stack of 3 Wind-culus, sort of collectibles in Genshin Impact that help increase your character stamina. THen I thought that if I found a big stack already, it's helpful that I will collect them all so I won't be distacted by them again, and in the future, I will want to collect all anyway, so doing now will be better. Spend the whole day (afternoon and evening) just to hunt down these things (using online interactive map) and still miss like 3 out of 65 of them. These doesn't show up on your world map, only shows up in minimap when you get close, and I have been going twice over the whole map, so I have no fucking idea where these are. So I officially give up on these until they release a patch that is more finding friendly. Yeah, still, I found these mroe fun/enjoyable than watching stupid (informative) youtube and reality tv shows.
+
+commit 47a0e7078b6ac582a5cc0a34618771d8f992e6dd
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sat Oct 10 23:59:56 2020 +0300
+
+    [0.5hr]Fix the progress bar bug found yesterday. It was the bug with progress bar, not the 3d prefab.
+    + The game movement is now a bit laggy and slugish, because every object is a sphere collider, which make player easy to just stuck in the middle, which make movement weird. Easy fix would be ofcourse just make them box collider, but then it's easy for the player to just stuck at the corner. I currently can't think of an easy way to fix it. The hard way would be to make object that is next to each other will have box collider to prevent player from falling in, and normally will be sphere collider. Will take a lot of time for detecting these thing though, which is not really optimal.
+    + Didn't work much today because I just coded a little bit in the morning before lunch, after that, driving for the food supply, and just chill with friends for the rest of the night. Also a bit of playing Genshin Impact. It's crazy, they gross over 100 millions after less than 2 weeks release. With a budget of total 100m (including marketting).
+    + I read a lot of critism for the game for being too expensive to buy, but I think you need to approach it with the patient mindset. Like, just pay the 5.5 euro pack that give you small amount of gem everyday (like I bought today) and just play little by little everyday). Rushing is only viable for big spender, normal people just play patiently. People bash the gacha, ofcourse, but I think it's what make it fun, playing with luck, and don't know what to expect is fun and interesting.
+    + The game progression feels really good as well. In normal RPG game like Witcher 3, Assassin creed, because it's purely single player game, then exploring and "farming" feel super useless because the game makes you so powerful already, so no need for farming anyway. In this game, exploring and farming is fun because it helps making you forward the goal of being stronger because end-game content is really hard.
+    + Ofcourse, there is a lot of "bad" grinding single player game as well, that why I say this game make farming soo rewarding, which make it really nice.
+    + Ok, off to play game now, will try to work more tomorrow.
+
+commit e117355e6e3a2660a688efadaee7a84630c988be
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sat Oct 10 01:00:20 2020 +0300
+
+    [1.5hr]So, the pick drop component works now, seems to be able to even chop/process object. Also fix the player height a bit.
+    + The pick drop actually works already, just because of some forget-to-code part that doesn't update the object to proper table position when dropped on table.
+    + Can chop food on the cooking board, but the process bar component position seems wrong, and it doesn't update the model when completed (yet)
+    + Fix the player height and the picker position. Now I see the problem that the current player asset height doesn't match super well with the restaurant models. Also, the color looks super dulls so I need to use some cool anime shader next (I guess).
+    + Has been super addicted to Genshin Impact. In term of enjoyable, I enjoy it the same level as BotW, more than Witcher. Such an incredible world just to get lost in. Only problem is the gacha, but I have been bless by the RnGesus with a really cool 5* character (Keqing) which has been super fun to play. Read a lot of valid critics on reddit about the game though: gated progression, un-generous gacha rate (0.6% for 5*) and really lackings free to player reward (like, 10 pulls for 1 month of play?). Still, I'm low level compared to the current max (21 mine compare to 29 which is the point the game runs out of contents). So the game still have a lot of magic and awe for me. Will probably stop play or just log in 20mins per day for dailys  and shit.
+    + Still it's such a miracle of a game that you can play serious on PC, and play a bit more casually on the bed before going to bed. Like, really cool about that.
+
+commit 9003e4c5ff1d432a5174376fba03db13db868ca8
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Thu Oct 8 00:56:11 2020 +0300
+
+    [2hr]Create the ingredient models for the ingredient I have in this game. Also, I can grab stuff from the container now, just can't drop them.
+    + Well, for ingredient models, I don't create them, just use premade one, and you know, like few hundreds of models, just choose which one is correct for my game, and some slight resize, re-adjust position, and sometime merge multi models into one. Cost a lot of time though.
+    + Update the ingredient object data as well.
+    + The ingredient data model works the first try, so I'm really impressed with my code system, as I though it would require lot of change. Just remove one Collider2D component call from code and it's done, cool.
+    + Monday, I added the PrefabCaching, with the intention of only using it for loading model for the food container, and wow, suprised today, I need to use it for the ingredient object too. My code was quite modular already so nothing big is needed to changed, just a bit wondering why I didn't think that I would need it for the ingredient. I guess I was tunnel visioned for the food-container only.
+    + Been sucked to playing this game called Genshin Impact, a Free to play Chinese gacha game. It's quite fun, and even if you don't pay, the game play is super good, not as good as BoTW as many people claim, but close and fix some minor annoyance with that game. Gacha game is quite fun, maybe the next game I will try to add gacha mechanic into it, but with 0 microtransaction (whale hunting) because it's really evil. But yeah, playing with your RNGesus is quite fun as the out-come is un-expected, the super cutie waifus help that significantly as well.
+
+commit e710887c44facfd4e5b29242fb85fd129016b290
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Mon Oct 5 00:48:01 2020 +0300
+
+    [3hr]Fix the loading sequence, at least the game loads now and everything looks normal. All models load correctly. Next will finally rework on the object inreaction.
+    + Fix the ingredient spawner. so that now it will have the spawned ingredient type as a sprite renderer sprayed on its side.
+    + The Food Container (Bowl, Pot) both have their own model now. They still works the same way as previously, as they are the same prefab, just different config ie: sprite and some setup, but previously, I can change the shape just by changing the sprite, now, I need to load a new GameObject in the Resouce folder can't load Just the mesh because different prefab have different materials, beside, some Object even have some children object for decoration.
+    + So, to continue the above, the data file now has the path to the prefab object, and each food container has a Dictionary, so that if it loads a new form (Bowl of Pho,  Empty Bowl, Dirty Bowl) it will load the object and store in a dictionary. And if that form is called again, it just re-active the old one and all other are de-active. This save a lot of load time with the expense of few more objects.
+    + Huge delay because I have been playing Hades (and some procrastination) a lot. Actually beat the game and unlock true ending. I like the game, but it's not fair to say it's a rogue-like, because everything you have is a progression, like, you really can't beat High-heat (skulls) without tons of titan-blood upgrade, and well, the game feels a bit too same-y after beating it a few times, unlike say DeadCells or Slay-The-Spire. Also, post-game contents (1->4BC in DeadCells or Ascension climbing in StS) feels weak. Just the same game without the wow effect.
+    + Still, base game is amazing and I enjoy a lot of the time I was climbing the rank and trying to beat Hades. It's a hard game for sure, but I think the hardest part is just to know which boon/bonus to pick, not the actual difficulty of the game. If you know what boons/power-up to use, the game can be dead-simple sometimes. So yeah, the game is more about game knowledge, rather than player skill, but it initially gave me the impression of inverse.
+    + Also, have like 2-3 nights of not touching the computer. One was because of my birthday party (which some guy rear-ended me) and other was because of a board game night. But yeah, this 10 days away was bad :(
+
+commit c9ed6e55a4bc63dd4290b988f408c4f6f839b27e
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Thu Sep 24 00:29:48 2020 +0300
+
+    [2hr]Add the foods and furnitures models to the game. Update the prefabs with all new models.
+    + Game looks passable now, lots of null error open creating game, but player can still move around and game looks 3d-ish now.
+    + Default unity shader/lightning doesn't work really well with low poly model, it looks like some low budget ps2 games. Still, it's progress as we are slowly approaching 3d nows. Feels good to be able to delete a lot of files and still maintain the same game.
+    + Simple furniture works now, but complicated case like FoodContainer/ingredient/ingredient spawner doesn't work yet because they have dynamic sprite. Will think of new ways for them to work next.
+    + Acidentally drag the Doozy folder (UI libs) to the resource folder, which cost like 15 minutes of re-importing assets, and then move them back again cost another 15 mins of just waiting, there should be some-way in unity to lock folder so you can't move them anymore. Even now, the Doozy folder update some assets for some reason, so I'm going to just commit them because the change seem harmless.
+    + Rocket League gone free on Epic store today, and if you claim it, they give you a 10euro voucher (yay), which I take and use on Hades. Been super pumped to play the game as I discovered it yesterday, but then making this game takes the whole night. So I can't play it. Super sad :(
+    + Now that I learn about marketting, it's not enough to let people hear about your game, you have to let them hear about it multiple times. Yesterday was like the 4th time I heard about Hades? few from reddit news, few from Steam and once from my co-workers say how it's an excellent game. I only was interested in it because I learnt it was a Rouge-like.
+    + It's funny that I have been wanting to play MoonLighter, which I have for free from the Epic Store for soo long, but haven't even downloaded it, but the moment I know about Hades Rouge-like (and watch a youtube vid about it), I was super pumped and so ready to pay for it. To sell a game, you need an excellent hook.
+
+commit c94b87769d3fef0f673f29636056deb3885569a6
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Wed Sep 23 22:48:10 2020 +0300
+
+    [2hr]Remove the old zDepthSorter. The player pickup highlight now works. Commit so that I will import some food/kitchenware in the next commit.
+    + I mostly remove the zDepthSorter because all the 2d component rely on it, so if I remove it, and clean until there are no compile error left, it's probably complete and safe to move forward
+    + Also, remove some directional function I made to determine the direction of the player. Now, it's just simple Y rotation only, which make things a lot simpler.
+    + Some fix here and there with the 3d renderer, commit mostly so that this commit won't become too big, because I will import lots of food and funiture to the next commit.
+
+commit 1e15c3a9f48cac71e223d1faa48dee8f49c987b5
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Wed Sep 23 00:29:28 2020 +0300
+
+    [2hr]Finish with the grid-map-tile. Make shadow works, start changing all the prefab to 3d.
+    + The grid-map now is a 3d plane, with textures, instead of sprite renderer. Wall is a cube and is higher, so it is actually a 3d object.
+    + The player and object now can cast shadows, and the plane can receive shadows as well, it didn't work at first, turn out because the project setting was set to 2d, which disable all nice 3d features. I think I will need to convert this project to URP for performance gain and nicer 3d graphic (Universal rendering pipeline Unity)
+    + Start adding 3d object with some textures to all the game prefabs as the ground work.
+    + Will update the player controller code, so that the picker and holder object will also have a 360 degree ranges. This means I can delete a lot of code :p
+
+commit 78c77d7d2f4639bdddb893d0aa2a705df0b10c6a
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Tue Sep 22 00:47:39 2020 +0300
+
+    [1.5hr]Make the 3d character animation. Also, prepare the ground tile to be proper 3d model.
+    + Right now, the ground tile are 2d sprite renderer, I want to make them 3d plane with assignable texture, so that they can receive shadow, cast from the player.
+    + Maybe proper wall object? Lol
+    + Move some files around. 3d models folder rename and such.
+
+commit 397577a9cccf540a60ed7c620d5986959a782458
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Mon Sep 21 00:27:00 2020 +0300
+
+    [30min]Buy the 3d humanoid models, import to the game, add light to the scene and fix a movement bug I made yesterday.
+    + It's technically tomorrow from the last commit, because I commit at mid-night, and now, this commit is at 00:26, so I really buy and import the model the next day.
+
+commit db7e13b3e6e2bdd9ed8f87758e8b52ce1ab1c034
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Mon Sep 21 00:00:08 2020 +0300
+
+    [15min]Remove git-ignore for all my purchased assets so this project can work as-is, as in, just clone and work, no installation needed.
+    + As this is a private repo, and I'm working alone, so I'm not distributing these to anywhere. So now, I'm using a old version of Unity with old version of the assets, if I would use a new computer, then it will be big problem, compile error when I clone this project.
+    + Also, buy a humanoid asset to import to the project. Just buy, import will be done tomorrow.
+
+commit fe8f16be6f8c8b7daaaead8fb52ed7c3acabb352
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Sun Sep 20 00:44:34 2020 +0300
+
+    [1.5hr]Add the 3d model some 3d rendering code to the player. It can move around with the player and face the direction it's moving now.
+    + The 3d model is now in a T pose, but at least it face the direction the joy-stick is pushed to now. I think this only would make targetting/picking/dropping stuff much more responsive and more natural already, as the previous system only account for 4 directions stuffs picking, which I think isn't good enough, and feels quite limited. Now, it's full 360 direction, so probably feels better.
+    + Small refactor, as move the GetComponentAndNullCheck from BaseObject class to the static utils class so all the GetComponent and Null check is at the same place.
+    + Wasn't planning to code anything today as the family went for a small trip to Porvoo, but then I have some spare time and decided that maybe I could do a little, and funny thing, something produtive, so yay me!.
+
+commit b99b35aac568b8c692369c4ac1b07e3577d1fead
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Fri Sep 18 00:41:25 2020 +0300
+
+    [2hr]Finish with the gird-coordination change from 2d to 3d. Also, player movement works now (again). Tomorrow will be pick/drop functionality.
+    + Seems like most of the Grid map, placing and validation works now. My map is spawned just like before (on screen). My code is quite modular so I mostly need to go to the grid manager and map manager class and change from y to z.
+    + Ofcourse, this being a top-down game, so moving to 3d is more of a art-direction change rather than like, game design decision that I need the extra dimension or though.
+    + Now that I wrote that down, I could have gotten away with just keeping everything the same, but use 3d models/camera, renderer but with the same 2d logic. But that would probably hurt more in the future, and my harm some lightning or something. Anyway, if I decied to do 3d, I should do 3d properly.
+    + Remove all the 2d Collider from prefabs and change them with box collider 2d. The player movement is also updated from rigidbody2d to rigidbody 3d, it works almost instantly, as I only need to change a vector 2 (x, y) from the controller input, to a movement velocity of (x, 0, z). So, really small change.
+    + Tomorrow, will try to make the pick/drop thing works again, so it means thing will be back to just before, minus some sorting/layering issue, but then, we are going to remove all the sprite anyway to change them with 3d model, so whatever.
+    + Will probably not work tomorrow due to a birthday party. It's not like I work so continuously and I sometimes (usually) just skip one or few days of developing game just because of game/watching movie/distraction anyway.
+
+commit ca930ebf0e072e2bea713f75f6267454d975a867
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Thu Sep 17 00:31:39 2020 +0300
+
+    [2hr]Starting to add 3d to the game. First step is to redo the map grid system.
+    + Because unity3d use xz for ground position, and Y for height, while our 2d top-down game use X for horizontal and Y for vertical, so everything, in the view of a 3d camera proper-view just are from the top down.
+    + To fix this, I will just try to go to every part of our code, mostly the grid and map system, to change Y position to Z position. Success would be that I am able to see the map like before, but with 3d camera view from top.
+    + Next would be harder, which is to change all our 2d physics (2d rigid-body, 2d collider) into 3d physics (character controller, 3d rigidbody/collider). After this step, our player should be able to move like normal, and actually playing the game just like before, just with 3d physics calculation instead of 2d physics.
+    + Last step would be to change the rendering from 2d to 3d, which change all sprite renderer to MESH renderer with texture and stuff. Ofcouse, add light as well.
+    + Hopeful thinking, this take a week if I work full time and really concentrate, but I don't work fulltime and I get distraction a lot so maybe like 1 month. Hopefully not that long though.
+
+commit b05530e66969d872b1af10505800b6a9070e4e60
+Author: Minh Duc <minhduc.gameregistry@gmail.com>
+Date:   Wed Sep 16 00:28:09 2020 +0300
+
+    [2hr]Update the steam page to have the Progress updates. Import a 3d humanoid model to start with.
+    + I initially wanted to have each update as an announcement/post/event, like games like DeadCells/Noita,... have, like update 19, 20, things like that. But seems like it's not possible with an un-released game.
+    + Stared at the project for a while without knowing where to start. Hmmm, this is like a huge task.
+
+commit ecaea4f3b7cbd447d772e168af6922b825e8ab75
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
 Date:   Tue Sep 15 00:38:33 2020 +0300
 
@@ -58,421 +250,4 @@ Author: Minh Duc <minhduc.gameregistry@gmail.com>
 Date:   Sun Sep 6 00:41:45 2020 +0300
 
     [1hr]Refactor the game prefab database.
-    So it's a bit smarter and not contains like 10 copy/pasted GetComponent function for every different prefab type I have in the game. So now, I have everything in a Dictionary<System.Type, PrefabType> that can lookup from it, and I can call the GetComponent(System.Type). It's a bit weird because I thought system.type is like, pre-compiled, but seems like it's a thing that generated at the final step of compilation, so I can't use Generic type like function<T> or switch :/
-    Kind of feeling there are still better way to do it, and I am just playing with the coding syntax, but this is quite briliant already and I will try to make the food processor working tomorrow.
-
-commit 670681ab972718adfe8dfb5b215a79b8bad45690
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sat Sep 5 20:01:48 2020 +0300
-
-    [1hr]Add the Processor prefab to the game, that can be easily spawn and remove. So, need to change in 3 file, which is a bit too complicated for my taste.
-
-commit a9b38d425538571cdcd84d8cd1f0bd13220d2e37
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sat Sep 5 00:37:09 2020 +0300
-
-    [1hr]Add animation and prefab for the Processor component.
-
-commit 4992d34fa7181bd0dc43189db385951be9bea3a0
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Fri Sep 4 00:20:43 2020 +0300
-
-    [30min]Add art sprite for the food processor. This is a component that will automatically process food for you, from RAW to PROCESSED.
-    There will be two version of this.
-    + One is that will just there and if you drop food on it, after a while, it will become processed.
-    + The other is that if you drop it on TOP of a food container, it will automatically get food from the container, and process it, so all you have to do is to just pick the food up.
-
-commit f8ca95c461932de1f74127145c3f88f2a14ce643
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Wed Sep 2 00:43:29 2020 +0300
-
-    [3hr]Add the processing ingredient code, also make progress-bar appear on processing ingredient.
-    + Problem is that my processing object art is super ugly and you really can't tell that if the food is under processing or not, so let's just use the good old progress bar.
-    + I could probably improve the art, but this will be a task of distant future.
-
-commit 23a302fed6ae787b2167dd35fb94b0322812eae1
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Tue Sep 1 00:41:43 2020 +0300
-
-    [2hr]Add processing sprite for ingredients, and update the json data format.
-    No code update though. The ingredients updated are Beef, Chiken, Tofu and MixVegetable. Also change the art of the chicken-processed.
-
-commit 79285cab036eb8d20c688a0a81fafed6dda7a892
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Aug 30 23:44:37 2020 +0300
-
-    [Hot-fix]Because I just found a new bug/improvement.
-    + Right now, the ingredient, when being chopped, will have a progress-bar show up, but if they are picked up, their progress-bar will be hidden, which will be confusing for the player. Idea are either make processing ingredient always have their progress bar show up and/or have a sprite for ingredient that is in the processing phase (which is also helpful anyway).
-    + Fix the map_0, make it bigger, I feel a bit too crampped playing in that map.
-
-commit f787111f2a561b2f0383559a64a8a05eaeef86d7
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Aug 30 23:37:37 2020 +0300
-
-    [1hr]Did the TODO from friday I think.
-    + Fix the bugs related to content transfer between cooking pots. My food-recipe-interaction code is, well, confusing so I renamed a bit, so it's shorter, so it's at least easier to read.
-    + So, transfer between cooking pot is two ways now.
-    + Wife is going to sleep early today so I will also go to sleep early. Next week, I will create more content,
-    + For example:
-    - cooking pot that will be burn if overcooked: Require code change in recipe json data, new art and some code.
-    - queueing customer: could use the same art but will need new customer class, that is interactable
-    - a dish/bowl/cooking pot rack: new art would be better, code would be simple though because I already have container code.
-    - Ingredient food will have limited value and will have to re-buy? This will create more depth as the player can buy more premium quality food to make better food, but might be confusing.
-    - Automatic dish-washer: new art, code wouldn't be too hard.
-    - Automatic ingredient slicer/processer: Basically, you put this on top of a ingredient container, it will get ingredient from there and process it, so you don't have to chop meat anymore.
-
-commit 448395580ba6e1d54510ea97434d27dd60b329be
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Aug 30 00:47:17 2020 +0300
-
-    [30min]No code with this commit, just had an idea in the morning and I should write it down as a GDD (Game design document).
-    + One core idea of a rogue-like is that you progress through the game with a health-bar that act as your main currency. If you run out of health, you die, and every encounter, you have to trade some of your health with the enemy to gain better loot/gold, etc... In this game, there are no way to make a persistent health value from one day (round) to the next day (round) yet. So, if every-day is the same, the player just play to gain more money and beat the high-score, it's just a level climbing game, not rogue-like, especially that the target everyday is more or less the same, survive all the customer and gain as much money as possible.
-    + So idea is that every day will has a "Rating score". Basically, if you successfully serve a customer, he/she will vote the restaurant positively (5 stars, maybe), or if bad, he will rate negatively (like 1 star), so if the whole day, the Rating drop below a certain number (40/100), maybe, he will automatically lose.
-    + The score, while is consistent, will be day specific, and total rating will be the average value.
-    + For example: Day 1: Rating 60/100, day 2: 70/100, day 3: 40/100 -> The average score will be 170/3 = 63.33. So, if the average rating falls too low (like 50/100) calculate after day ends, he will lose. This might be too harsh though as when the player complete a day, if the screen says he lose, it will feel bad. But, for example, player start the first day with, for example: 70/100 base rating, and then, each customer rating will improve/decrese that value. And the "starting" rating of the next day, will be the total average of the whole week, which give the whole week rating some meaning.
-    + Another idea is that as the days in the week progress, the minimum required rating will increase, but this might leads to also case of when day ends, player realized that he loses, which isn't fun. So maybe idea is that if a new day has a new higher rating than the player has, like 60/100, but player only has 40, he will enter a grace period of 1 minutes, that if he doesn't increase his rating, he will lose. This grace period can apply to normal calculation as well, maybe.
-    + Also, idea for higher ascension is that if player serve customer quickly, they will reward better rating, and if serve poorly, maybe neutral rating or just bad rating.
-    ----------
-    + Another idea of rogue-like is that you should be able to choose your own path. This is well, difficult as this is not a dungeon crawler, but we could have it like:
-    -> The game runs in the course of 4 in game weeks, where at the end of each weeks, you enter a boss-fight phase or something similar. So, one "Act" runs from Monday -> Sunday and if you don't lose, you enter the next "Act"
-    -> As the week progress, there might be some free-form days, where, for example, Wednesday, where player can choose to go for some event to earn some special rewards, for example a "FAVOR" with the judge or the seller that will give some advantages, but sacrifies one opening day, so he won't earn more money from restaurant, and maybe risk losing rating (because closed restaurant is bad.).
-    -> Maybe player can has side-quest each day, and if he accepts, he will earn "favor" one time value (like potion works in slay the spire) or special gadgets (like relic in slay the spire). Favor sounds cool, like, let the player borrow super cooker for one day, or like, an auto cleaning robot for 1 day. Max 3 favors at a time, maybe.
-    -> As the restaurant open on evening, maybe we can make it like, player can choose what to do in the morning. So, either prepare/clean/re-arrange the restaurant in the morning, and ready for the openning, or skip morning to sleep/rest (happier, so maybe like, faster or smile more so customer are happier?), things like that, like persona but not as detailed. This will add a small layer of decision making for the player, as if he wants to go to an event or spend time and clean-up the mess that he calls a restaurant.
-    ---------
-    + I'm thinking of also putting the pattern of number of customer fully shown to the player. So like, openning from 7pm -> 11pm, And peak customer at 7.30 and 10.30, so like, at that time, there will be 3 times the customer as usual, and show that info to the player, so he can make the decision better.
-    + Or better yet, that calendar info can be a relic/gadget that the player must sacrify one openning day or one morning to go to.
-
-commit a145b393302d131c6932c3f113eeb2db3679576e
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Fri Aug 28 00:12:02 2020 +0300
-
-    [2hr]Fix bug with Buy-Sell-UI, add feature to pour content (food) from one POT to another POT.
-    1. The buy-sell-ui will not close itself after buying stuffs. This was left over interaction when I copy the resume button to the buy menu, I think, or I just intented it to happen at the first.
-    2. I can pour food (content) from one pot to another now, which is nice things, also, some refactor with some food-container related functions so the naming can be understand clearer (I hope), few things left though:
-    TODO:
-    + Bugs fix: If one pot is completely added (full recipe) and fully cooked, it will return an error. Both case, as, get from pot on table to hand, and the other way of pour from pot on hand to pot on table. Those are 2 different bugs though
-    + Maybe make it possible to Get content from pot on table to pot on hand. Currently, this is only one way interaction. From hand to table only, not the other way around. It's possible to get food content from Cooking Pot to Bowl this way, so I guess it makes sense, and consistency sake to make it possible to do from Pot to Pot, both way.
-
-commit 8b0eb7042ac64c3135dec87575ed1bb40007adb0
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Thu Aug 27 00:39:32 2020 +0300
-
-    [2hr]Bug fixes and proper test with the day summaries so I think it work well now. Next will fix bugs and add features.
-    + The RT + LT to speed-up is implemented (it was just commented out).
-    + Another improvements to the game is that if you have an empty cookiing pot (presumably on a stove), you should be able to pour the content (and the progress) of another cooking pot into it.
-
-commit fe942020ff9e689b662f390bb16a6795125f3997
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Wed Aug 26 00:33:28 2020 +0300
-
-    [1hr]The end day summary works now + find some new bugs and some new ideas.
-    + If you don't have enough score. It will say you lose and prompt a game restart. If you have enough, you can go to next day. If it's the final day, there will be a you win show up and a restart button.
-    Bugs:
-    + The first cooking pot on the stove, when putting stuff it, the progress bar is way too high for some reason. If you pick it up and drop it, the position is set to normal, but no idea how that happen or how to fix. Note: this doesn't happen when I buy a new stove and buy a cooking pot so that it spawn on the stove. Only the one appears when you load the scene. (Not really load the scene as the object managers delete everything and spawn from save files)
-    + When loading restaurant layout. It's super bugger. It should be fix because it means my code has holes, but it will not be in the final feature though.
-    Improvement;
-    + press RT + LT so speed up the time, and release to make time normal, so that debugging/testing is faster.
-    + making collider of object more round. RIght now, it's a box and if you just stuck on to it, you stuck. Maybe make that it's circle so if you stump on it, you just move a bit slower, so the game feels better.
-
-commit 3067212ca393bcb3eb59bf838bd0a33c5722f2f0
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Aug 24 23:53:13 2020 +0300
-
-    [1hr]Fix bug related to the Day Summary not working, due to calling the Wait for second function while setting time scale to 0 due to pausing game (Fix by using WaitForRealTime). Also, add a small function to check if winning and losing game, so I will create a final winning game menu as well as a losing/restart game scene.
-
-commit c1fe28a4b610a29551238b55857b9fc0f7415a42
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Fri Aug 21 00:49:03 2020 +0300
-
-    [2hr]Continue to work with the DaySummary, it almost works. Like
-    It shows up and has a button, but pressing it doesn't work (go to next day, hide the menu), and the text is not updated (not sure why).
-    Code looks all over the place and ugly. I don't like it, but this is like, test code so I will change later? Atlest to be a part of Doozy UI, and this will probably be something bigger.
-    Update the Unity config so that the director will always be called first.
-    Remove all reference to the number scroller. Such a waste of time, but I think it's because I was really un-focus in making the game and just playing mobile phones, until I realized it's mid night and I need to do something for the game. So yeah, my fault.
-    I really should un-install all mobile games.
-
-commit 4b11a644113b5eb4e9b8943a0fb27d69e769b58d
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Thu Aug 20 00:16:08 2020 +0300
-
-    [1.5hr]Draft of the DaySummary UI. It will display the day information to the player, and a button to advance to the next day. The number scrolling yesterday was a bad idea, not "bad" idea but like, the implementation idea of mine was bad. It should not be a helper non-mono class. Should be a full on class and other things can call upon it.
-
-commit 434e9ed60709fbe286c0667023e9906e18f21fd1
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Wed Aug 19 00:50:32 2020 +0300
-
-    [1hr]I was trying to create a UI display so that it can display all the important game information after a day, then I got side tracked and create a number scrolling (running, animation) and it didn't work (yet). Feel kind of pointless and idiot for focusing on such a small detail instead of prototype the game now. Also, feel extra useless for wasting time playing stupid video game (Toon Blast, really addicting casual game).
-
-commit d4cead5aad132cde201b2da0862479656091aeea
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Aug 16 23:58:33 2020 +0300
-
-    [1hr]Add a on restaurant phase changed delegate and some small fix. I was really un-productive this week.
-
-commit 02fc3431fadcb80f891f483253e2be02f92bb1b2
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Tue Aug 11 00:17:08 2020 +0300
-
-    [2hr]Add a debug helper so I can just add some test/clean-up script to put there and use in editor (for example, one to clear all the player-prefs). Also, add a Restaurant-phase, so now, it will have 4 phase (prepare/openning/closing/ending) instead of just open/close like before.
-
-commit b37a53b7fbf4d2fbb0c06527e3ddcb2ae3054a78
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Tue Aug 4 00:24:13 2020 +0300
-
-    [2hr]Fix the bug I found yesterday, and add a simple score counting, so that the player will have to play better everyday to get the good score to pass until the next day.
-    + The bug yesterday was fixed because I was really silly, I didn't add the customer in the queue to the current custoemr list, thus, their update function is never called, thus, the table will just show them up at X and they will never run their timer. So they will never leave, and even if you serve them food, they will just eat forever.
-
-commit e19c5a54c0fc654356146c9c72bb39b90a67b80d
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Aug 2 23:54:41 2020 +0300
-
-    [3hr]Add the game announcement to announce important information to the player. Right now, to just annouce like 60 second left, 30 second left, or things like that.
-    There seem to be a new bug of customer timer not working again, probably due to my refactor or something, will try to fix tomorrow.
-
-commit 1df36108339cfb3dd52290fc00ce6a55e12d1cc0
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Thu Jul 30 23:56:06 2020 +0300
-
-    [0.5hr]Try to fix the map preview but couldn't, so just change the door preview from space to "," symbol. Weird bug. Also, slightly optimize it using StringBuilder instead of just string, but this weirdly doesn't fix the bug.
-    Also, will probably work on a big UI show up in the middle of the screen, like big announcement of such.
-
-commit 09650ee83158cb9ce54ae66090f0d97d58b87dbd
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Thu Jul 30 00:21:14 2020 +0300
-
-    *Quick bug report* Something wrong with the map preview in the game menu, that it somehow display the MAP_2 all wrong. However, it only display wrong if I add the door (D) character to the map, if I let it as wall, everything is good. Just a string replace (d to space) why it didn't work?
-
-commit 08db0e6065185b30f8dd59cd114da2ff4add9389
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Thu Jul 30 00:17:45 2020 +0300
-
-    [2hr]The default map layout saved by the user. Is now implemented. Next, I would want to have score, game over state and things like that. Right now, just increase the target score everyday, and then have the player try to reach that score.
-
-commit 102e38f654ce4e84ddf820415675bb8e515c552b
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Wed Jul 29 00:11:59 2020 +0300
-
-    [1hr]Fix the scoring so that it works now. When customer finish their meals, this will increase score and money, and if it fails, it will reduce some score. Will make a scoring system and ways to auto save restaurant layout next. As well as idea for having customer enter and queue from the door.
-    Both bugs I noted down yesterday were magically disappear this morning when I open the game and check again. Probably because of either Unity editor or my computer issue
-
-commit 58fc9c0111efe4f2e33827d2bb4a1a5496e16335
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Jul 27 23:52:12 2020 +0300
-
-    [2hr]Big huge refactor. Add the Popup and the Progress bar to all objects in the game. This is to make things a bit more streamlined and things more flexible in the future. This will come with some performance, I guess, but this is a pixel game, and these extra component each will eat probably a few kb of ram, should not be any problem.
-    Also, there are two bugs I need to fix immediately now:
-    + First, when the customer finish eating, if you pick up the bowl, there will be a null-reference. This is due to a refactor with customer/dining-table I made on Saturday.
-    + Second, somehow during this time, the controller can't navigate the UI anymore, both the UI, main-menu and everything. No idea why, hopefully, when I turn on the game tomorrow, it will magically work again.
-
-commit 95fcba6323937911e3f01793dc283690f33e5a96
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sat Jul 25 19:42:10 2020 +0300
-
-    [4hr]Commit after another long period of procrastination. :(  FIx bug with restaurant closing that will cause all customer logic to not update.Also, refactor the restaurant opening timer a bit so it's in the restaurant manager, not in the ui component, lol
-
-commit 299a4b85dcc7c7ecc53fbaf6d80ee46fbe1a99ce
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sat Jul 4 01:17:49 2020 +0300
-
-    [2hr]Finally fix the bug that cause pre-placed cooking pot on stove are not recognized unless you pick it up and drop it again. Due to map initiazlization.
-    Also, fix bug that make us somehow able to serve customer un-finished food (like, bowl of beef without vegetable).
-    Next, I will move all the world-display/popup/progress-bar as part of normal world object, so it will apply to all, not "just" some special object anymore.
-    Also, I want to fix the pick/drop targeting system so it feels better to play.
-    Finally, I want to have some better visual feedback on various item, like, stove cooking, customer eating...
-
-commit 74b299bb68a27732c46f283ce971531fed4f6c2c
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Fri Jul 3 00:34:57 2020 +0300
-
-    [3hr]Finally the Dining table and Game customer refactor is done. It works like before, hopefully, so the code is still a bit messy and I have a dread feeling of bugs in here and there, but it's finally done, so I will try to finally work on the game. I have been super procrastinating, so hopefully, I can be more serious this time.
-
-commit 2a9e44228c3b36f0a01b1d8e63f2173d6b292787
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Wed Jul 1 00:18:07 2020 +0300
-
-    [3hr]More work with the dining table and customer. It almost works, some bug/error when customer leave meal only.
-    Another long procrastination, ahh, damn it. Finally learn to set a timer limit on my phone so that I won't browse too much reddit and facebook (so, 15 mins combined daily).Hopefully, this timer will help.
-    Also, another reason is that we went on a small summer trip to a summer cabin in Kuopio (finland) so, it took like 4 days, and after that, I spend the rest of time finising "The Outer Wilds". It's an amazing experience, 10/10 recommendation. Also, just bought a new 55 inches tv, so it's also another distraction. now. Needs more testing though. Also, fixes on other part of the code, like the progress bar component, finally fix the long running bug that the progress bar somehow render on top of the clock/warning sign sprite (it's weird bug because of Unity).
-    Anyway, I think most bugs I fix today is mostly "work-around" the implementation of Unity. Fun time though.
-
-commit bf63db46d71fb5b9e7a4580f2d54d2987e70df43
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Fri Jun 19 23:59:09 2020 +0300
-
-    [4hr]More work with the customer manager and dining table. It generate customer, add to a dining table if there are empty one or add to a queue list. With proper timer set up and everything.
-    Here, it said 4 hr, for today, but probably in the span of a whole week. I always open the project and the IDE, but never write down some code, or very little code. And even today, I set my goal to spend whole day (minus daily task) to do thing, I have the whole day off, and I didn't manage to do much. Really considering just delete reddit from my life :(
-
-commit 1366f364d7b4498c2ff24f757a0aca2b19273be9
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Tue Jun 9 00:47:42 2020 +0300
-
-    [2hr]Slowly rework the restaurant manager and dining table component. It's getting together, hopefully.
-
-commit b90a007f6673d8dfc32af867079e687616bf6742
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Jun 8 00:27:52 2020 +0300
-
-    [2hr]Continue with the customer refactoring. Changed my mind (actually, found a better way of implementation) in the middle of the way 2 times already. Atleast, everything compile now, but that's because I deleted everything. Hopefully, it mights work tomorrow.
-
-commit d026a49794c2acb6916e0e0045fa1fa6ccbf71e7
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Jun 7 00:38:56 2020 +0300
-
-    [4hr]After soo many delay (and I moved my home last week, which was quite stressful), I finally get down to refactor the DiningTableComponent code so that it's good to work forward. Right now,it's super WIP and there are compile error everywhere. Hopefully, I could get it working tomorrow.
-
-commit fd03d723e7b075ab7c4bfb4ad21efcf50f458c4c
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Wed May 27 00:13:11 2020 +0300
-
-    [2hr]Trying to refactor the DiningTableComponent by adding the RestaurantManager class. Right now, each table handles its own customer task and count down. This is just a duct tape fix to trying to make thing work and test the water. Making a proper restaurant manager, and tasks giver for the player is the proper way to go. It's just a bit complicated. Heh
-    Another long break, because I played Xcom 2 (and finish it) and watched Barry season 1 and 2 with my wife.
-
-commit d9bac804059ce6e4717b7bf61fd48ffb7152abd0
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon May 11 12:47:33 2020 +0300
-
-    [1hr]Art fix. Update the sprites of table and diner table so that it looks slight better.
-    Change the Computer prefab so that it also contains a table sprite, as it is now a computer and a table, and will take place in both layer (ground and top). So we can arrange stuffs a bit easier, and more intuitive.
-
-commit badb0a8fb8e5f3eac860b45a2aecb8af62739384
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun May 10 21:28:49 2020 +0300
-
-    [2hr]Try to adjust our food data so that we can add vegetable to empty bowl because that's what I noticed a lot of our user did. Then figure out another nasty bug that gone completely through because the code never reach that part.
-    Also, make it that press [Y] (pick up heavy stuffs) will also pick up small stuff if there is no valid heavy stuffs.
-    Kind of want to refactor the food/recipe thing now. I think I have a better way of making it, but well, it's still work, so I think I should not touch it too much.
-
-commit b898b2d78d7f0f578d4e6423790ff1f410a5097e
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun May 10 16:50:31 2020 +0300
-
-    [2hr]Fix bugs that make objects not saved properly with the new set up. Also, rework with the ingredient spawner a bit, so that it's more consistent with the way other class is set up, so that their values is setup first, and then we call the init function.
-    Find out some weird bug:
-    1. If you buy a Sink/Stove, and then buy another bowl/cooking pot: the cooking pot/bowl will be spawn on top of that. It shouldn't happen.
-    2. If you save a layout, load it, and then load again (that layout or another layout) It will have a despawning error from the grid manager. I'm too lazy to fix it now, but it must be fixed.
-    3. I should also should create a test class, to validate all of our data.
-
-commit 0d2ac184d394fa67899fe55e32100758221bb7a8
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun May 10 01:31:40 2020 +0300
-
-    [4hr]More work with the GamePrefabData update. So, I fix all the bugs yesterday and manager to make everything working again. Then, I add more update, because it's needed, and now everything is not working again, but it should be finished tomorrow.
-    This is just mostly repacking data so that it's more convenience to pass data around and less error prone. Now, it dawns on me that I have 4-5 json data files, that is so inter-connected with each other, such that if I change one value in one file, all the other file would stop working, and because they are all text in json file, no compiler can help me catch them. Which, leads me to the needs of another test system.
-    Due to this refactor, I figured out another bug I made when I was creating the savable thing. Somehow it went all over the rader for 2 months, until this refactor.
-    I fixed a bug with Trashbin stop working due to another refactor as well.
-    This is becoming really tiring and I need an automated test system, so that I know that whenever I made a new change, old thing still works. Because all of this going in back and forth cost a lot of time, not just going back and testing if shit works, but just the process of testing is also time consuming. If I can make an automated test system that can just test everything, so I can make new features, press a button and know that all the old stuff still works, that would be really nice.
-    TL;DR: unit tests and integration tests.
-
-commit 096ec27756f89c4bd0d7129063f66a5126470cb5
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Fri May 8 00:56:17 2020 +0300
-
-    [1.5hr]More of the refactor of the GamePrefabData thing. Now that I also refactor the save-load-data mechanism, so it doesn't work now.
-    Somehow, the FoodContainer (Bowl/CookingPot) completely disappear in the scene and seem to be null, which should not happen for some reason. Will fix tomorrow or some day.
-
-commit 11b5d5bf66cca7ebdd584d91b961b4b5d0e08752
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Tue May 5 01:08:50 2020 +0300
-
-    [2hr]The buy menu layout work in a way that it can now automatically spawn the menu grid based on the contents inside the GamePrefabData config file.
-    Next is refactoring the spawning system and make the sell button works.
-    After selling work, probably some refactoring with the money/score/dining-table system because I wrote it in a rush for the demo.
-
-commit 7b098d593d3c9dd53c8a09750e76b9d36bd94231
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Thu Apr 30 00:45:20 2020 +0300
-
-    [1hr]More work with the GamePrefabsData class. It now remove all the old uses of "string" reference from Unity Editor Game Object name, which is not good.
-    Find out some bugs with the SaveLoad functionalities, probably because I rewrote many save load code. But, it shouldn't happen. It might be because of my refactor, or it might related to the object in ANY layer stuffs. I don't know. Must test tomorrow.
-    Now, I think that I should read more about Unity Automated test, and create some unittest, so that whenever I create a new feature or refactor something, I know that it works and doesn't break something else.
-
-commit c5040010d0ff813bb7e30949de9f0691124f2510
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Wed Apr 29 00:33:17 2020 +0300
-
-    [1hr]Adding grid layout to the buy sell menu. Will try to make it dynamic. Also, more base work with the GameItem/Prefab manager.
-
-    Hopefully, I can get a working prefab database system by the end of this week. This will be in charge of reading and serializing data. Also handle the data thing, like spawn rate, price and such.
-
-commit 5ec6e18d891934a13b0e5754c497cd6853c8b8d8
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Apr 20 00:36:44 2020 +0300
-
-    [10mins]Check for some TODOs and remove I think like 2 or 3 of them. (Total now: 21)
-    It's nice that I have Todos commented in the code, and all of them seems descriptive enough that I do have solution for. Now, I do wonder if I have some thing missing that needs to be done. Let's hope I don't have that and have the discipline to always add more todo to the code. For the record. I now have 21 todos in the code.
-
-commit 58a3e63d2dbf83d6c2ea0e0a79ab4f1e5203272f
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Apr 20 00:28:45 2020 +0300
-
-    [1hr]Trying to work with the new GameItemData thing, ended up remove a lot of code, which is good.
-    The idea is that that I will have a single json file that keep information of all game prefab (which I change the game item data name to game prefab data. Which, will handle stuffs like, cost of items and rarity and other stuffs like that as well. Ended up find out about some code I have written long ago that should be removed: Such as PickableData, or Container Component (mostly remove codes, because this use PickableData extensively).
-
-commit 46cb665a74a2a8a7ff61325797529757c75a2182
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Apr 19 14:27:31 2020 +0300
-
-    [2hr]Remove the FoodContainerSpawner component. Make the KitchenSink (the one to clean dishes) to a locking interactable objec.Fix a bug with the ANY layout world object.
-    + Remove FoodContainerSpawner: Includes the script, the prefabs, other reference to it in the buy/sell/spawn in the object manager And remove it from the saved layouts.
-    + IsLockingObject is a properly that tell if the interactable object will LOCK the player to the object (you can't do anything else, unless you press B to cancel the interaction). This will make it similar to the chopping board, as if you press X more, it will speed up the process, but if you don't do anything, it will clean the dish, just a bit slower.
-    + There is a bug with the object that can be dropped to ANY layer that if you drop it to the ground, it will act as a table. Which shouldn't happen. Fix that so that if you place it on the ground, it will occupy both ground and top layer.
-
-commit 6afbade12ea4c6c0e206712cb6ab1e4c9bcb3e88
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Apr 19 01:15:05 2020 +0300
-
-    [1.5hr]Create a GameItem data json file and class loader. This json config file will be used as our whole database for all item in the game, as well as their rarity and cost.
-
-    The data file is here and I'm done with the data structure. Will work on the loading next. I will try to remove the FoodContainer Spawner soon and rework the SavableData object a bit, as it's really similar to this GameItemJson.
-
-commit c10d0bd834f38ea3e5b8f38c26da031057a712b2
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sat Apr 18 00:39:35 2020 +0300
-
-    [1hr]Add the AnyLayer to World object, which make it possible for us to have a object that can be place either directly on the ground or on a table. Which I now it for food container object (Bowl, Cooking Pot), so that I can remove the stupid FoodContainer spawner thing, and buy a bowl directly, not like, buy a bowl, but you buy a box that have a bowl inside and you can use it as a table as well.
-
-commit 5fa88e0ea807aa93f7a06027817242f54a97917c
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Wed Apr 15 00:44:26 2020 +0300
-
-    [2hr]The sell button works halfway. Remove some useless UI-Code about the buy/sell menu. Refactor the Object manager despawn function so it works properly top down.
-    + The sell button now can detect all objects in the recycle zone and remove it. Nothing to do with money yet because we don't have a Money Manager class yet. Next is to work on a money manager class.
-    + The Despawn function used to be in each Object itself, and when called, it remove itself and report back (update the object list) in the object manager. Now, it works that the object-manager call the despawn function, and remove from its list. So slightly better.
-    + Need some refactor with the Pause Menu I think, I can remove the PauseMenu class, it's useless. Generally, my UI is quite mess up (I think all projects UI code is messed up).
-    + Add a ANY cell state, idea is that an object can be placed either at the ground, or on top of a table. It used to be JUST ground, or Just table, or BOTH. This work for, bowl or pot for example. So now when people buy a bowl or pot, they just buy a bowl or pot, not a table contain a bowl, or a pot. Really useless.
-    + Make the Computer so that it is a table with computer, and it takes both layer at once. Right now, the computer is a table-top object, and I think it's confusing to have to move the computer. Press A with the computer should probably interact with it as well.
-    + Make a sprite/state for a bowl with lectute on it. Players from testing (even me) always want to chop vegetable, put it in the bowl, but couldn't do it. I think it's dumb. So, more sprite.
-
-commit c2053784826aa357846290a203647006f93dd4f5
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Apr 13 15:29:56 2020 +0300
-
-    [2hr]Add the default layout setup for each map. Also, fix some bug with the UI and a bug related to the computer prefab missing the computer script component.
-    map_1 is quite ugly and not really well functioning, so I think that should be remade. Also, will need a working selling button on the Computer (shouldn't be too hard to make I think), and some sort of guidance or tutorial.
-
-commit c3b2352c622ab46bd54e8d84f78cf461f2caca4a
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Apr 13 00:44:09 2020 +0300
-
-    [30min]Rework map loader a bit so that it's not a duct-tape add on anymore. Next, will try to make a default layout for each map.
-
-commit 051cc52f5b05f6106e4c041bca1f72556f58d515
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sat Apr 11 15:22:21 2020 +0300
-
-    [2hr]Fix the bug with the UIs that if you navigate between different UI view, and moving the joystick while the ui is transitioning, will make the button not selected, thus, hard lock the player out of the game.
-    I'm really glad to fix this, because it's been annoying me quite a bit about the game and I though that it would took forever to fix. It's not the "fix/fix" to the solution, but rather a duct-tape fix, in that I will have to make the UI behave in some certain way, but it is fine and I guess I will just have to live with it.
-
-commit 1cc37cdb7414e3a411982dc72ce547b882b8380d
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Tue Apr 7 23:36:34 2020 +0300
-
-    [30min]Not doing much, but hopefully this will get me back on track. Trying to fix the UI and fix the compile error I made the other days.
-
-    The start-menu now can be controlled by controller now (previously, it was only controllable using mouse, which make demo-ing really awkward. Anyway, next is I will try to make a default layout for each map. So that each map will have a at least passable layout.
-
-commit 7642715968e2e60cf8a8e7c84cc723207fdefef3
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Apr 6 00:22:15 2020 +0300
-
-    [1hr]Moving some ui files around. Hopefully, this time I will get the discipline to work.
+    So it's a bit smarter and not contains like 10 copy/pasted GetComponent function for every different prefab type I have in the game. So now, I have everything in a Dictionary<System.Type, PrefabType> that can lookup from it, and I can call the GetComponent(System.Type). It's a 

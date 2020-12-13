@@ -1,253 +1,173 @@
-commit e2d6efeb0f1009506df500bd5f9368ce3e53b4e1 
+commit 82efcdc1671da292fd661085e5b6db5f24698525 (HEAD -> master, origin/master, origin/HEAD)
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Fri Nov 6 00:24:49 2020 +0200
+Date:   Thu Dec 10 00:56:00 2020 +0200
 
-    [2.5hr]Update the processor component, and tweak the camera angle. The 3d transition is now officially done. Also, write the progress update.
+    [1hr]Fix the bug with the UI. Remove all Tween animation.
+    + The UI is fix but still quite cubersome though.Because everytime the back/exit button is pressed, I have to call the DeactiveUI function manually to set the timescale back to 1. I think maybe adding a delegate or Unity function and subcribe all the resume button to that would be nicer?. Maybe.
 
-commit ece4a28ccbdf674653f1e6c9b8559a13c0ceba8c
+commit dba8ac7a6a68bac81388906d1a4f581e48390095
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Thu Oct 22 23:36:17 2020 +0300
+Date:   Mon Dec 7 01:00:21 2020 +0200
 
-    [1hr]The game is now fully working as similar as the 2d version now. So now I can just start to add cool shader and refine the movement.
-    + Fix the problem with progress bar, like somehow the progress part is sometimes behind the background. At first, I was doing really dummy way of setting the position to like -0.01 for the main part and 0 to the background, which might cause the issue. The proper way would be to change the order in layer, which I fortunately know from doing 2d. So doing this in 2d isn't a total loss of time at all. Also fix more positioning bug with the progress bar like icon was at -2 pos so it's so far away.
-    + Each food container now have a small text on top of it saying what ingredient it currently have, or in case of finished, what recipe it is. Because now, you can't tell which food container is which, and also, adding my old sprite to the popup would take too much refactor, which I plan to demolish the whole game recipe anyway. I did it initially because of 2d and sprite loading. Now I have 3d and none sprite loading, so I should do it in a less confusing way.
-    + The dining table has been update to be the same, so that if a customer is requesting some food, it will display the name of that dish.
-    + Remove most of the tween animation on 2d object, it's just weird.
-    + Right now, the movement is really akward, I think I need to fix it somehow, by resizing the object so movement is a bit easier, and generally, just placement of 3d objects.
-    + My son is expected to be born tomorrow, I have no idea when he will actually born, but exciting time ahead, and probably, busy time as well.
-    + I have been spending the last 8 days playing mostly JUST genshin impact, after spending soo much money on it (so 55 for the guarantee Venti pull, and AFTER that, I got greedy and spend another 17 euro to get 10 pulls to get more dupes of 4 stars so they get stronger, pretty good pulls though as I was able to get 1 fish and 2 barbaras). And 5 euro on a monthly gems (for a month, their value equal paying like 35euro) and the battle pass. Eventhough I spent a lot of money on that game (like 3-4 times I would normally on a normal game). I don't feel regret spending on that though, because somehow, I know exactly what I get into, and yeah, I just like the game that much. I also might have problem with Anime girls and gambling problem though, or at least, buying impulse.
+    [1.5h]Update day summary code so that it works again and refactor it a bit too so that it's better.
+    + There's still some hole in the UI, but I will do more testing tomorrow, and probably remove all the annoying warning in the unity console too. I have like 30+ warning now, which is a bit annoying.
+    + Hopefully next week, I am able to create a new release (lol, just blog post). I was planning to do a new relese last week, but then after I build the game, and found out that UI didn't work and then I have to refactor the UI, which took quite some times (mostly because I was procrastinating a lot).
+    + I uninstall BanG Dreams from my phone (decent music game, just the Gacha and monetization kills it) and decided to install Honkai Impact 3rd, same game from the Genshin Impact developer to scratch my Gacha itch (gacha addiction is real lol). Played for like 30 mins, feel guilty, comes back to develop game and spend like more than 1 hour reading reddit/r/genshin_impact. At least I still was able to do some work, but I really shouldn't un-block reddit for today, lol
 
-commit 7637ada0e69f31925a99e0663eca951bd0fbb550
+commit d3fee2710ca33627efa46685fd74e27ac79990e3
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Wed Oct 14 00:09:10 2020 +0300
+Date:   Sun Dec 6 17:29:49 2020 +0200
 
-    [1hr30min]So, the food-container updates its model properly now when there are food added and when completed.
-    + The whole recipe data I wrote a while ago was for the 2d sprite, which is a bit confusing. With this change, I could delete a lot of data/code to make this looks a bit clearer.
-    + Right now, when ingredient is added to food container, we have just one generic model for that, which make things super confusing, because adding vegetable or beef or chicken or anything to the bowl shows nothing different at all. This probably need to be fixed, to either have their little icon shows over the top like in Overcooked and DinerBros.
-    + Fix a bug with Tofu sometimes not able to drop it down. Turn out because I didn't remove the box collider from the model. Nothing big.
-    + See a bug with the progress bar component will fade behind the background (so it looks greyed out). It happens until the bar reach like 50%. Will investigate more.
-    + Also, if an object has progress bar popup, and we move it around, the progress bar is rotated as well. We should make that thing a bill-board shader, always facing main camera.
-    + When cooking pot is finished cooking and has its content taking by a bowl, its Z scale is set to 0. Will fix.
-    + Overall, my crappy pumping animation 2d doesn't looks that exiciting in 3d. Will need to fix later.
-    + Right now, I think it's more important to just make everything works again, so next I should make customer and food order work. After that, is the clean-up phase, which will remove all the 2d artifacts and makes it more 3d friendly.
-    + I played a lot of genshin impact today, but actually, just mostly reroll account (3 times only, not much though). Basically, somehow in the morning I have the briliant idea that I should pay 55 euro on this game, so that I will get the limited banner character (Venti). He's super good, S rank, and it's nice that this game have a pity system so that you are guarantee to have your star characters, so you will never spend too much. (Well, if you have ultra bad luck then you need like 200 to pulls the banner characters, but it's not much compare to other gacha games. Not that it's a small amount though).
-    + So I have been going over it a lot, basically, it not worth it, but because I am soo commited to this game, and this character is a limitted one, which means he probably won't come back until next year, so now is the only chance of getting him. And if I drop money to pull him, I will also have another cool character as well so not a 100% loss.
-    + Which makes me think of how Gacha game really works. They aren't straight forward P2W, actually, most of the content can be clear with just normal guys, what they did is they create a really fun game, and requires you to play a lots. And then, they show you just a little bit of these really cool and awesome character (that's also very cute). You can absolutely play fine without that cool character, but your gaming experience will be much better with that character, so yeah, get you commited to it, give you free gems so you can try, and only then, if you are really hooked, you will pay good money to pay.
-    + So, I tried reroll for that character (Venti) (means I create new account again, which they give a few gacha for free, so people reroll until their first chars are what they wants) which I did successfully. But then comes the problem that the character on my main account are actually way better, just that it will be even better with that Venti, which means I need to reroll to have 2 5* on my account, which basically means impossible.
-    + Yeah, like, really addicting thing, let see how this pan out. Like, I can dish out 55euro for this game, but I feel that these kind of money can be much better spend else where, like 1 week worth of food, or a new shoes, lol. But we shall see, the guy is on gacha for 4 more days, I will try to farm gems until 1 day left, and then let see if I will pay money, (and how much)
+    [3hr]UI now works except the end-of-day report. BuySellMenu also works. Lot's of refactor/restructuring with the UI.    + Fix the bug yesterday where the controller just doesn't interact with the UI. Turn out, I was missing the EventSystem for UI.
+    + Buy Sell menu works, and ofcourse some restructure to make the code shorter/esily readable.
+    + Make the UI interaction better, pressing Menu/B button is now universal to exit all the UI.
+    + Found a bug that if I place the FoodProcessor on top of the BanhPho/Noodle spawner (non-process-able food), it will spawn a BanhPho in the middle of the map.
 
-commit 64926425eaed766357681d6f15eefac5c4b68718
+commit a440b0bed79d479565fa0c389ce0ef545f5fed03
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Oct 12 23:28:39 2020 +0300
+Date:   Sun Dec 6 01:16:18 2020 +0200
 
-    [1hr]Ingredient now loads the correct models when finish processed. Change the collider of all prefabs from sphere to box.
-    + The ingredients now load their models correctly. Next I will try to make the food container models update correctly as well as fix bugs that I have with them, like somehow the processor component doesn't show up.
-    + The object's prefabs are changed from sphere to box. The player now doesn't stuck between object now, but moving around corner is a bit slugish. Need quite a while to fix though.
-    + Seems like all the object in the game (table) need to be lower, like only to be 0.5 or 0.7 of the x and z size. I was keeping everything in a 1-1-1 dimension box but seems like too high object make things clipping quite a lot and also asthestically not nice.
-    + Doesn't help that the game looks totally ugly due to the everything is still in the default model, definitely will buy some cool anime shader soon.
-    + I feel that if I do sit down for like one full day and work, all of this will be complete, but I just keep doing something else, and not even talk about playing game. I finished eating at 7.30 today, and now is 11.20, but I only dev-ed 1 hour, I just keep doing stupid thing, first, just aimlessly watching TV while waiting for my 2 roomates to finish sauna so I can do my sauna turn. After that, I was free from 9.30 but somehow just get distracted by the stupid reality tv shows on the tv right behind me, and then 10.15, walked the dog for half an hour. And dev a little bit until now. So that's a 1 hour dev in a 4 hour span. I mean, if I can play games for 2 hours, walk-dog 30min, and sauna + shower for 30 mins, it's much better time spend than that, which I waste 2 hours for something I don't even enjoy.
-    + Talk about game, I was playing Genshin Impact all day Sunday. I logged on in the noon and decied that I want to do some side quest, which then I found a stack of 3 Wind-culus, sort of collectibles in Genshin Impact that help increase your character stamina. THen I thought that if I found a big stack already, it's helpful that I will collect them all so I won't be distacted by them again, and in the future, I will want to collect all anyway, so doing now will be better. Spend the whole day (afternoon and evening) just to hunt down these things (using online interactive map) and still miss like 3 out of 65 of them. These doesn't show up on your world map, only shows up in minimap when you get close, and I have been going twice over the whole map, so I have no fucking idea where these are. So I officially give up on these until they release a patch that is more finding friendly. Yeah, still, I found these mroe fun/enjoyable than watching stupid (informative) youtube and reality tv shows.
+    [1hr]Refactor the PauseMenu View in the base game a little bit - remove a lot of work-round needed because I was working with Doozy.
+    + Fix some UI flag so that at least we can play the game normally. There is this boolean to check if UI is active then our player will not takes input anymore.
+    + The Main Pause Menu view works now. As in, if I press start, it does show up, but now it doesn't interact with the Controller button (yet).
+    + Also, remove some functionalities, like I used to have multiple save/load layout but I decided to remove them all and just have 3 buttons now: Resume, save layout as default, and exit to menu.
+    + Update text mesh pro so that it doesn't print thousands of logs about some thing that clearly doesn't happen.
+    + I had from 10 until now which is 1:15, like 3 hours to actually develop and fix UI, but then I procrastinate soo much, like install new gacha game and test them (BanG Dream, nice music game, but gacha and stamina system make it soo annoying) and testing the water with Honkai Impact 3rd - same dev from Genshin Impact. And I was planning yesterday like, I was going to spend 5 hours today developing game, urgg.
 
-commit 47a0e7078b6ac582a5cc0a34618771d8f992e6dd
+commit 514bfc912cdaf88e7c1a5ca8f2c6c71573c8fc0d
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sat Oct 10 23:59:56 2020 +0300
+Date:   Sat Dec 5 22:19:30 2020 +0200
 
-    [0.5hr]Fix the progress bar bug found yesterday. It was the bug with progress bar, not the 3d prefab.
-    + The game movement is now a bit laggy and slugish, because every object is a sphere collider, which make player easy to just stuck in the middle, which make movement weird. Easy fix would be ofcourse just make them box collider, but then it's easy for the player to just stuck at the corner. I currently can't think of an easy way to fix it. The hard way would be to make object that is next to each other will have box collider to prevent player from falling in, and normally will be sphere collider. Will take a lot of time for detecting these thing though, which is not really optimal.
-    + Didn't work much today because I just coded a little bit in the morning before lunch, after that, driving for the food supply, and just chill with friends for the rest of the night. Also a bit of playing Genshin Impact. It's crazy, they gross over 100 millions after less than 2 weeks release. With a budget of total 100m (including marketting).
-    + I read a lot of critism for the game for being too expensive to buy, but I think you need to approach it with the patient mindset. Like, just pay the 5.5 euro pack that give you small amount of gem everyday (like I bought today) and just play little by little everyday). Rushing is only viable for big spender, normal people just play patiently. People bash the gacha, ofcourse, but I think it's what make it fun, playing with luck, and don't know what to expect is fun and interesting.
-    + The game progression feels really good as well. In normal RPG game like Witcher 3, Assassin creed, because it's purely single player game, then exploring and "farming" feel super useless because the game makes you so powerful already, so no need for farming anyway. In this game, exploring and farming is fun because it helps making you forward the goal of being stronger because end-game content is really hard.
-    + Ofcourse, there is a lot of "bad" grinding single player game as well, that why I say this game make farming soo rewarding, which make it really nice.
-    + Ok, off to play game now, will try to work more tomorrow.
+    [1.5h]Add Button Wrapper to make it easier for me to work with UI.
+    + Create mostly shortcut function to change button text, add action listener and later on, if I want, make animation in here.
+    + Remove UiUtilities, it's mostly the way I work around DoozyUI, now that I remove it, I just make my OWN UI wrapper.
 
-commit e117355e6e3a2660a688efadaee7a84630c988be
+commit 8054790d55dea488436533684fc092933d3fe6fa
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sat Oct 10 01:00:20 2020 +0300
+Date:   Sat Dec 5 01:02:21 2020 +0200
 
-    [1.5hr]So, the pick drop component works now, seems to be able to even chop/process object. Also fix the player height a bit.
-    + The pick drop actually works already, just because of some forget-to-code part that doesn't update the object to proper table position when dropped on table.
-    + Can chop food on the cooking board, but the process bar component position seems wrong, and it doesn't update the model when completed (yet)
-    + Fix the player height and the picker position. Now I see the problem that the current player asset height doesn't match super well with the restaurant models. Also, the color looks super dulls so I need to use some cool anime shader next (I guess).
-    + Has been super addicted to Genshin Impact. In term of enjoyable, I enjoy it the same level as BotW, more than Witcher. Such an incredible world just to get lost in. Only problem is the gacha, but I have been bless by the RnGesus with a really cool 5* character (Keqing) which has been super fun to play. Read a lot of valid critics on reddit about the game though: gated progression, un-generous gacha rate (0.6% for 5*) and really lackings free to player reward (like, 10 pulls for 1 month of play?). Still, I'm low level compared to the current max (21 mine compare to 29 which is the point the game runs out of contents). So the game still have a lot of magic and awe for me. Will probably stop play or just log in 20mins per day for dailys  and shit.
-    + Still it's such a miracle of a game that you can play serious on PC, and play a bit more casually on the bed before going to bed. Like, really cool about that.
+    [1hr]Fix the start menu scene.
+    + It works again now, no cool effect though, which is a bit sad, but easy to make.
+    + There seems to be a bug that, if I choose 2 players and enter the game, there are null rererence about player prefab, I should check it after I'm done with the UI fix.
 
-commit 9003e4c5ff1d432a5174376fba03db13db868ca8
+commit d24aca0dec4932799c93687484f20cad1d27b570
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Thu Oct 8 00:56:11 2020 +0300
+Date:   Fri Dec 4 01:05:51 2020 +0200
 
-    [2hr]Create the ingredient models for the ingredient I have in this game. Also, I can grab stuff from the container now, just can't drop them.
-    + Well, for ingredient models, I don't create them, just use premade one, and you know, like few hundreds of models, just choose which one is correct for my game, and some slight resize, re-adjust position, and sometime merge multi models into one. Cost a lot of time though.
-    + Update the ingredient object data as well.
-    + The ingredient data model works the first try, so I'm really impressed with my code system, as I though it would require lot of change. Just remove one Collider2D component call from code and it's done, cool.
-    + Monday, I added the PrefabCaching, with the intention of only using it for loading model for the food container, and wow, suprised today, I need to use it for the ingredient object too. My code was quite modular already so nothing big is needed to changed, just a bit wondering why I didn't think that I would need it for the ingredient. I guess I was tunnel visioned for the food-container only.
-    + Been sucked to playing this game called Genshin Impact, a Free to play Chinese gacha game. It's quite fun, and even if you don't pay, the game play is super good, not as good as BoTW as many people claim, but close and fix some minor annoyance with that game. Gacha game is quite fun, maybe the next game I will try to add gacha mechanic into it, but with 0 microtransaction (whale hunting) because it's really evil. But yeah, playing with your RNGesus is quite fun as the out-come is un-expected, the super cutie waifus help that significantly as well.
+    [30min]Remove DoozyUI, first, because it doesn't work anymore, second, it's quite big, so getting rid of it was good. Nothing works now though. Will fix tomorrow.
+    + First, Doozy doesn't work with new Unity (2020) or with URP, not sure, but it doesn't work, and I install it on a fresh project, and it has tons of compile error. Reviews on the web-store also state that the dev doesn't response to email (in 7 days, at least), so yeah, no reason to keep it.
+    + So I assume that none of my UI will work at all, but well, just change the code from DoozyUI to native Unity UI code and it should be simple. I will lose some of the cool effect though. Luckily, I have bought DOTween PRO so it should be simple to make nice interactive AI.
+    + Watched the movie El Camino: A breaking bad movie today. It's great. Like, it's a new movie, but everything feels just so nogalista, I love breaking bad a lot, and the movie was just perfect, captures everything I love about Breaking Bad, and is also an awesome movie on top of that. So yeah, was planning to fix UI today, but got side tracked by the movie. It's nice though, I haven't seen movie in qutie a while.
+    + I am still playing Genshin Impact and will probably for quite a long time. I know it's a Gacha game which is bad and for the money I putted in the game, I could spend on like 3 AAA games, but the nice thing about Genshin is that, it actually limits my gaming time, like after 30mins-1h, I am done with the game, so I feel satisfied enough about gaming, and can focus on my work, not like, if I started like Hades, I will just spend the whole week playing it, or like Persona, that's like 1 full month of just NOT working in the game. I mean, yeah, of course, I can just NOT play game, but well, procrastination is strong, like, I am inclined to play at least some form of gaming, because else, I will just waste time on something else, so at least, with Genshin Impact, it has a clear limits and I can be more productive when I'm DONE with the game for the day.
 
-commit e710887c44facfd4e5b29242fb85fd129016b290
+commit df8766e108a2ff5b26bf3b6df537e311cc36cfa5
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Oct 5 00:48:01 2020 +0300
+Date:   Mon Nov 30 23:40:09 2020 +0200
 
-    [3hr]Fix the loading sequence, at least the game loads now and everything looks normal. All models load correctly. Next will finally rework on the object inreaction.
-    + Fix the ingredient spawner. so that now it will have the spawned ingredient type as a sprite renderer sprayed on its side.
-    + The Food Container (Bowl, Pot) both have their own model now. They still works the same way as previously, as they are the same prefab, just different config ie: sprite and some setup, but previously, I can change the shape just by changing the sprite, now, I need to load a new GameObject in the Resouce folder can't load Just the mesh because different prefab have different materials, beside, some Object even have some children object for decoration.
-    + So, to continue the above, the data file now has the path to the prefab object, and each food container has a Dictionary, so that if it loads a new form (Bowl of Pho,  Empty Bowl, Dirty Bowl) it will load the object and store in a dictionary. And if that form is called again, it just re-active the old one and all other are de-active. This save a lot of load time with the expense of few more objects.
-    + Huge delay because I have been playing Hades (and some procrastination) a lot. Actually beat the game and unlock true ending. I like the game, but it's not fair to say it's a rogue-like, because everything you have is a progression, like, you really can't beat High-heat (skulls) without tons of titan-blood upgrade, and well, the game feels a bit too same-y after beating it a few times, unlike say DeadCells or Slay-The-Spire. Also, post-game contents (1->4BC in DeadCells or Ascension climbing in StS) feels weak. Just the same game without the wow effect.
-    + Still, base game is amazing and I enjoy a lot of the time I was climbing the rank and trying to beat Hades. It's a hard game for sure, but I think the hardest part is just to know which boon/bonus to pick, not the actual difficulty of the game. If you know what boons/power-up to use, the game can be dead-simple sometimes. So yeah, the game is more about game knowledge, rather than player skill, but it initially gave me the impression of inverse.
-    + Also, have like 2-3 nights of not touching the computer. One was because of my birthday party (which some guy rear-ended me) and other was because of a board game night. But yeah, this 10 days away was bad :(
+    [1hr]Shadow is fixed. My game now has proper shadows and it looks beautiful. UI doesn't work now though.
+    + The RealToon dev is really good and responsive, easily 5* rating for me.
+    + Figure out that my UI doesn't work now, probably because of the upgrade from unity 2019 -> 2020 and I don't bother to check the the UI, just check the game, lol
 
-commit c9ed6e55a4bc63dd4290b988f408c4f6f839b27e
+commit a7027d480e3fba4fc132096fc8e2d6fc73241848
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Thu Sep 24 00:29:48 2020 +0300
+Date:   Mon Nov 30 00:26:09 2020 +0200
 
-    [2hr]Add the foods and furnitures models to the game. Update the prefabs with all new models.
-    + Game looks passable now, lots of null error open creating game, but player can still move around and game looks 3d-ish now.
-    + Default unity shader/lightning doesn't work really well with low poly model, it looks like some low budget ps2 games. Still, it's progress as we are slowly approaching 3d nows. Feels good to be able to delete a lot of files and still maintain the same game.
-    + Simple furniture works now, but complicated case like FoodContainer/ingredient/ingredient spawner doesn't work yet because they have dynamic sprite. Will think of new ways for them to work next.
-    + Acidentally drag the Doozy folder (UI libs) to the resource folder, which cost like 15 minutes of re-importing assets, and then move them back again cost another 15 mins of just waiting, there should be some-way in unity to lock folder so you can't move them anymore. Even now, the Doozy folder update some assets for some reason, so I'm going to just commit them because the change seem harmless.
-    + Rocket League gone free on Epic store today, and if you claim it, they give you a 10euro voucher (yay), which I take and use on Hades. Been super pumped to play the game as I discovered it yesterday, but then making this game takes the whole night. So I can't play it. Super sad :(
-    + Now that I learn about marketting, it's not enough to let people hear about your game, you have to let them hear about it multiple times. Yesterday was like the 4th time I heard about Hades? few from reddit news, few from Steam and once from my co-workers say how it's an excellent game. I only was interested in it because I learnt it was a Rouge-like.
-    + It's funny that I have been wanting to play MoonLighter, which I have for free from the Epic Store for soo long, but haven't even downloaded it, but the moment I know about Hades Rouge-like (and watch a youtube vid about it), I was super pumped and so ready to pay for it. To sell a game, you need an excellent hook.
+    [2hr]Add some post processing. Figure out another problem with shader, heh
+    + Only use the Anti-aliasing and very little color correction, as it feels quite nice already. I think if I want color change, I should tweak the shader and the color and art, the game is kind of fine as is now. I guess some color correction might be needed later in the future, but when I have a more clear-er feel of the game.
+    + Tweak the shadow value of objects a bit, so the un-lit side will be slightly lit up (black from 1 to 0.65) so it's a more toony-look.
+    + All of my objects doesn't cast shadow, this seems to be a problem with the shader config, after tweaking and reading the documents a while and can't solve it, I posted the question on the Unity forum, hopefully the author forgive my stupid mistake and answer my question.
+    + There is a but that cause the objects to sometimes set to a really weird scale. This is probably because of the jelly animation I set on them, in addition to the scale up/down on target effect. I should remove the jelly/Tween animation to most object now, as I feel with 3d, I have more way to make object feel responsive now, like actual 3d animation or particle or something.
 
-commit c94b87769d3fef0f673f29636056deb3885569a6
+commit 61e85100a976b105b70edcd011ea1234e6843fd5
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Wed Sep 23 22:48:10 2020 +0300
+Date:   Sun Nov 29 19:54:16 2020 +0200
 
-    [2hr]Remove the old zDepthSorter. The player pickup highlight now works. Commit so that I will import some food/kitchenware in the next commit.
-    + I mostly remove the zDepthSorter because all the 2d component rely on it, so if I remove it, and clean until there are no compile error left, it's probably complete and safe to move forward
-    + Also, remove some directional function I made to determine the direction of the player. Now, it's just simple Y rotation only, which make things a lot simpler.
-    + Some fix here and there with the 3d renderer, commit mostly so that this commit won't become too big, because I will import lots of food and funiture to the next commit.
+    [2hr]Install the New Unity URP.
+    + Don't know if it's some improvement or just my feeling after everything work, but things looks a bit better, color seems to be a bit brighter. Maybe it's true that something is change because I have to update the shader to the URP version as well, so it's different shader.
+    + Re-organize my asset a bit so I can filter them/view them inside the Unity Package Manager better.
+    + Found a weird bug like this:
+    Found a bug with the grid-high-light object. I have a velocity check that will only calculate the player cursor grid if the movement velocity is not 0. However, there is a bug that cause it to not register if we move directly UP or DOWN. We can test by looking right/left at some object: it get bigger -> Now, move down or up directly (using keyboard S/W) or the d-pad button on the xbox controller (joy-stick won't work as it's not 100% up/down). You can see that the object is not smaller. No idea what is the causes, probably the movement code? Disable the velocity check so that it check grid everyframe seems to fix the problem. Not a big issue though because the grid check is just x/y division so quite small, so it won't cause much performance issue.
 
-commit 1e15c3a9f48cac71e223d1faa48dee8f49c987b5
+commit 678485e884726cc164f5d11eb10386568f906c75
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Wed Sep 23 00:29:28 2020 +0300
+Date:   Fri Nov 27 23:35:10 2020 +0200
 
-    [2hr]Finish with the grid-map-tile. Make shadow works, start changing all the prefab to 3d.
-    + The grid-map now is a 3d plane, with textures, instead of sprite renderer. Wall is a cube and is higher, so it is actually a 3d object.
-    + The player and object now can cast shadows, and the plane can receive shadows as well, it didn't work at first, turn out because the project setting was set to 2d, which disable all nice 3d features. I think I will need to convert this project to URP for performance gain and nicer 3d graphic (Universal rendering pipeline Unity)
-    + Start adding 3d object with some textures to all the game prefabs as the ground work.
-    + Will update the player controller code, so that the picker and holder object will also have a 360 degree ranges. This means I can delete a lot of code :p
+    [1hr]Update Unity from 2019.2f to 2020.1.14 (it's already the end of 2020 and it's still 2020.1 ???)
+    + Update my packages because I have latest Unity now, including Doozy UI, DOTween and Rewire.
+    + Will test more the game tomorrow and update to URP and add some neat post-process effect.
 
-commit 78c77d7d2f4639bdddb893d0aa2a705df0b10c6a
+commit b7abe0c5a19bd4a6de3796fc707ef627bfd5fb2a
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Tue Sep 22 00:47:39 2020 +0300
+Date:   Thu Nov 26 23:59:31 2020 +0200
 
-    [1.5hr]Make the 3d character animation. Also, prepare the ground tile to be proper 3d model.
-    + Right now, the ground tile are 2d sprite renderer, I want to make them 3d plane with assignable texture, so that they can receive shadow, cast from the player.
-    + Maybe proper wall object? Lol
-    + Move some files around. 3d models folder rename and such.
+    [30min]Reduce the outline of object from 2 width to 1, so it look less extreme.
+    + Add the logo to the project setting.
+    + Trying to install Unity 2020.1 (newest version) so that I can update the project to URP next, and have some cool post processing effect, like anti-aliasing and some color correction.
 
-commit 397577a9cccf540a60ed7c620d5986959a782458
+commit 410474df658bd6c84b6b8447967b2f892adef47b
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Sep 21 00:27:00 2020 +0300
+Date:   Thu Nov 26 00:09:42 2020 +0200
 
-    [30min]Buy the 3d humanoid models, import to the game, add light to the scene and fix a movement bug I made yesterday.
-    + It's technically tomorrow from the last commit, because I commit at mid-night, and now, this commit is at 00:26, so I really buy and import the model the next day.
+    [1.5h]Fix the grid-high-light system. Move the camera much higher with an up-ward angle of 75 degree (from 45 degree). It has more top-down feeling, but much better visibility.
+    + The grid-high-light system used to be a 2d square that is draw on top of whatever the player is targetting at. It's very subtle, only appears if the player hasn't move for 0.5s and the color is very subtle as well (light green with 55/255 transparency), so no one really notice it, even me, the def. So, this time, I make it a lot more aggressive. The player has a picker component that is in charge of deciding what to pick up and what not, so now everytime this picker target change, that object will be scale slightly up (from 1.0 to 1.1) so it's very clear feeling of what the player is looking at. I tried doing some animation like, pop an animation when the player look at something, but because animation have animation time, it's very confusing and the game looks crap, just a single pop up when in target and back to normal when not in target anymore is quite effective but not too much confusing/in-your-face.
+    + Still, I still missed the drop/pick sometimes, especially when ordering new customer or givve food to customer. One idea may be that make the player even smaller and move slower, so everything around is bigger, thus, less sensitive to movement. Another way is to make the pick/drop component check. If it's empty,maybe check for other valid tiles in 4 other direction. maybe?
 
-commit db7e13b3e6e2bdd9ed8f87758e8b52ce1ab1c034
+commit df0f4234e4d7c23da35cf0c1418edf1db67424f3
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Sep 21 00:00:08 2020 +0300
+Date:   Sun Nov 22 17:55:52 2020 +0200
 
-    [15min]Remove git-ignore for all my purchased assets so this project can work as-is, as in, just clone and work, no installation needed.
-    + As this is a private repo, and I'm working alone, so I'm not distributing these to anywhere. So now, I'm using a old version of Unity with old version of the assets, if I would use a new computer, then it will be big problem, compile error when I clone this project.
-    + Also, buy a humanoid asset to import to the project. Just buy, import will be done tomorrow.
+    [1hr]Fix the placement of the top-up text in food processor and food container.
+    + Fix the bug that make the background show on top of all text (due to sorting layer).
+    + Resize the food processor, so that it now looks like a food processor, instead of a smoothy blender (well, its original model was a blender so ...)
+    + Also, tried play the game a bit to get the feeling of it, it still feels really bad to play as the targetting system still sucks. I wonder should I fix the targetting/picking/dropping of everything first (this is part of the movement, right?) or I should make more content, for the MVP, like start with a calendar system, so the game will have like 1 full week of playing with clear goal, and like, making more items and upgrade. Like, similar to the food processor, now you should have dishwasher? And a cabinet that you can store item?
+    + I think it's very important to have a MVP first, that's why I haven't even done the sound yet. I know sound is very important to have, as it also increase the responsive rate and everything, but it's like extra cream on top. If the game isn't good, having amazing sound won't help anything.
 
-commit fe8f16be6f8c8b7daaaead8fb52ed7c3acabb352
+commit 1996f9ce70806544be5ceb6a28b0787f544a14f0
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Sep 20 00:44:34 2020 +0300
+Date:   Sun Nov 22 13:08:00 2020 +0200
 
-    [1.5hr]Add the 3d model some 3d rendering code to the player. It can move around with the player and face the direction it's moving now.
-    + The 3d model is now in a T pose, but at least it face the direction the joy-stick is pushed to now. I think this only would make targetting/picking/dropping stuff much more responsive and more natural already, as the previous system only account for 4 directions stuffs picking, which I think isn't good enough, and feels quite limited. Now, it's full 360 direction, so probably feels better.
-    + Small refactor, as move the GetComponentAndNullCheck from BaseObject class to the static utils class so all the GetComponent and Null check is at the same place.
-    + Wasn't planning to code anything today as the family went for a small trip to Porvoo, but then I have some spare time and decided that maybe I could do a little, and funny thing, something produtive, so yay me!.
+    [1.5h]Update colors of furniture a little bit. Resize the text of the popup to auto size so it isn't too big.
+    + Make the Warning icon on timer animate only, but now, it's a bit too big. I tried to fix it by updating the tweening code to consider the local scale but it doesn't work somehow. Now, just make the whole sprite smaller, but it's a bit crappy fix.
 
-commit b99b35aac568b8c692369c4ac1b07e3577d1fead
+commit 537b19c38b854268156a81a4b534e248a5918ac9
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Fri Sep 18 00:41:25 2020 +0300
+Date:   Sat Nov 21 15:12:12 2020 +0200
 
-    [2hr]Finish with the gird-coordination change from 2d to 3d. Also, player movement works now (again). Tomorrow will be pick/drop functionality.
-    + Seems like most of the Grid map, placing and validation works now. My map is spawned just like before (on screen). My code is quite modular so I mostly need to go to the grid manager and map manager class and change from y to z.
-    + Ofcourse, this being a top-down game, so moving to 3d is more of a art-direction change rather than like, game design decision that I need the extra dimension or though.
-    + Now that I wrote that down, I could have gotten away with just keeping everything the same, but use 3d models/camera, renderer but with the same 2d logic. But that would probably hurt more in the future, and my harm some lightning or something. Anyway, if I decied to do 3d, I should do 3d properly.
-    + Remove all the 2d Collider from prefabs and change them with box collider 2d. The player movement is also updated from rigidbody2d to rigidbody 3d, it works almost instantly, as I only need to change a vector 2 (x, y) from the controller input, to a movement velocity of (x, 0, z). So, really small change.
-    + Tomorrow, will try to make the pick/drop thing works again, so it means thing will be back to just before, minus some sorting/layering issue, but then, we are going to remove all the sprite anyway to change them with 3d model, so whatever.
-    + Will probably not work tomorrow due to a birthday party. It's not like I work so continuously and I sometimes (usually) just skip one or few days of developing game just because of game/watching movie/distraction anyway.
+    [2h]Resize all the prefabs/models a little bit so that on the game, they looks fitted together, and have some sort of grid feeling. Adjust the color a bit too.
 
-commit ca930ebf0e072e2bea713f75f6267454d975a867
+commit 5c7c2dcac6ad0167d5d56b316ea7a0b5c17aad2a
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Thu Sep 17 00:31:39 2020 +0300
+Date:   Sat Nov 21 00:41:12 2020 +0200
 
-    [2hr]Starting to add 3d to the game. First step is to redo the map grid system.
-    + Because unity3d use xz for ground position, and Y for height, while our 2d top-down game use X for horizontal and Y for vertical, so everything, in the view of a 3d camera proper-view just are from the top down.
-    + To fix this, I will just try to go to every part of our code, mostly the grid and map system, to change Y position to Z position. Success would be that I am able to see the map like before, but with 3d camera view from top.
-    + Next would be harder, which is to change all our 2d physics (2d rigid-body, 2d collider) into 3d physics (character controller, 3d rigidbody/collider). After this step, our player should be able to move like normal, and actually playing the game just like before, just with 3d physics calculation instead of 2d physics.
-    + Last step would be to change the rendering from 2d to 3d, which change all sprite renderer to MESH renderer with texture and stuff. Ofcouse, add light as well.
-    + Hopeful thinking, this take a week if I work full time and really concentrate, but I don't work fulltime and I get distraction a lot so maybe like 1 month. Hopefully not that long though.
+    [4hr]Adjust camera angle and lightning. Tweak shader a bit, add background, fix some bugs. Surfing at the asset store for more than I should.
+    + The toon shader is really powerful with lots of options, I think I need like 1-2h with an empty project to JUST test it out, and read the manual as well, because I feel like eventhough the game looks better already, I feel like I still missing a lot of features to make it trully awesome.
+    + Add another chair to the dining table so it looks like dining table, not classroom chair and table. Also change the color of the chair cushion from pink (same with table) to green to make it a bit stand-out.
+    + Fix a bug that makes the customer would always seated to the tables in a order, which isn't nice. Make it so that they sit on random table order.
+    + Found a bug that make the progressbar to NOT FACE THE camera properly.
+    -> To reproduce, just let the progress bar run one full course from normal -> timer -> danger -> done.
+    -> Then, the next time it appears, it will face to the wall, not to the camera.
+    -> The reason: this only happens when the DANGER bar shows up, if the progressbar hasn't run full course, it seems to be ok
+    -> This is because when entering DANGER phase, we run a DOTween set pulsing animation, which messes up with the rotation.
+    -> Just temporally disable the pulsing DANGER phase until I found a solution
 
-commit b05530e66969d872b1af10505800b6a9070e4e60
+commit b6b5c100e879c4bedefb7818357d2966ae276363
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Wed Sep 16 00:28:09 2020 +0300
+Date:   Fri Nov 20 00:17:01 2020 +0200
 
-    [2hr]Update the steam page to have the Progress updates. Import a 3d humanoid model to start with.
-    + I initially wanted to have each update as an announcement/post/event, like games like DeadCells/Noita,... have, like update 19, 20, things like that. But seems like it's not possible with an un-released game.
-    + Stared at the project for a while without knowing where to start. Hmmm, this is like a huge task.
+    [2hr]Bought a new toony shader and apply them to all the game assets. The game looks a bit uniform now, but the tiles and the models doesn't match. Also, fix the positioning of picking up object clip with the table.
+    + Very nice that when I finally decided to buy the asset, Unity gives like a 50% store discount for like 700+ assets, which is nice. I might shop out for more assets. Heh
 
-commit ecaea4f3b7cbd447d772e168af6922b825e8ab75
+commit af39bee319a124f50fd0e21857b0f13add1c7307
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Tue Sep 15 00:38:33 2020 +0300
+Date:   Mon Nov 16 23:44:09 2020 +0200
 
-    [4hr]Create another progress update, which contains one build, some gameplay gifs, and all the commit logs. After this, I will try to make this game 3d, because it will be better in the long run.
-    + Today, it will only be posted to the game website, but tomorrow, maybe I will try to update the steam page as well.
-    + Game build didn't work at first, which nearly gives me a panic attack that the GamePrefabDatabase refactor wouldn't work (because it use Just-in-time type checking, not pre-compiled) so it might not work. Turn out, the data was wrong, like, because I build the game, on this computer before, there are old save data that will not work with the new code (Json fields with different names). Clearing the saved data works. Nearly give me a huge disaapointment :p.
-    + Finally fix the typo of the game name, from WhatThoPho to correctly WhatThePho
-    + Yeah, I think I want to switch this game from 2d to 3d. It's a huge task to be sure to change so many things, but it will make this game more beautiful (because my 2d art skill are crap anyway), so at least with 3d, I can buy models and with correct shader, everything is a bit more same-styled. Also, 3d can fix a lot of problem that I have with 2d, mostly the rendering layer, order in layer, and probably also the position picking that feel super ir-responsive now.
+    [1hr]Add the toon-colored shader to the materials of our food and some kitchen utensils. Next will be the furniture and some asset resizing and probably some light adjustment.
 
-commit 2a06f19870c0f9d147635bbfde94e49b7d3f6002
+commit d7173f9e9ccaf9b991522106758c2a6296e32715
 Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sat Sep 12 00:56:05 2020 +0300
+Date:   Sun Nov 8 23:41:21 2020 +0200
 
-    [3hr]Finally fix the bug with the progress bar and food processor automatically get food from the spawner if placed on top of a spawner.
-    + This bug caused by placing the object on top of the "stove" will call the set rendering offset function twice. This only happens on load because of the delay init function. I added a duct-tape fix to call onObjectPlaced on stove 0.2second after init, because there is a bug of, if a pot is load with scene right on top of the stove, the pot will not register as is on top of the stove, and if you put food in, it won't be cooked. I fix the rendering-offset bug now though.
-    The processor automatically get ingredient and process it if placed on top of a spawner.  Still, if you get food in it while it's processing, it will remain unprocessed with 0% progression. Simple fix by just not allowing the player to take already processing from the processor. It kind of makes sense to not be able to take from it though, so I think it's cool. Also, I'm tired with this processor now, so tomorrow I want to do another thing.
-    + Add a delegateUtils file, so I can dump all the delegate definition there. It's cleaner that way.
-    + Fuck, I started coding at 9, and now it's 1, but it doesn't feel like I did much. I did fuck around a lot, like, going to toilet, playing piano, and playing Clash Royale but I didn't mess around too much though. Probably because of thing just didn't work right away and I have to track down problems and fix it so that the processor works. Code is short but it took a while to write these short code.
-
-commit 9d69d09a702567cabca9bb6628e66bfe3520020f
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Fri Sep 11 00:48:31 2020 +0300
-
-    [1.5hr]Refactor the rendering component a bit so everything is cleaner. The food processor works, but still ugly.
-    + Refactor the progress-bar so its relation (inheritant) from rendering component make more sense and reduce more code.
-    + Make the sub-renderer as a property of the rendering component for easier set-world off-set function
-    + Make the WorldPopup inherit from the rendering component too because it makes more sense that way.
-    + Don't use the sub-renderer in the processing but use world popup now. It's more visible that ways, and both looks ugly anyway, so at least I choose the ugly but more visible.
-    + Add animation, but the animation I made look disgusting.
-    + Plan to make the Food-processor automatically pick up ingredient and process if is placed on top of a spawner.
-
-commit 715ac22b7e4cbce53a126c6b2dcd88f689068981
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Thu Sep 10 00:31:06 2020 +0300
-
-    [30min]Add the Sub-renderer to the Processor component, so it will display what is being processed instead of the popup.
-    + But this also looks a bit ugly though.
-    + Small code update to use my helpers function (GetComponent and check null automatically) so sorter and cleaner code.
-    + There is a bug with the SubRenderer, bascially, if things are put on top of table, it will be move back by some rendering offset to make the feel of 3d. This doesn't updat the subrenerer information though, so this should be fix.
-    + I'm thinking of maybe making the sub-rendrer as an optional part of the RenderingComponent?
-
-commit 5af5c1eb67b8bfc1d4f51f96e5b5bf6826548f03
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Mon Sep 7 00:44:47 2020 +0300
-
-    [2hr]Food processor work like 70%. You can put raw ingredient in, it will process it, and you can grad chopped food from it.
-    + Now, if the object is under transition, if you remove it, you will just get a 0% progression object. I will fix it tomorrow.
-    + No animation yet whatsoever for the food processor eventhough I spent hour making animation for it.
-    + The position of the Object popup and the progress bar is really not optimal. I will need to change later.
-    + Took some times because I procrastinate (I started working at 9, and in 4 hour, I got like 2 hours of work done, and that's generous).
-    + Also because of some stupid naming I made long ago with the ingredient object. Transition Progress is just the total time, not the percentage transition, I spend a lot of time stucked there. Luckily, I have good debug skill (lol).
-    + Also, more fix/refactor with the Move all Progress bar and Object Popup from specific prefab (Chopping Board, Stove) to all world object. Turns out my last refactor wasn't that thorough, so I finished what I should have done long ago
-    + I have a half can of beer at 11.30, that's why this commit message is a bit long.
-
-commit c67f7a74763aa60b59e754ea54f2f26badeceeb7
-Author: Minh Duc <minhduc.gameregistry@gmail.com>
-Date:   Sun Sep 6 00:41:45 2020 +0300
-
-    [1hr]Refactor the game prefab database.
-    So it's a bit smarter and not contains like 10 copy/pasted GetComponent function for every different prefab type I have in the game. So now, I have everything in a Dictionary<System.Type, PrefabType> that can lookup from it, and I can call the GetComponent(System.Type). It's a 
+    [30min]Raise the camera and its view angle to higher (from like 45 degree to 67.5 degree) so the game is more visible.
+    + Add script to make sure that all the text/progress bar angled nicely with the new viewport. That code looks a bit convoluted, but still, I think I will redo all of them in the future.
+    + Right now, when you take an object and move around, the object will rotate with you, and also the text on top also rotate, which looks funny. I can fix it, but I think it's quite funny to stay.
+    + A weird bug appear that makes my controller unable to navigate around the menu. Weird because previous moment, it still works, but after I change some code, it doesn't work, but the keyboard still work. Re-starting the game doesn't help. This bug probably will be gone by tomorrow when I boot up the engine again. I guess this is either the unity bug or windows controller bug, or the controller lib (rewired) bug. Anyway, I don't care and I hope that it will disappear tomorrow when I turned it on again.

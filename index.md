@@ -6,7 +6,7 @@ layout: splash
 permalink: /
 header:
   overlay_color: "#5e616c"
-  overlay_image: /assets/2020-03-20/Main-header.png
+  overlay_image: /assets/2021-01-12/banner.png
   actions:
     - label: "Wishlist on Steam!"
       url: "https://store.steampowered.com/app/1138610"
@@ -19,20 +19,20 @@ feature_row:
   #   alt: "Full game feature"
   #   title: "Have your own restaurant"
   - title: "Your own restaurant, down to every tile on the floor."
-    image_path: /assets/2020-03-20/prepare.gif
+    image_path: /assets/2020-12-14/chaos.gif
     alt: "Design your own restaurant"
 
   - title: "Grab, chop, cook, combine! Make food that your customer will crave for more!"
-    image_path: /assets/2020-03-20/serving.gif
+    image_path: /assets/2021-01-12/restaurant.gif
     alt: "And create awesome food"
 
   - title: "Buying upgrades for your restaurant!"
-    image_path: /assets/2020-03-20/buying.gif
+    image_path: /assets/2020-12-14/buying.gif
     alt: "Buy stuffs"
 
-  - title: "User's mod friendly: Come up with your own recipe and add them to the game using our super easy mod-tool."
-    alt: "Mod friendly"
-    image_path: /assets/2019-08-11/mod-friendly.jpg
+  - title: "Roguelike gameplay with calendar and decision system. Plan your days wisely to advance the next competition round."
+    alt: "Roguelike"
+    image_path: /assets/2021-01-12/calendar.gif
   
 ---
 

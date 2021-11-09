@@ -7,13 +7,12 @@ permalink: /
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/2021-01-12/banner.png
-  actions:
-    - label: "Wishlist on Steam!"
-      url: "https://store.steampowered.com/app/1138610"
+  # actions:
+  #   - label: "Wishlist on Steam!"
+  #     url: "https://store.steampowered.com/app/1138610"
 excerpt: >
-  An upcoming video game about starting up your own restaurant dream. <br />
-  Single-player or coop for main mode and arcade mode that support up to 4 players.<br />
-  <small><a href="https://store.steampowered.com/app/1138610">Coming to Steam (and hopefully, more).</a></small>
+  An upcoming VR game about building awesome twisty track in your home, totally in VR. <br />
+  Collect donuts, unlock new tracks and cars.<br />
 feature_row:
   # - image_path: /assets/2019-08-11/FullGameFeature.jpg
   #   alt: "Full game feature"
@@ -38,4 +37,4 @@ feature_row:
 
 {% include feature_row %}
 
-<iframe src="https://cdn.forms-content.sg-form.com/7dc2ad2a-c35b-11e9-8da4-9ec1f6b6d727"/>
+<!-- <iframe src="https://cdn.forms-content.sg-form.com/7dc2ad2a-c35b-11e9-8da4-9ec1f6b6d727"/> -->

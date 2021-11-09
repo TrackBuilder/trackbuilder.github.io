@@ -6,33 +6,32 @@ layout: splash
 permalink: /
 header:
   overlay_color: "#5e616c"
-  overlay_image: /assets/2021-01-12/banner.png
+  overlay_image: /assets/2021-11-09/banner.png
   # actions:
   #   - label: "Wishlist on Steam!"
   #     url: "https://store.steampowered.com/app/1138610"
 excerpt: >
-  An upcoming VR game about building awesome twisty track in your home, totally in VR. <br />
-  Collect donuts, unlock new tracks and cars.<br />
+  Stunt track builder is a free to play physic-simulation-game about building awesome twisty stunt tracks in your home environment and collect all the super looking toy cars in the game.
 feature_row:
-  # - image_path: /assets/2019-08-11/FullGameFeature.jpg
-  #   alt: "Full game feature"
-  #   title: "Have your own restaurant"
-  - title: "Your own restaurant, down to every tile on the floor."
-    image_path: /assets/2020-12-14/chaos.gif
-    alt: "Design your own restaurant"
+  - title: "Build giant toy tracks in your home."
+    image_path: /assets/2021-11-09/1.png
+    alt: "Giant toy tracks"
 
-  - title: "Grab, chop, cook, combine! Make food that your customer will crave for more!"
-    image_path: /assets/2021-01-12/restaurant.gif
-    alt: "And create awesome food"
+  - title: "Collect all the donuts."
+    image_path: /assets/2021-11-09/2.png
+    alt: "Donut collection"
 
-  - title: "Buying upgrades for your restaurant!"
-    image_path: /assets/2020-12-14/buying.gif
-    alt: "Buy stuffs"
+  - title: "Build the tracks any way you want."
+    image_path: /assets/2021-11-09/3.png
+    alt: "Track building"
 
-  - title: "Roguelike gameplay with calendar and decision system. Plan your days wisely to advance the next competition round."
-    alt: "Roguelike"
-    image_path: /assets/2021-01-12/calendar.gif
+  - title: "Many awesome car to collect."
+    alt: "Cars"
+    image_path: /assets/2021-11-09/4.png
   
+  - title: "Exchange donuts for more tracks and cars."
+    alt: "Rewards"
+    image_path: /assets/2021-11-09/5.png
 ---
 
 {% include feature_row %}

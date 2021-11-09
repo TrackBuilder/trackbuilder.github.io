@@ -1,4 +1,6 @@
 # main links
-# main:
-#   - title: "Progress updates"
-#     url: /updates/
+main:
+  - title: "Progress updates"
+    url: /updates/
+  - title: "Privacy policy"
+    url: /privacy/

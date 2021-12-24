@@ -14,7 +14,7 @@ header:
     - label: "Join us on Discord"
       url: "https://discord.gg/XeYVJpHmZ4"
 excerpt: >
-  Stunt track builder is a free to play physic-simulation-game about building awesome twisty stunt tracks in your home environment and collect all the super looking toy cars in the game.
+  Stunt track builder is a free-to-play physic-simulation game about building giant stunt tracks in your home and collecting all the super looking toy cars. Build the stunt tracks of your dream, all in VR.
 feature_row:
   - title: "Build giant toy tracks in your home."
     image_path: /assets/2021-12-24/0.png

@@ -3,12 +3,12 @@ Privacy Policy
 
 Last updated: December 24, 2021
 
-This privacy policy describes our policies and procedures on collecting, using, and disclosing your information when you use Stunt Track Builder, our Oculus Software Application. If you have any suggestions, questions or concerns related to our privacy policies, please get in touch with us at: trackbuildervr@gmail.com.
+This privacy policy describes our policies and procedures on collecting, using, and disclosing your information when you use Stunt Track Builder, our Oculus Software Application. If you have any suggestions, questions or concerns related to our privacy policies, please get in touch with us at: [trackbuildervr@gmail.com](/cdn-cgi/l/email-protection).
 
 What information is obtained, and how is it used?
 ==============================
 
-Stunt Tracks Builder does not collect, store, use or transmit any personally identifiable information such as your name, address, location data related to your geographic location, phone number, email address or Oculus ID. We also do comply with the Children’s Online Privacy Protection Act (COPPA) and do not solicit nor gather any data from children under the age of 13. If a parent or guardian becomes aware that their child has provided us with information without their consent, they should contact us at trackbuildervr@gmail.com.
+Stunt Tracks Builder does not collect, store, use or transmit any personally identifiable information such as your name, address, location data related to your geographic location, phone number, email address or Oculus ID. We also do comply with the Children’s Online Privacy Protection Act (COPPA) and do not solicit nor gather any data from children under the age of 13. If a parent or guardian becomes aware that their child has provided us with information without their consent, they should contact us at [trackbuildervr@gmail.com](/cdn-cgi/l/email-protection).
 
 
 Share of personal information
@@ -18,7 +18,7 @@ We do not collect, use, transmit, or maintain any personal information, therefor
 
 How can you delete your data
 ==============================
-You, as a data subject, have certain rights with regard to your personal data.If you wish to delete your data send an email to trackbuildervr@gmail.com requesting such deletion.
+You, as a data subject, have certain rights with regard to your personal data.If you wish to delete your data send an email to [trackbuildervr@gmail.com](/cdn-cgi/l/email-protection) requesting such deletion.
 
 
 Privacy Policy Updates Notification

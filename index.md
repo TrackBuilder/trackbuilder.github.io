@@ -6,13 +6,10 @@ layout: splash
 permalink: /
 header:
   overlay_color: "#5e616c"
-  overlay_image: /assets/2021-11-09/banner.png
-  actions:
-    - label: "Try on Oculus AppLab"
-      url: "https://www.oculus.com/experiences/quest/4397519526943470/"
+  overlay_image: /assets/banner.png
   actions:
     - label: "Join us on Discord"
-      url: "https://discord.gg/XeYVJpHmZ4"
+      url: "https://discord.com/invite/YrYwsTaxnx"
 excerpt: >
   Stunt track builder is a free-to-play physic-simulation game about building giant stunt tracks in your home and collecting all the super looking toy cars. Build the stunt tracks of your dream, all in VR.
 feature_row:
@@ -35,6 +32,12 @@ feature_row:
   - title: "Exchange donuts for more tracks and cars."
     alt: "Rewards"
     image_path: /assets/2021-12-24/4.png
+
+  # - title: "Download for free on Oculus Applab."
+  #   alt: "Rewards"
+  #   image_path: /assets/2021-12-24/4.png
+  #   url: https://www.oculus.com/experiences/quest/4397519526943470
+
 ---
 
 {% include feature_row %}
